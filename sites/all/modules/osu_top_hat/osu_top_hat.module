@@ -1,0 +1,221 @@
+<?php
+/**
+ * @file osu_top_hat.module
+ *
+ * A module to implement the OSU Top Hat
+ *
+ */
+
+/**
+ * Implements hook_permssion()
+ *
+ * Permissions to configure top hat
+ */
+function osu_top_hat_permission(){
+  return array('configure top hat' => array(
+      'title'           => t('Configure OSU Top Hat'),
+      'description'     => t('Configure the OSU Top Hat'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_menu()
+ *
+ * Add a link to the Site Configuration menu
+ * And create a callback for our search form
+ */
+function osu_top_hat_menu() {
+  $items = array();
+
+  // Add our settings form to the Configuration -> Search and Metadata menu
+  // The form is loaded from an include file
+  $items['admin/appearance/osu-top-hat'] = array(
+    'title'            => 'OSU Top Hat Settings',
+    'description'      => 'Configure the Top Hat',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('osu_top_hat_settings'),
+    'access arguments' => array('configure top hat'),
+    'type'             => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_form()
+ *
+ * Top hat settings form
+ */
+function osu_top_hat_settings($form, &$form_state) {
+
+  // Get saved settings
+  $settings = variable_get('osu_top_hat_settings', array());
+
+  // Option - Hide utiltity links
+  $form['osu_top_hat_options']['hide_utility'] = array(
+      '#type'          => 'checkbox',
+      '#title'         => 'Hide utitlity links in Top Hat.',
+      '#default_value' => isset($settings['hide_utility']) ? $settings['hide_utility'] : 0,
+      '#description'   => t('Hide the "Calendar, Library, Maps..." links in the Top Hat'),
+      );
+
+  // Option - Display the search form
+  $form['osu_top_hat_options']['show_search'] = array(
+      '#type'          => 'checkbox',
+      '#title'         => 'Show the search form in Top Hat.',
+      '#default_value' => isset($settings['show_search']) ? $settings['show_search'] : 1,
+      '#description'   => t('Show the search form in the Top Hat:. Requires the OSU Search module.'),
+      );
+
+  // Option - VSO Branding
+  $form['osu_top_hat_options']['vso_option'] = array(
+      '#type'          => 'checkbox',
+      '#title'         => 'Use the VSO branding.',
+      '#default_value' => isset($settings['vso_option']) ? $settings['vso_option'] : 0,
+      '#description'   => t('Set the branding for voluntary organizations. This replaces the tag image with the words Oregon State University.'),
+      );
+
+    $form['osu_top_hat_options']['submit'] = array(
+      '#type'           => 'submit',
+      '#value'          => 'Save Settings',
+    );
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_submit()
+ *
+ */
+function osu_top_hat_settings_submit($form, &$form_state){
+
+  // Create an array of our settings
+  $settings = array(
+    'hide_utility' => $form_state['values']['hide_utility'],
+    'show_search'  => $form_state['values']['show_search'],
+    'vso_option'   => $form_state['values']['vso_option'],
+  );
+
+  // Write it to variables
+  variable_set('osu_top_hat_settings', $settings);
+  drupal_set_message('The settings have been saved.');
+
+}
+
+
+
+
+/**
+ * Implements hook_init()
+ *
+ * Build the utiltiy menu if it doesn't exist
+ *
+ */
+function osu_top_hat_init() {
+  $menu = array(
+      'menu_name'   => 'osu-top-hat',
+      'title'       => t('OSU Top Hat'),
+      'description' => t('The menu at the top of the page'),
+      );
+  menu_save($menu);
+
+  $links = menu_load_links('osu-top-hat');
+
+  if (empty($links)) {
+
+    $item = array(
+        'link_title'  => t('Calendar'),
+        'link_path'   => 'http://calendar.oregonstate.edu',
+        'menu_name'   => 'osu-top-hat',
+        'weight'      => 1,
+        );
+    menu_link_save($item);
+
+    $item = array(
+        'link_title'  => t('Library'),
+        'link_path'   => 'http://osulibrary.oregonstate.edu',
+        'menu_name'   => 'osu-top-hat',
+        'weight'      => 2,
+        );
+    menu_link_save($item);
+
+    $item = array(
+        'link_title'  => t('Maps'),
+        'link_path'   => 'http://oregonstate.edu/campusmap',
+        'menu_name'   => 'osu-top-hat',
+        'weight'      => 3,
+        );
+    menu_link_save($item);
+
+    $item = array(
+        'link_title'  => t('Online Services'),
+        'link_path'   => 'http://oregonstate.edu/main/online-services',
+        'menu_name'   => 'osu-top-hat',
+        'weight'      => 4,
+        );
+    menu_link_save($item);
+
+    $item = array(
+        'link_title'  => t('Make a Gift'),
+        'link_path'   => 'http://osufoundation.org/giving/online_gift.shtml',
+        'menu_name'   => 'osu-top-hat',
+        'weight'      => 5,
+        'options'     => array('attributes' => array('class' => array('campaign'))),
+        );
+    menu_link_save($item);
+
+    // Update the menu router information.
+    menu_rebuild();
+  }
+}
+
+
+/**
+ * Display the Top Hat
+ *
+ * This fucntion is called from the theme page.tpl.php
+ *
+ */
+function osu_top_hat_render() {
+  global $base_url;
+
+  // Get saved settings
+  $settings = variable_get('osu_top_hat_settings', array());
+
+  // Start the top hat
+  $top_hat = "<div id='osu-top-hat'><div class='container'>";
+
+
+  if ($settings['vso_option']) {
+    // Show VSO branding
+    $top_hat .= "<p class='vso-standard-header'>";
+    $top_hat .= "<span class='students-orange'>Students</span>";
+    $top_hat .= " @ <a href='http://oregonstate.edu/'>Oregon State University</a></p>";
+  }
+  else {
+    // Show Tag image
+    $module_path = drupal_get_path('module', 'osu_top_hat');
+    $tag_image = $base_url . '/' . $module_path  . '/images/osu-tag.png';
+    $top_hat .= "<a href='http://oregonstate.edu' class='tag'>" .
+        "<img src='" . $tag_image . "' class='logo' alt='Oregon State University' />" .
+        "<span class='mobile-header'>OREGON STATE UNIVERSITY</span>" .
+        "</a>";
+  }
+
+  // Utility links
+  if (! $settings['hide_utility']) {
+    $menu = menu_tree('osu-top-hat');
+    $top_hat .= drupal_render($menu);
+  }
+
+  // Render the search form if it is installed and enabled
+  if( $settings['show_search'] && function_exists('osu_search_top_hat_form')) {
+    $top_hat .= render(drupal_get_form('osu_search_top_hat_form'));
+  }
+
+  // Close our divs
+  $top_hat .= "</div></div>";
+
+  return $top_hat;
+}
