@@ -33,19 +33,19 @@ ul.audiences li {list-style: none; margin-bottom: 12px;}
     font-size: 24px;
     line-height: 24px;
   }
-.page-search-osul #block-block-6 {
+.page-search-osul #block-block-5 {
 	margin: 20px 0 50px 0;
 	min-width: 291px;
 	}
-.page-search-osul #block-block-6 fieldset {
+.page-search-osul #block-block-5 fieldset {
 	position: absolute;
 	left: 0;
 }
-.page-search-osul #block-block-6 fieldset, .page-search-osul #block-block-6 .form-item {
+.page-search-osul #block-block-5 fieldset, .page-search-osul #block-block-5 .form-item {
 	min-width: 277px;
 	width: 100%;
 }
-.page-search-osul #block-block-6 label input, .page-search-osul #block-block-6 .form-item input {
+.page-search-osul #block-block-5 label input, .page-search-osul #block-block-5 .form-item input {
 		width: 78%;
 	}
 #homePage .span9 .inner {box-shadow: none;}
