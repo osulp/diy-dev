@@ -424,16 +424,16 @@ content: ' - ';
 
 /*** search ***/
 
-#block-block-6 {
+#block-block-5 {
 float: right;
 margin-top: -29px;
 }
-#block-block-6  #tabs.ui-widget-content {
+#block-block-5  #tabs.ui-widget-content {
 	border: 0;
 	background: transparent;
 }
 
-#block-block-6 .ui-widget-header .ui-state-active {
+#block-block-5 .ui-widget-header .ui-state-active {
 	border: 1px solid #d3d3d3;
 	background: -webkit-gradient(
 	    linear,
@@ -449,37 +449,37 @@ margin-top: -29px;
 	);
 }
 
-#block-block-6 .ui-widget-header li {
+#block-block-5 .ui-widget-header li {
 	margin: 0 6px 0 0;
 
 }
 
-#block-block-6 .ui-widget-header .last {
+#block-block-5 .ui-widget-header .last {
 	margin-right: 0;
 }
 
-#block-block-6 ul li a {
+#block-block-5 ul li a {
 	font-family:'trebuchet ms', Arial, sans-serif;
 	font-size: 12.9px;
 	outline: none;
 }
 
-#block-block-6 img {
+#block-block-5 img {
 	float: left;
 }
 
-#block-block-6 .form-item {
+#block-block-5 .form-item {
 	margin:0;
 	display: inline;
 	float:left;
 }
-#block-block-6 form {margin:3px 0;}
-#block-block-6 fieldset, #block-block-6 .form-item {
+#block-block-5 form {margin:3px 0;}
+#block-block-5 fieldset, #block-block-5 .form-item {
 	padding: 0;
 	margin:0
 }
 
-#block-block-6 label input, #block-block-6 .form-item input  {
+#block-block-5 label input, #block-block-5 .form-item input  {
 	font-family:'trebuchet ms', Arial, sans-serif;
 	font-size: .9em;
 	height: inherit;
@@ -493,11 +493,11 @@ margin-top: -29px;
 	margin-left: 1px;
 }
 
-#block-block-6 .gobtn {
+#block-block-5 .gobtn {
 	float:left;
 	margin: 0;
 }
-#block-block-6 #google-appliance-search-form #edit-keys {float: none;}
+#block-block-5 #google-appliance-search-form #edit-keys {float: none;}
 /*** Google App. Search ***/
 
 #google-appliance-search-form #edit-keys { float:left; }
@@ -1118,9 +1118,9 @@ a.gallerix-external-picture-link {
 #ie6 .megamenu-parent-title {font-size: 85%;}
 #ie6 .megamenu-skin-osul h3.nolink {letter-spacing: normal;}
 
-#ie6 #block-block-6 {float: none;}
-#ie6 #block-block-6 #tabs {float: right !important; position: none; clear: both; width: 300px;}
-#ie6 #block-block-6 label input, #ie6 #block-block-6 .form-item input {font-size: .7em;}
+#ie6 #block-block-5 {float: none;}
+#ie6 #block-block-5 #tabs {float: right !important; position: none; clear: both; width: 300px;}
+#ie6 #block-block-5 label input, #ie6 #block-block-5 .form-item input {font-size: .7em;}
 #ie6 #block-megamenu-0, #ie6 #block-megamenu-1, #ie6 #block-megamenu-2, #ie6 #block-megamenu-3 {margin-top: 29px;}
 #ie6 .panels-flexible-region-OSUL_rt_sidebar-center_-inside {padding: 0 0 0 5px; width: 92%;}
 #ie6 .view-policies, #ie6 .panels-flexible-region-OSUL_rt_sidebar-center_, #ie6 .panels-flexible-column-osul_3_column-2, #ie6 .panels-flexible-region-osul_2rows_2col-center_ {
@@ -1135,7 +1135,7 @@ a.gallerix-external-picture-link {
 	/* For Internet Explorer 5.5 - 7 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f5f5f5, endColorstr=#FFFFFFFF);
 }
-#ie6 #block-block-6 .ui-widget-header .ui-state-active {
+#ie6 #block-block-5 .ui-widget-header .ui-state-active {
 	/* For Internet Explorer 5.5 - 7 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#f5f5f5);
 }
@@ -1148,7 +1148,7 @@ a.gallerix-external-picture-link {
 
 /* IE7 fixes */
 #ie7 #header, #ie7 #header-inner, #ie7 #header-blocks, #ie7 #block-megamenu-0, #ie7 .megamenu-menu,
-#ie7 #block-block-6, #ie7 .block-inner, #ie7 .ui-tabs, #ie7 .ui-tabs-nav, #ie7 .ui-tabs-panel, #ie7 .ui-tabs-panel form {zoom: 1;}
+#ie7 #block-block-5, #ie7 .block-inner, #ie7 .ui-tabs, #ie7 .ui-tabs-nav, #ie7 .ui-tabs-panel, #ie7 .ui-tabs-panel form {zoom: 1;}
 #ie7 .view-news-releases .view-content .views-row,
 #ie7 .view-news-releases .view-content .views-row .views-field-field-teaser-value .field-content {
 	width:97%;
@@ -1180,7 +1180,7 @@ a.gallerix-external-picture-link {
 	/* For Internet Explorer 5.5 - 7 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#f5f5f5, endColorstr=#FFFFFFFF);
 }
-#ie7 #block-block-6 .ui-widget-header .ui-state-active {
+#ie7 #block-block-5 .ui-widget-header .ui-state-active {
 	/* For Internet Explorer 5.5 - 7 */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#f5f5f5);
 }
@@ -1199,7 +1199,7 @@ a.gallerix-external-picture-link {
 #ie8 .megamenu-skin-osul .megamenu-bin {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f5f5f5, endColorstr=#FFFFFFFF)";
 }
-#ie8 #block-block-6 .ui-widget-header .ui-state-active {
+#ie8 #block-block-5 .ui-widget-header .ui-state-active {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#f5f5f5)";
 }
 
@@ -1220,7 +1220,7 @@ a.gallerix-external-picture-link {
 #ie9 #megamenu-mlid-185326, #ie9 #header .megamenu-skin-osul .megamenu-parent:first-child:hover {
 	border-radius: 0;
 }
-#ie9 #block-block-6 .ui-widget-header .ui-state-active {
+#ie9 #block-block-5 .ui-widget-header .ui-state-active {
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFFFF, endColorstr=#f5f5f5)";
 }
 
@@ -1494,9 +1494,9 @@ a.glossary-term {border-bottom: 1px dotted #d85a1a; color: #d85a1a;}
 .panels-flexible-region-61-archive_front_page_search #tabs .ui-widget-header {padding-top: 84px;}
 .panels-flexible-region-61-archive_front_page_search #tabs.ui-tabs .ui-tabs-nav a {float: left; padding: 0.5em 1em 0.5em 1em;}
 .panels-flexible-region-61-archive_front_page_search #tabs .ui-tabs-nav {float: right; margin: 0;}
-/* #block-block-6 #tabs.ui-widget .ui-state-default, #block-block-336 #tabs.ui-widget .ui-state-default {font-size: .95em; font-weight: bold;} */
+/* #block-block-5 #tabs.ui-widget .ui-state-default, #block-block-336 #tabs.ui-widget .ui-state-default {font-size: .95em; font-weight: bold;} */
 .panels-flexible-region-61-archive_front_page_search #tabs .ui-tabs-nav li {margin: 0 0.3em 0 0; float: left; list-style: none;}
-#block-block-6 #tabs .ui-tabs-nav li a {padding: 6px 5px 4px 0; line-height: 1em;}
+#block-block-5 #tabs .ui-tabs-nav li a {padding: 6px 5px 4px 0; line-height: 1em;}
 .panels-flexible-region-61-archive_front_page_search #tabs li.ui-state-default {background: #000000; border: 1px solid #232021;
 	-moz-box-shadow: 0 0 8px .25px #232021; -webkit-box-shadow: 0 0 8px .25px #232021; box-shadow: 0 0 8px .25px #232021;}
 .panels-flexible-region-61-archive_front_page_search #tabs li.ui-state-default a {color:#ffffff;}

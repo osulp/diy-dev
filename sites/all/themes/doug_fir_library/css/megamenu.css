@@ -254,7 +254,7 @@ ul.megamenu-menu {
 
 /* ---- go button ---- */
 
-#block-block-6 input.gobtn{
+#block-block-5 input.gobtn{
 	-moz-border-radius:10px 10px 10px 10px;
 	-webkit-border-radius:10px 10px 10px 10px;
 	border-radius: 10px;
@@ -262,7 +262,7 @@ ul.megamenu-menu {
 	overflow:hidden;
 }
 
-#block-block-6 label{
+#block-block-5 label{
 	display:inline;
 }
 
@@ -273,22 +273,22 @@ ul.megamenu-menu {
 
 }*/
 
-#block-block-6 .content {
+#block-block-5 .content {
 	/*margin:6px 0 16px 0;*/
 	margin: 0;
 }
 
-#block-block-6 #tabs {
+#block-block-5 #tabs {
 	/*padding:3px;*/
 	padding: 0;
 	width:275px;
 	/*height:64px;*/
 }
-#block-block-6 a {
+#block-block-5 a {
 	height:13px;
 }
 
-#block-block-6 .ui-tabs .ui-tabs-nav {
+#block-block-5 .ui-tabs .ui-tabs-nav {
 	padding:4px 4px 0px;
 	/*height:23px;*/
 	height: 24px;
