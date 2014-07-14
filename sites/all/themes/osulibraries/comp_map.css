@@ -1,0 +1,72 @@
+/* add space above footer (using border instead of margin because it makes IE 6 happy) */
+#content {border-bottom: 30px solid #f6f5f4;}
+
+/* main map wrapper and internal text elements */
+#computer_map {background: #fff; border: 1px solid #aaa; padding: 5px; color: #686868; position: relative; width: 610px;}
+#computer_map h2 {text-align: center; margin: 1em 0 0; font-size: 1.8em; font-family: verdana, geneva, arial, sans-serif; color: #686868;}
+#computer_map p {text-align: center; margin: 3em 0 1em; font-weight: 900;}
+
+/* rounded corners */
+#computer_map .tl, #computer_map .tr, #computer_map .bl, #computer_map .br {position: absolute; height: 13px; width: 13px; background: url(http://osulibrary.oregonstate.edu/images/menu.png);}
+#computer_map .tl {top: -1px; left: -1px;}
+#computer_map .tr {top: -1px; right: -1px; background-position: 100% 0;}
+#computer_map .bl {bottom: -1px; left: -1px; background-position: 0 100%;}
+#computer_map .br {bottom: -1px; right: -1px; background-position: 100% 100%;}
+
+* html #computer_map .tl {top: 0; left: -6px;}
+* html #computer_map .tr {top: 0; right: 0;}
+* html #computer_map .bl {bottom: 61px; left: -6px;}
+* html #computer_map .br {bottom: 61px; right: 0;}
+
+
+
+#computer_map_600 {
+	background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Map_600px.jpg);
+	display: block;
+	width: 600px;
+	height: 600px;
+	overflow: hidden;
+}
+
+#computer_map_600 { margin:0; }
+	
+dt.icon {
+	display: block;
+	position: relative;
+	text-indent: -9999px;
+	outline: none;
+	z-index: 10;
+	text-decoration: none;
+	padding-bottom:0;
+}
+
+dt.busy_pc_600, dt.avail_pc_600, dt.offline_pc_600, dt.busy_mac_600, dt.avail_mac_600, dt.offline_mac_600 {width: 24px; height: 24px;}
+dt.busy_pc_600 		{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/PC_in_use_20px.jpg);}
+dt.avail_pc_600 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/PC_open_20px.jpg);}
+dt.offline_pc_600 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/PC_offline_20px.jpg);}
+dt.busy_mac_600 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Mac_in_use_20px.jpg);}
+dt.avail_mac_600 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Mac_open_20px.jpg);}
+dt.offline_mac_600 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Mac_offline_20px.jpg);}
+
+#computer_map_900 {
+	background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Map_900px.jpg);
+	display: block;
+	width: 900px;
+	height: 900px;
+	overflow: hidden;
+}
+
+dt.busy_pc_900, dt.avail_pc_900, dt.busy_mac_900, dt.avail_mac_900 {width: 36px; height: 36px;}
+dt.busy_pc_900 		{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/PC_in_use_30px.jpg);}
+dt.avail_pc_900 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/PC_open_30px.jpg);}
+dt.busy_mac_900 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Mac_in_use_30px.jpg);}
+dt.avail_mac_900 	{background: no-repeat url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/Mac_open_30px.jpg);}
+
+dt.legend_icon {
+	display: block;
+	position: relative;
+	font-size: 14px;
+	width: 165px;
+	padding: 5px 0 0 30px;
+	background-position: 0 50%;
+}

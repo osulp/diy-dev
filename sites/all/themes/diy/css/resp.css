@@ -1,0 +1,116 @@
+
+@media (max-width: 979px) {
+body {
+	padding: 0;
+	}
+
+	table {
+		word-wrap:break-word;
+		width:100%;
+	}
+	table tbody tr td{
+		max-width: 75px;
+	}
+}
+@media (min-width: 481px) {
+#homePage #backgroundcolor .pane-content {border-top: 1px solid #212121; background: url(/files/valleybuildingsign.jpg?1311315634) no-repeat;}
+#homePage .span9 .inner #backgroundcolor h2.pane-title {font-size: 18px; padding-top: 4px; border-bottom: 1px solid #5C2651; margin-bottom: 0; height: 26px; box-shadow: 0;
+-moz-box-shadow:  none;
+-webkit-box-shadow:  none;
+box-shadow:  none;}
+#homePage ul.audiences {background: url(/sites/all/themes/osu_confident/images/dark_transparent.png) repeat;
+padding: 15px 0 15px 20px; margin: 0; width: 186px; height: 233px; font-size: 1em;}
+ul.audiences li {list-style: none; margin-bottom: 12px;}
+/*.audiences a {color:#fff; background: url('/sites/all/themes/osu_confident/images/dotted-underline.gif') repeat-x left bottom; text-decoration: none;}*/
+.audiences a, .audiences a:hover {text-decoration: none; color: #fff;}
+
+}
+@media (max-width: 480px) {
+#page-title,
+  .classic #page-title,
+  .marine #page-title {
+    padding: 5px 8px 5px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+.page-search-osul #block-block-6 {
+	margin: 20px 0 50px 0;
+	min-width: 291px;
+	}
+.page-search-osul #block-block-6 fieldset {
+	position: absolute;
+	left: 0;
+}
+.page-search-osul #block-block-6 fieldset, .page-search-osul #block-block-6 .form-item {
+	min-width: 277px;
+	width: 100%;
+}
+.page-search-osul #block-block-6 label input, .page-search-osul #block-block-6 .form-item input {
+		width: 78%;
+	}
+#homePage .span9 .inner {box-shadow: none;}
+#homePage #backgroundcolor .pane-content {border-top: none; background: transparent; color: #000;}
+#homePage #backgroundcolor h2.pane-title {background: transparent; color: #561f4b; box-shadow: none;}
+.surveytab{top: 100px;}
+
+
+}
+@media (min-width: 480px) and (max-width: 768px) {
+.surveytab{top: 185px;}
+}
+@media (min-width: 980px) {
+#homePage .span3 {width: 29.5%;}
+#homePage .span9 {width: 650px;}
+#block-block-326 .content {
+	-moz-box-shadow:  0 0 5px 0.5px #C2BFBC;
+	-webkit-box-shadow:  0 0 5px 0.5px #C2BFBC;
+	box-shadow:  0 0 5px 0.5px #C2BFBC;
+}
+.surveytab {
+ background-image: url("/sites/all/themes/doug_fir_library/images/survey.png");
+    background-repeat: no-repeat;
+    bottom: 0;
+    display: block;
+    height: 185px;
+    left: 0;
+    opacity: 0.75;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 100%;
+    top: 285px;
+    width: 29px;
+    z-index: 1;
+}
+}
+@media (min-width: 768px) and (max-width: 979px) {
+#homePage .span9 {width: 650px;}
+.surveytab{top: 285px;}
+}
+@media (max-width: 979px) {
+#homePage .span3 {width: 100%; float: left;}
+.surveytab{
+	background-image: url("/sites/all/themes/doug_fir_library/images/survey.png");
+    background-repeat: no-repeat;
+    display: block;
+    right: 0;
+    opacity: 0.75;
+    overflow: hidden;
+    position: absolute;
+    text-indent: 100%;
+    z-index: 1;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+	height:185px;
+	width:29px;
+}
+}
+@media (max-width: 768px) {
+#homePage .span9 {max-width: 650px;}
+/* --- removes the survey element at the top of the home page for small screens --- */
+	div #promoBig, div #promoSmall {
+		display:none;
+	}
+}

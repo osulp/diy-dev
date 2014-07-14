@@ -1,0 +1,43 @@
+body, html {
+	background-color:#fff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:13pt;
+}
+
+a {
+	color:#d85a1a;
+	text-decoration:underline;
+}
+
+#osu-top-hat {
+	float:none;
+	overflow:visible;
+} 
+
+#header .menu,
+#sidebar-right,
+#sidebar-left,
+#footer {
+	display:none;
+}
+
+#ft {
+	border-top:none;
+}
+
+.breadcrumb {
+	display:none;
+}
+
+#yui-main {
+	width:85%;
+	float:none !important;
+	margin:0 !important;
+}
+
+#doc,#doc2,#doc3,#doc4,.yui-t1,.yui-t2,.yui-t3,.yui-t4,.yui-t5,.yui-t6,.yui-t7,#page,#page-inner,.yui-g,.yui-gb,.yui-gc,.yui-gd,.yui-ge,.yui-gf,.yui-b,.yui-u{margin:0 !important; width:100% !important;}
+
+#osu-top-hat,.osulheader, #hd,.tabs {display: none;}
+.content-multigroup-group-scans thead {border: solid #561F4B; border-width: 2px 0;}
+.content-multigroup-group-scans thead th {font-weight: 900;}
+.no-print {display: none;}

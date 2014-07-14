@@ -1,0 +1,32 @@
+#content form p {position: relative;}
+#content form input, #content form select {position: absolute; left: 210px; width: 280px;}
+#content .button {margin-left: 295px; width: 100px; font-weight: 900;}
+
+#content #plusMaterial {margin-top: 2em; height: 2.5em}
+#content #plusMaterial .button {margin-left: 0; left: 0;}
+
+#content form p span {position: absolute; left: 200px;}
+#content .noalign input {position: relative; left: 0; width: auto; top: 2px; margin: 0 5px 0 10px;}
+#content .noindent {margin-left: -10px;}
+
+.library_material label, .personal_material label, .reserve_binder label, .reserve_purchase_request label {display: block; top: -4px;}
+.library_material, .personal_material, .reserve_binder, .reserve_purchase_request, .loan_copies {display: none;}
+
+#content h3 {font-size: 1.1em; font-style: italic; color: #000; margin: 2em 0 1em;}
+#content textarea {width: 490px;}
+
+#materials input, #materials select {left: 170px !important;}
+#materials p {margin-left: 40px;}
+#materials h3 {margin: 2em 0 1em;}
+
+* html #content form * {zoom: 1;}
+* html #content form p span {left: 197px;}
+* html #content .noalign input {top: 0; margin-right: 0; left: 10px;}
+* html #content .noindent input {top: 0; margin-right: 0; left: 0;}
+* html #materials h3 {margin: 1em 0;}
+
+*+html #content form * {zoom: 1;}
+*+html #content form p span {left: 197px;}
+*+html #content .noalign input {top: 0; margin-right: 0; left: 10px;}
+*+html #content .noindent input {top: 0; margin-right: 0; left: 0;}
+*+html #materials h3 {margin: 1em 0;}

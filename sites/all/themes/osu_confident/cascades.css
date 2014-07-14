@@ -1,0 +1,91 @@
+/***
+--template - OSU banner, site title, footer
+--main menus
+--megamenu dropdown
+--search
+--breadcrumbs
+--panel and page padding and color
+--page title and section headers
+--links
+--lists
+--tables
+--rotating image
+--glossary
+***/
+
+/*** template - osu banner, site title, footer ***/
+
+.megamenu-skin-osul h3.nolink, #main #purpleheader h2.pane-title {
+    background: #0069A7 ;
+}
+
+.megamenu-skin-osul .megamenu-item	a {
+	color: #0069A7 ;
+}
+
+#main h2, #ask a {
+	color:#0069A7 ;
+}
+
+#main h2.pane-title {
+	color:#0069A7 ;
+}
+
+.view-display-id-news_block a, view-display-id-news_block a:visited {color: #0069A7 ;}
+
+#ask a {
+    color: #0069A7 ;
+}
+
+.osul_rt_sidebar .center .inner, .osul_3_col .middle_col .inner, .osul_2rows_2col .center_bottom .inner {
+    border-top-color:  #0069A7 ;
+}
+
+.panels-flexible-region-OSUL_rt_sidebar-center_-inside, .panels-flexible-column-osul_3_column-2-inside {
+    border-top-color:  #0069A7 ;
+}
+
+#main #body #border {
+	border-top-color:  #0069A7 ;
+}
+
+.view-nw-art-exhibit .view-header {
+	border-top-color:  #0069A7 ;
+}
+
+#separator {border-top-color:  #0069A7 ;}
+
+.calNone {
+    border-top-color:  #0069A7 ;
+}
+
+.view-display-id-news_block li { color: #0069A7 ; }
+
+#main .panels-flexible-region-OSUL_rt_sidebar-center_-inside #purpleheader h2.pane-title { border-bottom-color: #006DAD !important; }
+
+#title { margin: -17px 0 5px 130px !important; height:64px !important; }
+
+#cascades_home {
+	margin-top:30px;
+}
+
+#cascades_home .center {
+	min-height:0;
+}
+
+#cascades_home .center .inner > div { float:left; }
+#cascades_home .center .menu { margin-left:0; }
+
+#cascades_home .right li {
+	list-style-type:disc;
+	margin: 0 0 5px 0;
+	padding: 0.2em 0.5em 0 0;
+}
+
+#cascades_home .right ul { margin:10px 0 10px 10px; }
+
+#cascades_home .right img { margin-top:0; }
+
+#cascades_home .right h2.pane-title { margin-left:7px; }
+
+#cascades_home .right #news-more { margin-left:21px; }

@@ -1,0 +1,4 @@
+#header .menu li.last { border-right: none;
+	background: url(/sites/all/themes/osu_confident/images/archives_images/envelope.png) no-repeat right transparent;
+	padding-right: 30px;
+}

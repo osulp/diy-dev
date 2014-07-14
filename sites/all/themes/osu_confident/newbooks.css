@@ -1,0 +1,43 @@
+#body.regsite { margin-top:50px; position:relative; }
+#body h1 { color:#000; font-size:2em; font-family:'trebuchet ms',Arial,Helvetica,sans-serif; font-variant:small-caps; position:absolute; top:-48px; margin:0 0 0 -12px; }
+
+#body h2 {
+	color:#561F4B;
+	font-size:1.35em;
+	font-weight:bold;
+	line-height:0.75em;
+	padding-bottom:0;
+}
+
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size:.93em;
+	/* margin:45px auto; */
+	margin: 13px 0;
+	width:95%;
+	text-align:left;
+	border-collapse:collapse;
+}
+
+table th {
+	padding:.616em;
+	border-top:2px solid #561F4B;
+	border-bottom:1px solid #fff;
+	color:#fff;
+	background-color:gray;
+	font-size:1em;
+	font-weight:normal;
+}
+
+table td {
+	padding:.616em;
+	border-top:1px solid transparent;
+	border-bottom:1px solid #fff;
+	border-left-color:#fff;
+	border-right-color:#fff;
+	color:#000;
+}
+
+table tr:nth-of-type(odd) { background-color: #EEEEEE; }
+table tr:nth-of-type(even) { background-color: #E5E5E5; }
+

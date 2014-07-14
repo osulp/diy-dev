@@ -1,0 +1,92 @@
+h1 a,
+h1 a:hover {
+	color:#615042;
+}
+
+#main h2 {
+	color:#615042;
+}
+
+table th {
+	border-top-color:#615042;
+}
+
+#osu-top-hat {
+	border-bottom-color:#615042;
+}
+
+#pre-content img {
+	border-color:#615042;
+}
+
+#sidebar-right h2 {
+    color:#fff;
+    background-color:#615042;
+}
+
+#sidebar-right a,
+#sidebar-right li a {
+	color:#fff;
+}
+
+#sidebar-right .content {
+	color:#fff;
+	background-color:#615042; 
+}
+
+#sidebar-right .block-book .content {
+	background-color:transparent; 
+}
+
+#social-media h2 {
+    color:#d85a1a;
+	background:none;
+}
+
+#social-media .content {
+	color:#000;
+	background-color:transparent; 
+}
+
+#sidebar-left .menu li.collapsed,
+#sidebar-left .menu li.leaf {
+	list-style-image:url(images/chocolate/menu-collapsed.gif);
+}
+
+#sidebar-left .menu li.expanded {
+	list-style-image:url(images/chocolate/menu-expanded.gif);
+}
+
+#ft {
+	border-top-color:#615042;
+}
+
+/* nice menus css */
+#sidebar-right ul.nice-menu li, #sidebar-right ul.nice-menu-left li.menuparent, #sidebar-right ul.nice-menu-left li li.menuparent, 
+#sidebar-right ul.nice-menu-left li.menuparent:hover, #sidebar-right ul.nice-menu-left li.over, 
+#sidebar-right ul.nice-menu-left li li.menuparent:hover, #sidebar-right ul.nice-menu-left li li.over {
+    background-color:#615042;
+}
+
+#sidebar-right ul.nice-menu ul {
+    border-color:#615042;
+}
+
+#sidebar-right ul.nice-menu-left li ul, #sidebar-right ul.nice-menu-left li ul li ul {
+    left:-12.5em;
+}
+
+#sidebar-right ul.nice-menu-left li.menuparent:hover, #sidebar-right ul.nice-menu-left li.over, #sidebar-right ul.nice-menu-left li li.menuparent:hover, #sidebar-right ul.nice-menu-left li li.over,
+#sidebar-right ul.nice-menu-left li.menuparent, #sidebar-right ul.nice-menu-left li li.menuparent {
+    background:#615042 url(images/arrow-left-white.png) no-repeat scroll left center;
+}
+
+#sidebar-right ul.nice-menu-right li.menuparent:hover, #sidebar-right ul.nice-menu-right li.over, #sidebar-right ul.nice-menu-right li li.menuparent:hover, #sidebar-right ul.nice-menu-right li li.over,
+#sidebar-right ul.nice-menu-right li.menuparent, #sidebar-right ul.nice-menu-right li li.menuparent{
+    background:#615042 url(images/arrow-right-white.png) right center no-repeat;
+}
+
+#sidebar-right ul.nice-menu-down li.menuparent:hover, #sidebar-right ul.nice-menu-down li.over, #sidebar-right ul.nice-menu-down li li.menuparent:hover, #sidebar-right ul.nice-menu-down li li.over,
+#sidebar-right ul.nice-menu-down li.menuparent{
+    background:#615042 url(images/arrow-down-white.png) right center no-repeat;
+}

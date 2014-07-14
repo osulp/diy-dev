@@ -1,0 +1,233 @@
+/* $Id: osulibraries.css,v 1.1.2.18 2007/11/29 00:51:00 johnalbin Exp $ */
+
+/*
+ * ZEN STYLES
+ *
+ * This is an example stylesheet. Sub-themes should NOT include this file, but
+ * instead copy any needed CSS to their own stylesheets.
+ *
+ * In this stylesheet, we have included all of the classes and IDs from this
+ * theme's tpl.php files. We have also included many of the useful Drupal core
+ * styles to make it easier for theme developers to see them.
+ *
+ * Many of these styles are over-riding Drupal's core stylesheets, so if you
+ * remove a declaration from here, the styles may still not be what you want
+ * since Drupal's core stylesheets are still styling the element. See the
+ * drupal5-reference.css file for a list of all Drupal 5.x core styles.
+ *
+ * In addition to the style declarations in this file, other Drupal styles that
+ * you might want to override or augment are those for:
+ *
+ *   Book Navigation	See line 74  of Zen's drupal5-reference.css file
+ *   Forum				See line 197 of Zen's drupal5-reference.css file
+ *   Menus				See line 667 of Zen's drupal5-reference.css file
+ *   News Aggregator	See line 20  of Zen's drupal5-reference.css file
+ *   Polls				See line 287 of Zen's drupal5-reference.css file
+ *   Search				See line 320 of Zen's drupal5-reference.css file
+ *   User Profiles		See line 945 of Zen's drupal5-reference.css file
+ */
+
+body {min-width: 960px;}
+/* Min-width for old IE.*/
+* html #page {
+padding-left:985px;
+height: 1px;
+}
+* html #page #page-inner {
+height: 1px;
+}
+* html #page #page-inner #header, * html #page #page-inner #main, * html #page #page-inner #footer {
+margin-left:-985px;
+position: relative;
+height: 1px;
+}
+#page, #template {font-size: .85em; color: #4d4d4d;}
+
+#sidenav {font-size: .8em;}
+#main-inner {border-bottom: 1px solid #777;}
+
+h1.title, h2.title, h3.title {margin: 0;}
+.front h2 {font-size: 2em;}
+.page-cascades h1, .page-guin h1 {display: none; visibility: hidden;}
+
+#content-top  {margin: 0 0 0 35px; padding: 0; line-height: 24px; background-color: #777;}
+#content-top a {border-right: solid 1px #fff; font-family: verdana, geneva, arial, sans-serif; font-weight: 900; font-size: 12px; padding: 0 10px; color: #fff;}
+#content-top a.no-border  {border: 0;}
+
+#content-header {padding: 10px 0;}
+.page-guin #content-header {padding: 0;}
+.front #content-header, .page-cascades #content-header {padding: 35px 0 0 0; margin-left: -35px; background: repeat-x url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/topBarGrad.png);}
+#topBar {padding: 0 0 6px; height: 13px; line-height: 19px; position: absolute; margin: 0; font-size: 11px; font-weight: 900;}
+#topBar a {border: solid 1px #fff; border-width: 0 1px 0 0; padding: 0 9px 0 7px; color: #fff;}
+#topBar .left-border {border-width: 0 0 0 1px;}
+#topBar a:last-child, #topBar a.no-border  {border-right: 0;}
+#topBar a.highlightLink {color: #f96; text-decoration: none; cursor: default;}
+#topBar .block {margin: 0;}
+* html #topBar {padding: 0 0 1px; text-indent: 22px;}
+* + html #topBar {text-indent: 22px;}
+
+div.messages {margin: 0 1em 5px 1em; border: 2px solid #ccc; padding: 5px; color: #000; background-color: #fff; font-style: italic;}
+div.warning {border-color: #ff7;}
+div.warning, tr.warning {color: #000; background-color: #ffc;}
+div.error {border-color: #c00;}
+div.error, tr.error {color: #900; background-color: #fee;}
+.help {margin: 1em 0;}
+.more-help-link {font-size: 0.85em; text-align: right;}
+.pager {clear: both; margin: 1em 0; text-align: center;}
+.pager a, .pager strong.pager-current {padding: 0.5em;}
+.feed-icons {margin: 1em 0;}
+
+/** sidebar-left **/
+.menu_box, .menu_box div, .logged-in #sidebar-left-inner .block, .logged-in #sidebar-left-inner .block-inner {background: #fff url(http://osulibrary.oregonstate.edu/images/menu.png) no-repeat;}
+.menu_box, .logged-in #sidebar-left-inner .block-inner {background-position: 0 100%;}
+
+.front #sidebar-left, .page-cascades #sidebar-left {padding-top: 19px; background: url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/topBarGrad.png) repeat-x;}
+#sidebar-left-inner{float: left; padding: 0; margin: 0; width: 100%;}
+#sidebar-left fieldset {margin: 0; padding: 5px 0 15px 10px; border: 0;}
+#sidebar-left input {padding: 1px 3px;}
+#sidebar-left #query {padding: 4px; border: solid #7c7b7d; border-width: 2px 0 0 2px; width: 190px;}
+#sidebar-left img {float: left; margin: 5px 3px 0 0;}
+#sidebar-left ul {margin: 0; padding: 0;}
+.menu_box {width: 240px; margin: 10px; padding: 0 0 12px;}
+.menu_box div {padding: 12px 0 0;}
+.menu_box div div {background: #fff; border: solid #a8aaa9; border-width: 0 1px; padding: 0 15px;}
+#sidebar-left h2{font-weight: 400; margin: 0 0 8px; color: #F45B29; font-size: 1.4em; font-family: garamond, 'times new roman', serif; border-bottom: 1px solid #a8aaa9;}
+
+.logged-in #sidebar-left-inner {margin: 10px 0 0 10px; width: 240px;}
+.logged-in #sidebar-left-inner .block {margin: 0 0 12px; padding: 12px 0 0;}
+.logged-in #sidebar-left-inner .block-inner{padding: 0 0 12px;}
+.logged-in #sidebar-left-inner .content {background: #fff; border: solid #a8aaa9; border-width: 0 1px; padding: 30px 15px 5px;}
+.logged-in #sidebar-left ul {margin: 0 0 0 15px;}
+.logged-in #sidebar-left h2 {position: absolute; width: 210px; margin: -5px 15px;}
+
+
+
+
+/** sidebar-right **/
+#sidebar-right .block, #sidebar-right ul, .panel-sidebar-right, .panel-sidebar-right ul {padding: 0; margin: 0; list-style: none;}
+.front #sidebar-right {background: repeat-x url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/topBarGrad.png);}
+
+.front #ask, .panel-sidebar-right #ask, .libraryh3lp {margin: 18px 0 -2px; padding: 10px 0 0;}
+#ask {margin: 0; background: none !important;}
+#ask a {display: block; width: 248px; height: 51px; background-image: url(http://osulibrary.oregonstate.edu/images/chatbox.jpg);}
+#ask a:hover, .libraryh3lp a:hover {background-position: 0 100% !important;}
+.guin #ask a, .cascades #ask a {height: 138px;}
+
+.libraryh3lp img {margin: 0 0 -5px;}
+.libraryh3lp a {display: block; height: 51px; background: no-repeat url(http://osulibrary.oregonstate.edu/images/chatbox.jpg); text-indent: -99999px; outline: 0;}
+.needs-js {margin-top: 19px; padding: 1em 0 0 1em; border-left: 1px solid #c6c6c6;}
+
+#block-views-news, .news, #block-views-news_cascades, #block-views-news_guin, #block-block-61 .block-inner {width: 248px; border-left: 1px solid #c6c6c6;}
+#block-views-news h2, .news h2, #block-views-news_cascades h2, #block-views-news_guin h2, #block-block-61 .block-inner h2 {padding: 16px 0 0 9px; margin-bottom: .5em; }
+#block-block-61 .block-inner p {padding-left: 10px; padding-bottom: 12px;}
+#block-views-news li, .news .item-list ul li, #block-views-news_cascades li, #block-views-news_guin li {padding: 0 0 1em 2.25em; width: 210px; background: url(http://osulibrary.oregonstate.edu/sites/all/themes/osulibraries/images/newsBullet.png) 12px 5px no-repeat;}
+#block-views-news a, .news a, #block-views-news_cascades a, #block-views-news_guin a {text-decoration: none; color: #4d4d4d;}
+
+#sidebar-right .view-footer {text-align: right; margin: 0; padding: 5px 5px 10px;}
+#sidebar-right .view-footer img {margin: 0 0 -2px 3px;}
+.view-footer-news-cascades, .view-footer-news-guin {border-bottom: 1px solid #c6c6c6; padding: 5px 10px 0 !important;}
+
+#sidebar-right img, .panel-sidebar-right img {margin-bottom: -3px;}
+
+/** footer **/
+#footer-inner {width: 600px; margin: 10px 0 0 290px; line-height: 1.7em;}
+#footer .ada img {margin: 0 0 -8px;}
+
+/* "New" or "Updated" marker for content that is new or updated for the current user */
+.marker  {color: #c00;}
+
+/* Wrapper for node links */
+.node div.links  {margin: 1em 0;}
+
+/* Taxonomy links, node links, comment links */
+ul.links {margin: 0; padding: 0;}
+ul.links.inline {display: inline;}
+ull.links li {display: inline; list-style-type: none; padding: 0 0.5em;}
+
+/** Drupal comments **/
+#comments {margin: 1em 0;}
+.new {color: #c00;}
+.comment div.links {margin: 1em 0;}
+
+/** Miscellaneous Drupal styles **/
+.block {margin-bottom: 1em;}
+.error  {color: #c00;}
+.more-link {text-align: right;}
+#user-login-form  {text-align: left;}
+tr.even, tr.odd  {border-bottom: none; padding: 0;}
+tr.even {background-color: transparent;}
+td.view-field {padding: 5px;}
+
+
+
+li a.active {color: #000;}
+
+/** Drupal forms **/
+.form-item, .form-checkboxes, .form-radios {margin: 1em 0;}
+.form-item input.error, .form-item textarea.error, .form-item select.error {border: 2px solid #c00;}
+.form-item label {display: block; font-weight: bold; color: #1c4753;}
+.form-item label.option {display: inline; font-weight: normal;}
+.form-required {color: #c00;}
+.form-item .description {font-size: 0.85em;}
+.form-checkboxes .form-item, .form-radios .form-item {margin: 0.4em 0;}
+.tips {margin: 0;padding: 0;font-size: 0.9em;}
+
+/* Zen's theme settings CSS -- safe to ignore. */
+.section-admin #div-osulibraries-breadcrumb  {margin-top: 1em;}
+
+/** Drupal admin tables **/
+.section-admin tbody  {border-top: 1px solid #ccc;}
+.section-admin th  {text-align: left; padding-right: 1em; border-bottom: 3px solid #ccc;}
+.section-admin tbody th {border-bottom: 1px solid #ccc;}
+.section-admin thead th {text-align: left; padding-right: 1em; border-bottom: 3px solid #ccc;}
+.section-admin tr.even, .section-admin tr.odd {background-color: #eee; border-bottom: 1px solid #ccc; padding: 0.1em 0.6em;}
+
+#content-top a:active.highlightLink, #content-top a:visited.highlightLink, #content-top a:link.highlightLink, #content-top a.highlightLink{color:#f96; text-decoration:none;}
+
+/* search box on front page */
+
+#front-search h2 {margin-bottom: 0;}
+#front-search input {width: 35px; padding: 1px;}
+#front-search label input {width: 293px; color: #aaa; padding: 2px 3px; height: 18px; line-height: 20px; font-size: 1.1em;}
+#front-search fieldset {padding: 0; width: 350px; margin: 0;}
+#front-search p {font-size: .85em; text-align: right; margin-right: 50px;}
+
+/* (temp) search box naming contest */
+/* #front-search h2 {background: #f6f5f4;}*/ /* this makes the icon display inline in IE, no idea why but it works */
+#name-new-search {display: inline;}
+#front-search a.name-new-search {margin-left: 17px; font-size: .425em; font-weight: normal; font-family: verdana,arial,helvetica;}
+* html #front-search img {margin-top: 5px;}
+*+html #front-search img {margin: 5px 0 0 -5px;}
+#front-search div.popup {float: left; margin: -5px 0 0 26px; width: 8em; background: #fff; border: 1px solid #aaa; padding: 1.2em; font-size: 0.5em; color: #4d4d4d; font-family: verdana, geneva, arial, helvetica, sans-serif; font-weight: 400; line-height: 1.3em; text-align: center;-moz-border-radius: 1em; -webkit-border-radius: 1em; border-radius: 1em; -moz-box-shadow: 0 0 3px #ccc; -webkit-box-shadow: 0 0 3px #ccc; box-shadow: 0 0 3px #ccc;}
+#front-search div.popup div {margin-top: .5em;}
+* html #front-search div.popup {margin-left: 15px;}
+
+
+
+.content fieldset {border: 0;}
+.node-type-page fieldset
+.block-panels_mini ul {margin: 0;}
+
+.LTitem {margin: 10px 0;}
+.LTitem img {float: left; margin: 0 10px 0 0; position: relative; top: 5px;}
+.LTprovided {font-size: 10px; text-align: right; clear: left; padding: 10px 0;}
+#lf {padding: 4px; width: 300px;}
+
+#goog-wm ul li {padding-bottom: 5px;}
+
+/* views */
+
+/* Organic Groups home page views */
+.view-og-ghp-ron .node {margin-bottom: 25px; }
+
+/* blog styles */
+
+.blog_contact_title{color:#58732C;font-weight:bold;}
+.blog_contact{margin-top:10px}
+.blog_contact div div {width:223px;background-color:#fff;position:relative; top:-18px;border: solid #a8aaa9; border-width: 0 1px; padding:5px 0 0 15px;}
+.blog_contact_top{width:240px;height:34px;background: #fff url('http://drupal-test.library.oregonstate.edu/images/menu.png'); background-repeat:no-repeat;position:relative;}
+.blog_contact_bottom{position:relative; z-index:-1;top:-28px;width:240px;height:27px;;background: #fff url('/images/menu.png'); background-repeat:no-repeat;}
+#blog_contact_head{color:#555555; font-weight:bold;border-bottom:1px solid #D1D1D1; font-size:1.26em; border-left:none; border-right:none;width:195px;padding-left:0px;padding-bottom:5px;padding-top:12px;}
+
+#block-views-featured_book {width: 300px;}
+

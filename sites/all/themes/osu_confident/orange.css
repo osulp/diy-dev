@@ -1,0 +1,93 @@
+h1 a,
+h1 a:hover {
+	color:#d85a1a;
+}
+
+#main h2 {
+	color:#d85a1a;
+}
+
+#main h3 {
+	color:#3c3c3c;
+}
+
+#main h4 {
+	color:#d85a1a;
+}
+
+#main h5 {
+	font-size:1em;
+}
+
+#main h6 {
+	font-size:.93em;
+}
+
+table th {
+	border-top-color:#d85a1a;
+}
+
+#osu-top-hat {
+	border-bottom-color:#c6c0b7;
+}
+
+#pre-content img {
+	border-color:#c6c0b7;
+}
+
+#sidebar-right h2 {
+    color:#fff;
+    background-color:#d85a1a;
+}
+
+#sidebar-right a,
+#sidebar-right li a {
+	color:#3c3c3c;
+}
+
+#sidebar-right .content {
+	color:#000;
+	background-color:#c6c0b7;
+}
+
+#sidebar-right .block-book .content {
+	background-color:transparent;
+}
+
+#social-media h2 {
+    color:#d85a1a;
+	background:none;
+}
+
+#social-media .content {
+	color:#000;
+	background-color:transparent;
+}
+
+#sidebar-left .menu li.collapsed,
+#sidebar-left .menu li.leaf {
+	list-style-image:url(images/orange/menu-collapsed.gif);
+}
+
+#sidebar-left .menu li.expanded {
+	list-style-image:url(images/orange/menu-expanded.gif);
+}
+
+#ft {
+	border-top-color:#c6c0b7;
+}
+
+/* nice menus css */
+#sidebar-right ul.nice-menu li, #sidebar-right ul.nice-menu-left li.menuparent, #sidebar-right ul.nice-menu-left li li.menuparent,
+#sidebar-right ul.nice-menu-left li.menuparent:hover, #sidebar-right ul.nice-menu-left li.over,
+#sidebar-right ul.nice-menu-left li li.menuparent:hover, #sidebar-right ul.nice-menu-left li li.over {
+    background-color:#C6C0B7;
+}
+
+#sidebar-right ul.nice-menu ul {
+    border-color:#C6C0B7;
+}
+
+#sidebar-right ul.nice-menu-left li ul, #sidebar-right ul.nice-menu-left li ul li ul {
+    left:-12.5em;
+}

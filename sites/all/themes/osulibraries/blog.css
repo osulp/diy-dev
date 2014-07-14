@@ -1,0 +1,16 @@
+.node-type-blog .node-inner {border-bottom: 1px solid #555; width: 460px; padding: 1em 0 .5em;}
+.node-type-blog:last-child .node-inner {border: 0;}
+
+.node-type-blog ul.links li {padding: 0;}
+
+.node-type-blog .meta {padding: 0 0 1em; font-family: garamond,'times new roman',helvetica,serif;}
+
+.node-type-blog ul.inline li {border-left: 1px solid #555; padding: 0 2px 0 4px;}
+
+.not-logged-in #sidebar-left h2 {display: none;}
+.not-logged-in #sidebar-left .menu_box h2 {display: block;}
+
+#sidebar-left ul {margin: 0 !important; padding: 0 !important;}
+#sidebar-left li {list-style: none !important;}
+
+.pager {width: 460px;}

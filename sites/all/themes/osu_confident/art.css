@@ -1,0 +1,20 @@
+/* individual artwork pages */
+#art {padding: 20px; margin: 20px 0; text-align: center;}
+#art * { margin-left:0 !important; }
+#prev_art, #next_art {float: left; width: 20%;}
+#current_art {float: left; width: 60%; }
+#prev_art img, #next_art img {margin: 10px 0;}
+#art_desc {clear: both; padding-top: 20px;}
+
+
+/* main landing page */
+.view-id-nw_art_exhibit .views-row {float: left; margin: 10px 6px; width: 110px; height: 8em; padding: 75px 0 0; text-align: center; font-size: .85em;}
+.view-id-nw_art_exhibit .views-row img {margin: -75px 0 0;}
+.view-id-nw_art_exhibit .views-row a {text-decoration: none;}
+.view-id-nw_art_exhibit h3 {clear: left; margin: 0; padding: 2em 0 0;}
+
+
+/* artist pages */
+#art_by_artist {overflow: auto; padding: 0 0 3em;}
+#art_by_artist .row {float: left; margin: 20px 20px; width: 140px; height: 120px; padding: 0 5px; text-align: center;}
+#art_by_artist .row img {margin: 0 -5px;}

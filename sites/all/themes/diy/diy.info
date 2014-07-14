@@ -1,13 +1,24 @@
 name = DIY Guides
 description = Sub-theme of Alloy. Requires Fusion Accelerator.
 base theme = alloy
+;base theme = doug_fir
 core = 7.x
 engine = phptemplate
 
+; doug_fir styles
+stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = css/main.css
+
+; diy styles
 stylesheets[all][] = css/diy.css
+stylesheets[all][] = css/library.css
+stylesheets[all][] = css/megamenu.css
+
+scripts[] = js/timers.js
+scripts[] = js/menus.js
 
 ; --------------------------------------------------------------------------------
-; This provides support for the Fusion Accelerator suite.  
+; This provides support for the Fusion Accelerator suite.
 ; See http://www.drupal.org/project/fusion_accelerator for more information.
 ; --------------------------------------------------------------------------------
  fusion[api] = 2
@@ -67,7 +78,7 @@ settings[search_info_upload] = 1
 settings[grid_mask] = 1
 
 ; --------------------------------------------------------------------------------
-; Default theme settings for responsive layouts. 
+; Default theme settings for responsive layouts.
 ; These can be removed from children themes once inheritance is properly fixed
 ; in core.  See issue #563708.
 ; --------------------------------------------------------------------------------
@@ -89,7 +100,7 @@ settings[responsive_displays][] = sidebar_tablet_portrait
 settings[responsive_displays][] = sidebar_phone_landscape
 
 ; Desktop layout.
-; These settings are also used for non-responsive and fluid grids. 
+; These settings are also used for non-responsive and fluid grids.
 settings[sidebar_enabled] = 1
 settings[sidebar_layout] = sidebars-split
 settings[sidebar_first_width] = 3
@@ -130,7 +141,7 @@ settings[sidebar_phone_landscape_mquery] = 'only screen and (max-width:759px)'
 settings[sidebar_phone_landscape_mask] = 'rgba(220,220,70,.1)'
 
 ; --------------------------------------------------------------------------------
-; Configure regions that will be alongside other regions.  
+; Configure regions that will be alongside other regions.
 ; --------------------------------------------------------------------------------
 settings[grid_nested_regions][] = sidebar_first
 settings[grid_nested_regions][] = sidebar_second
@@ -144,7 +155,7 @@ settings[grid_nested_regions][] = help
 
 ; --------------------------------------------------------------------------------
 ; Some regions receive grid unit assignments automatically based on the size
-; of adjacent regions.  For example, the content region will be adjusted to 
+; of adjacent regions.  For example, the content region will be adjusted to
 ; be the total grid width less the width of both sidebars.  The assignments
 ; below are used by the grid calculator to do that simple math.
 ; --------------------------------------------------------------------------------
@@ -160,8 +171,8 @@ settings[grid_adjusted_regions][node_bottom][] = sidebar_second
 settings[grid_adjusted_regions][postscript_top][] = sidebar_first
 
 ; --------------------------------------------------------------------------------
-; A group contains one or more regions.  An adjusted group will be assigned 
-; grid units based on the width of other regions.  The layout is defined below to 
+; A group contains one or more regions.  An adjusted group will be assigned
+; grid units based on the width of other regions.  The layout is defined below to
 ; allow for that calculation.
 ; --------------------------------------------------------------------------------
 settings[grid_adjusted_groups][main_group][] = sidebar_first

@@ -1,0 +1,93 @@
+name = OSU Confident
+description = A subtheme of osu-drupal
+version = 1.3
+core = 6.x
+base theme = osu_drupal_1_11
+
+; STYLESHEETS
+stylesheets[all][]   = osu_confident.css
+
+; orange is the default colorscheme
+stylesheets[all][]   = orange.css
+stylesheets[print][]   = print.css
+
+; JAVASCRIPT
+scripts[] = js/jquery.corner.js
+scripts[] = js/mobile.js
+
+ ; REGION DEFINITION
+regions[left]           = left sidebar
+regions[right]          = right sidebar
+regions[social_media] = social media
+regions[header]         = header (menus or site title only)
+regions[footer]         = footer
+regions[contact]         = contact information
+regions[content]	  = content
+regions[pre_content]    = pre content
+regions[post_content]   = post content
+regions[top_hat] = top hat
+
+  ; Various page elements output by the theme can be toggled on and off. The
+  ; "features" control which of these check boxes display on the
+  ; admin/build/themes config page. This is useful for suppressing check boxes
+  ; for elements not used by your sub-theme. To suppress a check box, omit the
+  ; entry for it below. See the Drupal 6 Theme Guide for more info:
+  ; http://drupal.org/node/171205#features
+features[] = mission
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = search
+features[] = favicon
+
+; Set up the info we need for swapping css
+styles[orange][title]    = 'Orange'
+styles[orange][file]     = 'orange.css'
+styles[chocolate][title]  = 'Chocolate'
+styles[chocolate][file]   = 'chocolate.css'
+styles[blue][title]     = 'Steel Blue'
+styles[blue][file]      = 'blue.css'
+styles[purple][title]  = 'Purple'
+styles[purple][file]   = 'purple.css'
+styles[guin][title] = 'Guin'
+styles[guin][file] = 'guin.css'
+styles[cascades][title] = 'Cascades'
+styles[cascades][file] = 'cascades.css'
+styles[archives][title] = 'Archives'
+styles[archives][file] = 'archives.css'
+styles[rdm][title] = 'RDM'
+styles[rdm][file] = 'rdm.css'
+
+; background color
+osu_confident_background_colors[]		= 'dark'
+osu_confident_background_colors[]		= 'light'
+
+settings[osu_confident_background_color] = 'dark'
+
+; OSU ROTATING and TALL/SHORT HEADER SETTINGS
+; rotating images directory (relative to sites/default/files) don't forget the leading and trailing /'s
+settings[osu_rotating_header_directory] = '/rotating-images/example/'
+
+; settings for the front pages
+settings[osu_rotating_header_type] = '0'
+settings[osu_rotating_header_interval] = '4'
+settings[osu_rotating_header_single_image] = 'example.jpg'
+
+; settings for secondary pages
+settings[osu_second_header_type] = 'tall'
+settings[osu_second_rotating_header_type] = '2'
+settings[osu_second_rotating_header_interval] = '4'
+settings[osu_second_rotating_header_single_image] = 'example.jpg'
+
+; settings for site name in header
+settings[osu_confident_hide_site_name] = '0'
+
+; ZEN THEME SETTINGS
+; Set the default settings to be used in theme-settings.php
+settings[zen_block_editing]        = 0
+settings[zen_breadcrumb]           = yes
+settings[zen_breadcrumb_separator] = ' › '
+settings[zen_breadcrumb_home]      = 1
+settings[zen_breadcrumb_trailing]  = 1
+settings[zen_breadcrumb_title]     = 0
+settings[zen_rebuild_registry]     = 0
+settings[zen_wireframes]           = 0

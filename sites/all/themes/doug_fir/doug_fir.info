@@ -1,0 +1,57 @@
+name =  Doug Fir
+description = OSU Theme based on Twitter Bootstrap
+package = OSU
+version = 7.x-1.1.1
+core = 7.x
+
+stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = css/main.css
+
+scripts[] = js/timers.js
+scripts[] = js/menus.js
+
+; Default regions
+regions[page_top]           = Page Top
+regions[page_bottom]        = Page Bottom
+regions[top]                = Top
+;regions[header]             = Header
+regions[nav]                = Main Menu
+regions[help]               = Help
+
+; Optional regions
+regions[full_top]           = Full width below the main menu
+regions[features]           = Features
+regions[pre_content]        = Pre content
+regions[content]            = Content
+regions[post_content]       = Post content
+regions[sidebar_first]      = Primary Sidebar
+regions[sidebar_second]     = Secondary Sidebar;
+regions[pre_footer]         = Full width above the footer
+regions[footer]             = Footer
+regions[highlighted]        = Highlighted
+regions[main_first]         = Main Column1
+regions[main_second]        = Main Column2
+regions[main_third]         = Main Column3
+;regions[footer_firstcolumn] = Footer first column
+;regions[footer_secondcolumn] = Footer second column
+;regions[footer_thirdcolumn]  = Footer third column
+;regions[footer_fourthcolumn] = Footer fourth column
+
+features[] = logo
+features[] = name
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+; Theme variants
+default_variant     = 'doug_fir'
+variants[doug_fir]  = 'Doug Fir'
+variants[classic]   = 'OSU Standard'
+; variants[marine]    = 'Marine Sciences'
+variants[science]   = 'College of Science'
+variants[honors]   = 'Honors College'
+
+settings[responsive] = 1
+settings[hide_breadcrumbs] = 0
+settings[hide_book_nav] = 0
+settings[hide_terms = 0

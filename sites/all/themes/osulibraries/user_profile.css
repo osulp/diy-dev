@@ -1,0 +1,33 @@
+#page #content-area {padding-left: 35px; }
+#user_profile .panel-row-1 {width: 95%; padding-left: 35px; margin-bottom: 35px; border-bottom: 1px solid #ccc;}
+#user_profile .panel-row-2 .inside {border: 0; margin: 0 0 50px 15px;}
+
+#user_profile .directoryinfo .label, #user_profile .view-staff-contact-for .view-label {font-weight: bold; color: #58732c;}
+#user_profile .view-staff-contact-for p {margin-top: 0;}
+#user_profile .divider {border-bottom: 1px solid #ccc; width: 60%; padding: 5px 10px 5px 0;}
+#user_profile .pad {padding: 5px 0 5px 10px;}
+#user_profile .first {padding: 0 10px 5px 0;}
+#user_profile .last {border: none;}
+#user_profile .profile {margin:0;}
+#user_profile .profile h2 {color:#1c4753; margin-bottom: 0;}
+#user_profile .profile h3 {margin-top: 0; margin-bottom: 0; color:#1c4753;}
+#user_profile .picture {margin-top: 0.667em;}
+
+#user_profile .anchors a {padding: 5px 10px; font-size: 0.9em; color: #1c4753; font-weight: 900; font-family: Verdana, Tahoma, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;}
+
+#user_profile .primary li, #user_profile .primary li:hover, #user_profile .primary .tabs-selected {background: url(images/new-tab-left.png) no-repeat 0 -75px;}
+#user_profile ul.primary a, #user_profile .primary li:hover a, #user_profile .primary .tabs-selected a {background: url(images/new-tab-bar.png) no-repeat 100% -76px;}
+
+#user_profile ul.primary li {float: left; padding: 0 2px 0 5px; font-weight: 900; background-position: 0 -37px;}
+#user_profile ul.primary li a {display: block; height: 20px; line-height: 20px; padding: 4px 11px 1px 6px; background-position: 100% -38px;}
+
+#user_profile ul.primary li.tabs-selected {background-position: 0 2px;}
+#user_profile ul.primary li.tabs-selected a {background-position: 100% 0;}
+
+#user_profile .fragment .view-label, #user_profile .view-content-tab-brief-cv .view-label {margin-bottom: 0; color:#1c4753; font-family: Verdana, Tahoma, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;}
+#user_profile .item-list ul, #user_profile .item-list li {list-style-image: none; list-style-position: outside; list-style-type: none; margin: 0; padding: 0;}
+
+#user_profile .fragment {background: #f3f5f8; padding: 25px 10px 10px; border: 1px solid #ccc; border-top: 0; min-height: 300px;}
+#user_profile .fragment .view-field {margin-bottom: 1em; margin-top: 0;}
+#user_profile .fragment .view-field p {margin-top: 0;}
+#user_profile .view-field-field-award-sponsor-value {display: inline; float: left; margin-right: 1em;}

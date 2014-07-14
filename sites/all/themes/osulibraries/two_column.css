@@ -1,0 +1,43 @@
+#content-area {min-height: 500px;}
+.breadcrumb {font-size: .8em;}
+
+#header p {margin: 0;}
+#header fieldset {margin: 0; border: 0; padding: 0;}
+
+.osulink, .librarylink {display: block; height: 37px; width: 230px; position: absolute; top: 35px; left: 0;}
+.librarylink {width: 270px; left: 230px;}
+#titlebar2 a, #titlebar-cascades2 a, #titlebar-guin2 a {top: 24px;}
+
+.utility {color: #fff; font-family: tahoma,verdana,arial,sans-serif; display: block; width: 100%; text-align: right; line-height: 85px;}
+.utility a {color: #fff; padding: 0 .4em;}
+.utility a:hover {text-decoration: none;}
+.utility span {color:#000; float:left;display:block; width: 22px; height: 28px; position: relative; text-align:center;}
+
+.selectfont {position: absolute; z-index: 10; line-height: 37px; top: 22px; right: 5px; cursor: default;}
+.selectfont a {color: #fff;}
+.smallfont {text-decoration: underline; font-size: .8em;}
+.medfont {text-decoration: none; font-size: 1.1em;}
+.largefont {text-decoration: none; font-size: 1.4em;}
+
+#titlebar .selectfont, #titlebar-cascades .selectfont, #titlebar-guin .selectfont {top: 98px; font-size: 9px;}
+
+#titlebar_inner input {position: absolute; top: 78px; left: 25px; padding: 3px; width: 200px; background: #f6f5f4 url(/images/search.gif) no-repeat right;}
+
+#titlebar, #titlebar-cascades, #titlebar-guin {height: 109px; width: 100%;}
+#titlebar2, #titlebar-cascades2, #titlebar-guin2 {height: 109px; width: 100%; margin: 0 0 -38px;}
+#titlebar_inner {height: 109px;}
+
+#titlebar {background: url(/images/headerbkgrdsmaller.jpg) repeat-x;}
+#titlebar #titlebar_inner {background: url(/images/title.jpg) no-repeat;}
+#titlebar2 {background: url(/files/img/background-valley.jpg) repeat-x;}
+#titlebar2 #titlebar_inner {background: url(/files/img/header-valley.jpg) no-repeat;}
+
+#titlebar-cascades {background: url(images/headerbkgrdsmaller_cascades.jpg) repeat-x;}
+#titlebar-cascades #titlebar_inner {background: url(images/COCC_final-banner.jpg) no-repeat;}
+#titlebar-cascades2 {background: url(images/background-cascades.png) repeat-x;}
+#titlebar-cascades2 #titlebar_inner {background: url(images/header-cascades.jpg) no-repeat;}
+
+#titlebar-guin {background: url(images/headerbkgrdsmaller_guin.jpg) repeat-x;}
+#titlebar-guin #titlebar_inner {background: url(images/guin-header_final.jpg) no-repeat;}
+#titlebar-guin2 {background: url(/files/img/background-guin.png) repeat-x;}
+#titlebar-guin2 #titlebar_inner {background: url(/files/img/header-guin.png) no-repeat;}

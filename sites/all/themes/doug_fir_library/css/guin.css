@@ -1,0 +1,87 @@
+/***
+--template - OSU banner, site title, footer
+--main menus
+--megamenu dropdown
+--search
+--breadcrumbs
+--panel and page padding and color
+--page title and section headers
+--links
+--lists
+--tables
+--rotating image
+--glossary
+***/
+
+/*** template - osu banner, site title, footer ***/
+
+.megamenu-skin-osul h3.nolink, #main #backgroundcolor h2.pane-title {
+    background: #6784A0 ;
+}
+
+.megamenu-skin-osul .megamenu-item	a {
+	/*color: #6784A0 ;*/
+}
+
+#main h2, #ask a {
+	color:#6784A0 ;
+}
+
+#main h2.pane-title {
+	color:#6784A0 ;
+}
+
+.view-display-id-news_block a, view-display-id-news_block a:visited {color: #6784A0 ;}
+
+#ask a {
+    color: #6784A0 ;
+}
+
+.osul_rt_sidebar .center .inner, .osul_3_col .middle_col .inner, .osul_2rows_2col .center_bottom .inner {
+    border-top-color:  #6784A0 ;
+}
+
+.panels-flexible-region-OSUL_rt_sidebar-center_-inside, .panels-flexible-column-osul_3_column-2-inside, .panels-flexible-region-osul_2rows_2col-center_-inside {
+    border-top-color:  #6784A0 ;
+}
+
+#main #body #border {
+	border-top-color:  #6784A0 ;
+}
+
+.view-nw-art-exhibit .view-header {
+	border-top-color:  #6784A0 ;
+}
+
+/* --- adds border to top of h2 in a pane for seperator id --- */
+#separator h2.pane-title {
+border-top-color:  #6784A0 ;
+}
+
+
+.calNone {
+    border-top-color:  #6784A0 ;
+}
+
+.view-display-id-news_block li { color: #6784A0 ; }
+
+#main .panels-flexible-region-OSUL_rt_sidebar-center_-inside #backgroundcolor h2.pane-title { border-bottom-color: #6C8BA8 !important; }
+
+/* --- color override for guin library --- */
+
+h1, h1 a{
+	color:rgb(195, 69, 0);
+}
+
+h2#page-title.title{
+	color:rgb(86, 31, 75);
+}
+
+h2, h4 {
+	color:rgb(103, 132, 160);
+}
+
+#backgroundcolor h2.pane-title{
+	background:none repeat scroll 0% 0% rgb(103, 132, 160);
+}
+

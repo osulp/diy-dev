@@ -1,0 +1,43 @@
+/* tablist module styling */
+.quicktabs_main.quicktabs-style-basic {
+  border: none;
+  padding: 0;
+  .content {
+    margin-bottom: 0;
+    padding: 8px 0 0;
+  }
+}
+
+ul.quicktabs-tabs.quicktabs-style-basic {
+  border: none;
+  font-family: @sansFontFamily !important;
+  border-bottom: 1px solid #eae7e2;
+  min-height: 22px;
+  padding-right: 0;
+  li {
+    border: none;
+    margin: 0;
+    padding: 0;
+    &.active {
+      border:none;
+      a {
+        color: #fff;
+        background: @linkColor;
+      }
+    } 
+    &:hover {
+      border: none;
+    }
+    a {
+      font-family: @sansFontFamily !important;
+      font-weight: normal !important;
+      color: @grayDarker;
+      padding: 4px 8px;
+      #gradient .vertical(#f2f2f2, #f6f6f6);
+      &:hover, &:active, &:focus {
+        color: #fff;
+        background: @linkColor;
+      }
+    }
+  }
+}

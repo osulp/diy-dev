@@ -1,0 +1,116 @@
+/* Prevent header text from creating a margin */
+#hd h1, #hd h2, #hd h3 {
+	margin-top: 0;	
+}
+
+/* rotating-image */
+#rotating-image {
+	position: relative;
+}
+
+#rotating-image div.slide {
+	position: absolute;
+}
+
+
+/* Override Zen table borders */
+tbody, thead, thead th {
+	border: 0;
+}
+
+/* Skip to nav for accessablility */
+#skip-to-nav {
+	position: absolute;
+	left: 0px;
+	top: -500px;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+/* We don't want to show these */
+div.book-navigation {
+	display: none;
+}
+
+#book-outline {
+	min-width: 0em;
+}
+
+#logo, #logo-image {
+	display: none;
+}
+
+/* Calendar */
+#sidebar-right .minical_month th, #sidebar-right .minical_month td, 
+#sidebar-left .minical_month th, #sidebar-left .minical_month td{
+	border:none;
+	padding:0;
+}
+
+#content .minical_month a{
+	color: #000;
+}
+
+a.minical_hasevents {
+	text-decoration:underline;
+}
+
+
+
+/* Paginator */
+div.view ul.pager {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+}
+
+div.view ul.pager li {
+	display: inline;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/* Admin Settings */
+body.section-admin fieldset {
+	border: 1px solid #000;	
+}
+
+body.section-admin fieldset legend {
+	font-size: 120%;
+}
+
+#osu-rotating-header-image-preview, #osu-second-rotating-header-image-preview {
+	width: 50%;
+}
+#footer-message p{
+	margin-bottom:0px;
+}
+
+/*NiceMenu Tweaks*/
+
+ul.nice-menu-down li,ul.nice-menu-right, ul.nice-menu-left, ul.nice-menu-right li, ul.nice-menu-left li {
+	padding-right:0px;
+	border:none;
+	list-style-image:none;
+	list-style-type:none;
+}
+
+/*ul.nice-menu-left li ul, ul.nice-menu-left li ul li ul {
+	left:-12.5em;
+}*/
+
+div.terms {
+    display: block;
+    margin: 1em 0;
+    color: gray;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.terms a { 
+    font-weight: normal;
+    font-style: italic;
+}
+

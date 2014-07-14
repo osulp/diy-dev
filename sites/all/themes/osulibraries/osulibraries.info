@@ -1,0 +1,8 @@
+name = OSU Libraries Old
+description = For Cascades Temporarily
+version = 1.3
+core = 6.x
+
+
+; STYLESHEETS
+stylesheets[all][]   = osulibraries.css

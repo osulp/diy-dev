@@ -1,7 +1,21 @@
 <?php
 ?>
+<!-- Top-Hat -->
+<?php
+  if (function_exists('osu_top_hat_render')) {
+    print osu_top_hat_render();
+  }
+  $site_name = variable_get('site_name');
+  $base_path= variable_get('base_path');
+?>
+<div id="mobile-icon-menu">
+  <a href='#' id="toggle-mobile-menu" class="m-icon-link"><i class="icon-reorder"></i></a>
+  <a href='<?php echo $base_path; ?>search/osul' id="mobile-search-link" class="m-icon-link"><i class="icon-search"></i></a>
+</div>
 
-  <div id="page" class="page">
+  <div id="page" class="page container">
+    <h1><a href='<?php print $base_path; ?>'><?php print $site_name; ?></a></h1>
+
     <div id="page-inner" class="page-inner">
       <?php print render($page['header_top']); ?>
 
@@ -14,7 +28,7 @@
           </div><!-- /header-group-inner -->
         </div><!-- /header-group -->
       </div><!-- /header-group-wrapper -->
-      
+
       <?php print render($page['main_menu']); ?>
       <?php print render($page['preface_top']); ?>
 
@@ -78,6 +92,26 @@
         </div><!-- /main -->
       </div><!-- /main-wrapper -->
       <?php print render($page['postscript_bottom']); ?>
-      <?php print render($page['footer']); ?>
+
     </div><!-- /page-inner -->
   </div><!-- /page -->
+  <!-- Page Footer -->
+
+  <div id='footer-osul'>
+    <div class='container'>
+      <div class='row'>
+
+        <div class="span0 social-media">
+          <a class="flickr" href="http://www.flickr.com/photos/osuvalleylibrary" title="Flickr">Flickr</a>
+          <a class="fb" href="http://www.facebook.com/pages/Corvallis-OR/The-Valley-Library/5913513878?ref=ts" title="Facebook">Facebook</a>
+          <a class="twitter" href="http://www.twitter.com/osuvalleylib" title="Twitter">Twitter</a>
+        </div>
+
+        <div class='span9'>
+          <?php print render($page['footer']); ?>
+        </div>
+
+
+      </div>
+    </div>
+  </div>

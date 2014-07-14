@@ -4,6 +4,7 @@
 
 .header-group-wrapper {
   background: none;
+  border-top: none;
 }
 
 .header tbody {
@@ -130,7 +131,7 @@ body.front div#main-inner {
 }
 
 #block-views-sidebar_node_title-block_1 {
-  margin: 0;  
+  margin: 0;
 }
 
 #block-views-sidebar_node_title-block_1 h1 {
@@ -159,7 +160,8 @@ div#block-views-front_page_categories-block div.views-field-field-list-title a {
   max-height: 80px;
   min-height: 80px;
   display: block;
-  border-top: 4px solid #6a7f10;
+  /*border-top: 4px solid #6a7f10;*/
+  border-top: 4px solid #c34500;
   border-collapse: separate;
   box-shadow: 4px 4px 6px gray;
   border-bottom-right-radius: 15px;
@@ -206,7 +208,9 @@ body.front div#block-views-add_new_category-block {
   max-height: 80px;
   min-height: 80px;
   display: block;
-  border-top: 4px solid #6a7f10;
+  /*border-top: 4px solid #6a7f10;*/
+  border-top: 4px solid #c34500;
+
   border-collapse: separate;
   box-shadow: 4px 4px 6px gray;
   border-bottom-right-radius: 15px;
@@ -307,7 +311,9 @@ body.node-type-diy-guide div.field.field-name-field-guide-body table {
   max-height: 70px;
   min-height: 70px;
   display: block;
-  border-top: 4px solid #6a7f10;
+/*  border-top: 4px solid #6a7f10;*/
+  border-top: 4px solid #c34500;
+
   box-shadow: 4px 4px 9px black;
   border-bottom-right-radius: 15px;
   line-height: 120%;
@@ -327,4 +333,221 @@ div#block-views-related_diys-block {
   text-align: left;
 }
 
+
+/*  Preface Regions
+-------------------------------------------------------------- */
+/* The Preface Top region sits between the header and the Main Area
+ (columns, sidebars, and main content).  The Preface Bottom region
+ is inside the Main Area. */
+.preface-top-wrapper {
+  /*background: #1a7cc6 url(../preface-bg.png) repeat top left;*/
+  background: none;
+  color: white;
+  font-weight: none;
+  font-size: 100%;
+  padding: 20px 0 0 0;
+  /*margin-bottom: 30px;*/
+  margin-top: -1.5em;
+  margin-bottom: 1em;
+
+  /*font-weight: bold;
+  font-size: 150%;
+  padding: 20px 0 0 0;
+  margin-bottom: 30px;*/
+}
+
+.preface-top {
+}
+
+.preface-top .menu,
+.preface-top .nice-menu {
+  margin: 1em 0;
+  float: none;
+  background-color: #373737;
+  z-index: 200;
+  /* avoids conflicts with nice-menus in right hand side */
+
+  border-radius: 4px;
+  font-size: 14px;
+}
+.preface-top .content {
+  padding: 0;
+}
+.preface-top .menu {
+  min-height: 38px;
+}
+.ie7 .preface-top .nice-menu,
+.ie7 .preface-top .menu {
+  min-height: 25px;
+}
+.preface-top .menu li,
+.preface-top .nice-menu > li {
+  float: left;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border: none;
+}
+.preface-top .menu li a,
+.preface-top .nice-menu > li > a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+.preface-top .nice-menu a,
+.preface-top .nice-menu a:visited {
+  color: #fff;
+}
+/* Nice Menu Overwrites *******************************************************/
+/* Reset default nice-menu graphics, backgrounds  and spacing*/
+.preface-top .nice-menu > ul {
+  top: 2.3em;
+  /* CRUCIAL to remove for other themes */
+
+}
+ul.nice-menu ul {
+  border: 0;
+  /* removes top 1px border that comes with default nice-menus */
+
+}
+.preface-top ul.nice-menu-down li,
+.preface-top ul.nice-menu-down li:hover,
+.preface-top ul.nice-menu-down li.menuparent,
+.preface-top ul.nice-menu-down li.menuparent:hover {
+  background-color: transparent;
+  background-image: none;
+}
+/* Width of Nice Menu Elements, adjustments */
+ul.nice-menu ul li {
+  width: 14em;
+  /* needs to match number below */
+
+}
+ul.nice-menu-down li ul li ul {
+  left: 14em;
+  /* need to match number above */
+
+}
+/* Nice Menu Multi Level Stylings (and level 1 menu styling) **********************************************/
+/* Level 1 */
+.preface-top .nice-menu > li > a,
+.preface-top .menu a {
+  border-right: 1px solid #000;
+}
+.preface-top .nice-menu > li.last > a,
+.preface-top .menu li.last a {
+  border-right: none;
+}
+.preface-top .nice-menu > li.menuparent > a {
+  background: url('../images/h-menu-arrow-down.png') right center no-repeat;
+  padding-right: 32px;
+}
+.preface-top .nice-menu > li.menuparent:hover > a,
+.preface-top .nice-menu > li.menuparent > a:hover,
+.preface-top .nice-menu > li.menuparent > a:active,
+.preface-top .nice-menu > li.menuparent > a:focus {
+  background-color: #4b4b4b;
+}
+.preface-top .nice-menu > li.over > a,
+.preface-top .nice-menu > li > a:hover,
+.preface-top .nice-menu > li > a:active,
+.preface-top .nice-menu > li > a:focus,
+.preface-top .menu li a:hover,
+.preface-top .menu li a:active,
+.preface-top .menu li a:focus {
+  color: #fff;
+  background-color: #4b4b4b;
+}
+/* Level 2 */
+.preface-top .nice-menu > li > ul {
+  margin-top: 13px;
+  background-color: #5c5c5c;
+}
+.preface-top .nice-menu > li > ul > li > a:hover,
+.preface-top .nice-menu > li > ul > li > a:active,
+.preface-top .nice-menu > li > ul > li > a:focus {
+  color: #fff;
+}
+.preface-top .nice-menu li li.menuparent > a {
+  padding-right: 20px;
+  /* width: 160px; */
+
+  background: url('../images/h-menu-arrow-right.png') no-repeat 97% center;
+}
+.preface-top .nice-menu li li.menuparent > a:hover,
+.preface-top .nice-menu li li.menuparent > a:active,
+.preface-top .nice-menu li li.menuparent > a:focus {
+  background-image: url('../images/h-menu-arrow-right-hover.png');
+}
+.preface-top .nice-menu ul {
+  padding: 8px;
+  overflow: hidden;
+}
+.preface-top .nice-menu li li {
+  border: none;
+  padding: 4px 0;
+  margin-right: 6px;
+}
+.preface-top .nice-menu li li a {
+  text-decoration: none;
+  border-radius: 4px;
+}
+.preface-top .nice-menu li li a:hover,
+.preface-top .nice-menu li li a:active,
+.preface-top .nice-menu li li a:focus,
+.preface-top .nice-menu li li.over a {
+  background-color: #4b4b4b;
+}
+/* Level 3 */
+.preface-top .nice-menu ul ul {
+  border: none;
+  margin-left: 14px;
+}
+.preface-top .nice-menu ul ul,
+.preface-top .nice-menu li li.over li a {
+  background-color: #626262;
+}
+.preface-top .nice-menu li li.over li a:hover,
+.preface-top .nice-menu li li.over li a:active,
+.preface-top .nice-menu li li.over li a:focus,
+.preface-top .nice-menu li li li.over a {
+  background-color: #4b4b4b;
+}
+/* Level 4 */
+.preface-top .nice-menu ul ul ul,
+.preface-top .nice-menu li li li.over li a {
+  background-color: #696969;
+}
+.preface-top .nice-menu li li li.over li a:hover,
+.preface-top .nice-menu li li li.over li a:active,
+.preface-top .nice-menu li li li.over li a:focus,
+.preface-top .nice-menu li li li li.over a {
+  background-color: #4b4b4b;
+}
+
+.preface-top-inner {
+}
+
+.preface-bottom {
+}
+
+.preface-bottom-inner {
+}
+
+
 /* @end */
+.font-size-13 {
+  /*font-size: 81.25%;*/
+  font-size: 100%;
+}
+.block {
+  float: left;
+  margin-bottom: auto;
+  width: 100%;
+}
+
+.footer-wrapper {
+  background-color: #252525;
+  border-top: none;
+}

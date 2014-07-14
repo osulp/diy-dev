@@ -1,0 +1,63 @@
+/* $Id: html-elements.css,v 1.1.2.1 2007/11/29 00:50:59 johnalbin Exp $ */
+
+/*
+	Our font size and line height declarations are based on the following ALA article: http://www.alistapart.com/articles/howtosizetextincss
+	All modern browsers use a 16px default font size. Specifying the font-size and line-height in ems (relative to the 16px default font) produces the most consistent results across different browsers.
+*/
+
+html {background: #f6f5f4; font-family: verdana, geneva, arial, helvetica, sans-serif;}
+body {font-size: 90%; line-height: 1.2em; margin: 0;}
+
+a:link {color: #00e;}
+a:visited {color: #551A8B;}
+a.contents:hover, .contents a:hover  {color: #0000c7; text-decoration: underline;}
+a:hover, a.contents, .contents a  {color: #c50; text-decoration: none;}
+
+pre, code {font-size: 1.1em; font-family: "bitstream vera sans mono", "courier new", monospace;}
+
+h1,h2, h3, h4, h5, h6 {line-height: 1.3em;}
+h1, h2 {font-family: garamond, 'times new roman', helvetica, serif;}
+h1 {font-size: 2.3em;		margin: 0.825em 0 0.5em;	color: #58732C;}
+h2 {font-size: 1.55em;	margin: 0.845em 0 0.322em;	color: #58732C;}
+h3 {font-size: 1.20em;	margin: 0.941em 0 0.37em;	color: #717171;}
+h4 {font-size: 1.15em;	margin: 0.969em 0 0.385em;}
+h5 {font-size: 1.10em;	margin: 1.1em 0 0.43em;}
+h6 {font-size: 1em;		margin: 1.2em 0 0.5em;}
+
+p, ul, ol, dl, pre, table, fieldset, blockquote {margin: 0 0 1em;}
+
+ul, ol {margin-left: 0; padding-left: 2em;}
+li {margin: 0; padding: 0;}
+.block ul, .item-list ul {margin: 1em 0; padding: 0 0 0 2em;}
+ul ul, ul ol, ol ul, ol ol, .block ul ul, .block ul ol, .block ol ul, .block ol ol, .item-list ul ul, .item-list ul ol, .item-list ol ul, .item-list ol ol {margin: 0;}
+.item-list ul li {margin: 0; padding: 0; list-style: inherit;}
+ul.menu li, li.expanded,li.collapsed, li.leaf, li {margin: 0; padding: 0;}
+
+ul		{list-style: disc;}
+ul ul	{list-style: circle;}
+ul ul ul	{list-style: square;}
+ul ul ul ul{list-style: disc;}
+ol		{list-style: decimal;}
+ol ol	{list-style: lower-alpha;}
+ol ol ol	{list-style: decimal;}
+
+dt 		{margin: 0; padding: 0; font-weight: 900;}
+dd 		{margin: 0 0 .5em 3em; padding: 0;}
+
+table	{border-collapse: collapse;}
+th		{text-align: center; border-bottom: 0; padding: 5px 7px;}
+td		{padding: 3px 5px;}
+tbody	{border-top: 0;}
+
+abbr			{border-bottom: 1px dotted #666; cursor: help; white-space: nowrap;}
+abbr.created	{border: 0; cursor: auto; white-space: normal;}
+
+img, a img{border: 0;}
+
+hr {height: 1px; border: 1px solid #666;}
+
+form	{margin: 0; padding: 0;}
+fieldset	{margin: 1em 0; padding: 0.5em;}
+
+.utility {line-height: 65px; display: block; padding: 0 2px 0 0; float: right; color: #fff; font-family: tahoma, verdana, geneva, arial, helvetica, sans-serif; font-size: .95em;}
+.utility a {color: #fff;}

@@ -1,0 +1,18 @@
+.treeview li{ /*Style for LI elements in general (excludes an LI that contains sub lists)*/
+	list-style-type: none;
+	padding: 2px 0;
+}
+
+.treeview li.submenu{ /* Style for LI that contains sub lists (other ULs). */
+	cursor: pointer;
+}
+
+.treeview li.submenu ul{ /*Style for ULs that are children of LIs (submenu) */
+	display: none; /*Hide them by default. Don't delete. */
+	padding-top: 2px !important;
+}
+
+.treeview .submenu ul li{ /*Style for LIs of ULs that are children of LIs (submenu) */
+	cursor: default;
+	padding-left: 25px;
+}

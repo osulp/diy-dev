@@ -1,0 +1,47 @@
+name = THEME NAME
+description = A subtheme of osu-drupal
+version = VERSION
+core = 6.x
+base theme = osu_drupal_1_11
+
+; STYLESHEETS  
+stylesheets[all][]   = THEME NAME.css
+conditional-stylesheets[if IE 6][all][] = ie6.css
+conditional-stylesheets[if IE 7][all][] = ie7.css
+conditional-stylesheets[if IE 8][all][] = ie8.css
+ 
+ ; REGION DEFINITION
+regions[left]           = left sidebar
+regions[right]          = right sidebar
+regions[header]         = header
+regions[footer]         = footer
+regions[content]	  = content
+regions[top_horizontal_bar] = top horizontal bar
+regions[pre_content]    = pre content
+regions[post_content]   = post content
+
+; OSU ROTATING and TALL/SHORT HEADER SETTINGS
+; rotating images directory (relative to sites/default/files) don't forget the leading and trailing /'s
+settings[osu_rotating_header_directory] = '/rotating-images/example/'
+  
+; settings for the front pages 
+settings[osu_rotating_header_type] = '0'
+settings[osu_rotating_header_interval] = '4'
+settings[osu_rotating_header_single_image] = 'example.jpg'
+  
+; settings for secondary pages
+settings[osu_second_header_type] = 'tall'
+settings[osu_second_rotating_header_type] = '2'
+settings[osu_second_rotating_header_interval] = '4'
+settings[osu_second_rotating_header_single_image] = 'example.jpg'
+
+; ZEN THEME SETTINGS
+; Set the default settings to be used in theme-settings.php
+settings[zen_block_editing]        = 0
+settings[zen_breadcrumb]           = yes
+settings[zen_breadcrumb_separator] = ' › '
+settings[zen_breadcrumb_home]      = 1
+settings[zen_breadcrumb_trailing]  = 1
+settings[zen_breadcrumb_title]     = 0
+settings[zen_rebuild_registry]     = 1
+settings[zen_wireframes]           = 0
