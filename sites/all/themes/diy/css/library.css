@@ -2269,3 +2269,29 @@ table.table_ask {
   width: 17px;
   margin-right: 2px;
 }
+
+/* User menu block style */
+
+div#block-system-user-menu .menu {
+	background-color: transparent;
+	min-height: 0px;
+
+}
+div#block-system-user-menu .content {
+	margin: -1.4em 0 -1em;
+	float: right;
+
+}
+
+div#block-system-user-menu a {
+	color: #c34500;
+	padding: 0px 16px;
+}
+
+h2.title.block-title {
+	display: none;
+}
+
+div#block-system-user-menu a:hover {
+	background: transparent;
+}
