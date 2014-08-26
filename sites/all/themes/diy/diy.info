@@ -13,6 +13,7 @@ stylesheets[all][] = css/main.css
 stylesheets[all][] = css/diy.css
 stylesheets[all][] = css/library.css
 stylesheets[all][] = css/megamenu.css
+stylesheets[all][] = css/citation.css
 
 scripts[] = js/timers.js
 scripts[] = js/menus.js
