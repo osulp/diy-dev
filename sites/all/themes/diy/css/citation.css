@@ -1,10 +1,10 @@
 /* citation style */
-p.citation {
+.citation {
   line-height: 2;
   padding-left: 25px;
   text-indent: -25px;
   font-family: "Courier New", Courier, mono;
-  font-size: 12px;
+  font-size: 13px;
   margin: 0px 0px 25px 50px;
   line-height: 2;
 }
