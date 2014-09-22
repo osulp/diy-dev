@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file osu_top_hat_install
+ *
+ * Install default settings for the oregonexplorer_topics
+ *
+ */
+function oregonexplorer_topics_install(){
+  $settings = array(
+      'hide_utility' => 0,
+      );
+
+  variable_set('oregonexplorer_topics_settings', $settings);
+}
+
+function oregonexplorer_topics_uninstall() {
+  variable_del('oregonexplorer_topics_settings');
+}

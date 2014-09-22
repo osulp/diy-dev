@@ -51,6 +51,16 @@
   <meta name="MobileOptimized" content="width" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <?php endif; ?>
+
+<!--
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
+-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
   <?php print $scripts; ?>
 </head>
 <body id="<?php print $body_id; ?>" class="<?php print $classes; ?>" <?php print $attributes;?>>

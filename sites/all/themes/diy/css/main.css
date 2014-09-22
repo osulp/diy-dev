@@ -48,13 +48,15 @@ html {
 body {
   background: url('../images/bg-pattern.jpg') repeat #f4f2ec;
 }
+/*
 #sidebar-first,
 #sidebar-second,
 #sidebar-first p,
 #sidebar-second p {
   font-size: 14px;
   line-height: 18px;
-}
+}*/
+
 h1,
 h2 {
   font-family: 'EksjaExtremesRegular', Arial, Helvetica, Verdana, sans-serif;

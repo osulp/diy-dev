@@ -1,6 +1,7 @@
 <?php
 ?>
 <!-- Top-Hat -->
+<div class = "osu-top-hat-render">
 <?php
   if (function_exists('osu_top_hat_render')) {
     print osu_top_hat_render();
@@ -8,12 +9,35 @@
   $site_name = variable_get('site_name');
   $base_path= variable_get('base_path');
 ?>
+</div>
+
 <div id="mobile-icon-menu">
   <a href='#' id="toggle-mobile-menu" class="m-icon-link"><i class="icon-reorder"></i></a>
   <a href='<?php echo $base_path; ?>search/osul' id="mobile-search-link" class="m-icon-link"><i class="icon-search"></i></a>
 </div>
 
   <div id="page" class="page container">
+
+    <?php
+    /*
+        //$audience_menu = menu_tree_all_data('audience-menu', '', 2);
+        $main_menu = menu_tree_all_data('menu-menu-osul', '', 2);
+        $tophat_menu = menu_tree_all_data('osu-top-hat', '', 1);
+        if ( !empty($main_menu) || !empty($tophat_menu) ) {
+          echo '<ul id="mobile-menu">';
+            if (!empty($main_menu) ) {
+              echo '<li id="mobile-main-menu">';
+              $output = menu_tree_output($main_menu);
+                print render($output);
+              echo '</li>';
+            }
+
+           echo '</ul>';
+          }
+          */
+     ?>
+
+
     <h1><a href='<?php print $base_path; ?>'><?php print $site_name; ?></a></h1>
 
     <div id="page-inner" class="page-inner">

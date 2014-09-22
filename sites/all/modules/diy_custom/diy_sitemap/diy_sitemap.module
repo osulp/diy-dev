@@ -1,0 +1,285 @@
+<?php
+/**
+ * @file diy_sitemap.module
+ *
+ * A module to implement the Sitemap display
+ *
+ */
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function diy_sitemap_preprocess_page(&$variables) {
+
+  //dpm($variables['breadcrumb']);
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function diy_sitemap_node_view($node, $build_mode) {
+  if ($build_mode == 'full') {
+    // Check for breadcrumb for this node type.
+    global $language;
+    $languages = array(
+      'language' => $language->language,
+      'all' => '',
+    );
+    $breadcrumbs = custom_breadcrumbs_load_breadcrumbs('custom_breadcrumbs', NULL, array('node_type' => $node->type), $languages);
+
+    if (!empty($breadcrumbs)) {
+      //dpm($node);
+      $selected_pid = "";
+
+      $query_parameters = drupal_get_query_parameters();
+      if (!empty($query_parameters['category'])) {
+        $selected_pid = $query_parameters['category'];
+      }
+
+      $selected_parent_crumb_index = 0;
+
+      if (!empty($selected_pid) && is_numeric($selected_pid)) {
+          $parent_ids = array();
+          if (isset($node->field_guide_category['und'])) {
+            if (count($node->field_guide_category['und']) > 0) {
+              $parents_count = 0;
+
+              foreach($node->field_guide_category['und'] as $parent) {
+                if (isset($parent['target_id'])) {
+                  $pid = $parent['target_id'];
+                  $parent_ids[] = $pid;
+                  if ($selected_pid === $pid) {
+                    $selected_parent_crumb_index = $parents_count;
+                  }
+                  $parents_count = $parents_count + 1;
+                }
+              }
+            }
+          }
+      }
+
+      //$ptitle = token_replace('[node:title]', array('node' => $node));
+      //dpm($ptitle);
+      //dpm($parent_ids);
+
+      $breadcrumbs[0]->titles = "[node:field-guide-category:".$selected_parent_crumb_index.":title]";
+      $breadcrumbs[0]->paths = "[node:field-guide-category:".$selected_parent_crumb_index.":url:path]";
+
+      //dpm($breadcrumbs[0]->titles);
+      //dpm($breadcrumbs[0]->paths);
+
+      $objs = array('node' => $node);
+      if ($breadcrumb = custom_breadcrumbs_select_breadcrumb($breadcrumbs, $objs)) {
+        custom_breadcrumbs_set_breadcrumb($breadcrumb, $objs);
+      }
+    }
+
+  }
+}
+
+
+function diy_sitemap_menu() {
+  $items = array();
+
+  $items['site-map'] = array(
+    'title' => 'DIY Table of Contents',
+    'description' =>
+    'Table of Contents.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_diy_sitemap_set_form', 1),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function _diy_sitemap_set_form($form, &$form_state) {
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name'),
+  );
+  return $form;
+}
+
+function diy_sitemap_embed_children_categories($nid) {
+  $output = views_embed_view('sitemap_view', 'page_1', $nid);;
+
+  return $output;
+}
+
+function _diy_sitemap_set_multiple_alias($node, $op) {
+  //if ($node->type === "diy_guide" || $node->type === "guide_categories")
+  if ($node->type === "diy_guide") {
+    if (isset($node->field_guide_category['und'])) {
+      $parent_count = 0;
+      foreach ($node->field_guide_category['und'] as $pcategory) {
+        if (is_numeric($pcategory['target_id'])) {
+          $parent_id = $pcategory['target_id'];
+          $ntitle = token_replace('[node:title]', array('node' => $node));
+          $parent_node = node_load($parent_id);
+          $ptitle = token_replace('[node:title]', array('node' => $parent_node));
+          $new_alias = $ntitle."/".$ptitle;
+
+          module_load_include('inc', 'pathauto');
+          //pathauto_create_alias('diy_sitemap', $op, 'node/' . $node->nid, array('node' => $node), $node->type);
+          $pattern = "[node:field-guide-category:".$parent_count.":title]/[node:title]";
+          diy_sitemap_custom_create_alias('diy_sitemap', $op, 'node/' . $node->nid, array('node' => $node), $node->type, LANGUAGE_NONE, $pattern);
+          //dpm("setting alias: ".$new_alias);
+
+          //path_set_alias("node/$node->nid", "parent-$parent_id/node-$node->nid");
+          //$path = array('source' => "node/$node->nid", 'alias' => "node-$node->nid-$node->type");
+          //path_save($path);
+          $parent_count = $parent_count + 1;
+        }
+
+      }
+    }
+  }
+}
+
+function diy_sitemap_custom_create_alias($module, $op, $source, $data, $type = NULL, $language = LANGUAGE_NONE, $pattern) {
+  // Retrieve and apply the pattern for this content type.
+  //$pattern = pathauto_pattern_load_by_entity($module, $type, $language);
+  //dpm($pattern);
+  if (empty($pattern)) {
+    // No pattern? Do nothing (otherwise we may blow away existing aliases...)
+    return '';
+  }
+
+  // Special handling when updating an item which is already aliased.
+  $existing_alias = NULL;
+  if ($op == 'update' || $op == 'bulkupdate') {
+    if ($existing_alias = _pathauto_existing_alias_data($source, $language)) {
+      switch (variable_get('pathauto_update_action', PATHAUTO_UPDATE_ACTION_DELETE)) {
+        case PATHAUTO_UPDATE_ACTION_NO_NEW:
+          // If an alias already exists, and the update action is set to do nothing,
+          // then gosh-darn it, do nothing.
+          return '';
+      }
+    }
+  }
+
+  // Replace any tokens in the pattern. Uses callback option to clean replacements. No sanitization.
+  $alias = token_replace($pattern, $data, array(
+    'sanitize' => FALSE,
+    'clear' => TRUE,
+    'callback' => 'pathauto_clean_token_values',
+    'language' => (object) array('language' => $language),
+    'pathauto' => TRUE,
+  ));
+
+  // Check if the token replacement has not actually replaced any values. If
+  // that is the case, then stop because we should not generate an alias.
+  // @see token_scan()
+  $pattern_tokens_removed = preg_replace('/\[[^\s\]:]*:[^\s\]]*\]/', '', $pattern);
+  if ($alias === $pattern_tokens_removed) {
+    return '';
+  }
+
+  $alias = pathauto_clean_alias($alias);
+
+  // Allow other modules to alter the alias.
+  $context = array(
+    'module' => $module,
+    'op' => $op,
+    'source' => &$source,
+    'data' => $data,
+    'type' => $type,
+    'language' => &$language,
+    'pattern' => $pattern,
+  );
+  drupal_alter('pathauto_alias', $alias, $context);
+
+  // If we have arrived at an empty string, discontinue.
+  if (!drupal_strlen($alias)) {
+    return '';
+  }
+
+  // If the alias already exists, generate a new, hopefully unique, variant.
+  $original_alias = $alias;
+  pathauto_alias_uniquify($alias, $source, $language);
+  if ($original_alias != $alias) {
+    // Alert the user why this happened.
+    _pathauto_verbose(t('The automatically generated alias %original_alias conflicted with an existing alias. Alias changed to %alias.', array(
+      '%original_alias' => $original_alias,
+      '%alias' => $alias,
+    )), $op);
+  }
+
+  // Return the generated alias if requested.
+  if ($op == 'return') {
+    return $alias;
+  }
+
+  // Build the new path alias array and send it off to be created.
+  $path = array(
+    'source' => $source,
+    'alias' => $alias,
+    'language' => $language,
+  );
+  $path = _pathauto_set_alias($path, $existing_alias, $op);
+  return $path;
+}
+
+
+function diy_sitemap_node_insert($node) {
+  //dpm("node scheduled:");
+  //path_set_alias("node/$node->nid", "node-$node->nid-$node->type");
+  //->field_guide_category['und'][0]['target_id']
+  //->field_guide_category['und'][1]['target_id']
+  //$parent_categories = array();
+
+  //if ($node->type === "diy_guide" || $node->type === "guide_categories")
+  _diy_sitemap_set_multiple_alias($node,"insert");
+
+
+  dpm($node);
+}
+
+function diy_sitemap_node_update($node) {
+  _diy_sitemap_set_multiple_alias($node,"update");
+
+  //dpm($node);
+}
+
+function diy_sitemap_get_categories ($title_field, $title) {
+  $link = "";
+
+  //dpm($output);
+  $tokens = explode("/", $title_field);
+  $nid = "";
+  //dpm($title_field);
+  //dpm($title);
+  foreach ($tokens as $token) {
+    $var = explode("-", $token);
+
+    if (count($var) == 2) {
+
+      if ($var[0] === "node" && is_numeric(intval($var[1]))) {
+        //dpm($var);
+        $nid = intval($var[1]);
+      }
+    }
+
+  }
+
+  $options = array('absolute' => TRUE);
+  //$nid = 4163; // Node ID
+  if (strlen($nid) > 0) {
+    $alias = url('node/' . $nid, $options);
+
+    $url = $alias;
+    $link = l(t($title), $url,array('external' => TRUE, 'attributes' => array('name' => 'guide'.$nid)));
+  }
+
+
+  if (!empty($nid)) {
+      $children = "";
+      $children = diy_sitemap_embed_children_categories($nid);
+      if (!empty($children)) {
+          $link = $link."<br>".$children;
+      }
+  }
+
+  return $link;
+}

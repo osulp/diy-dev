@@ -1,0 +1,8 @@
+DIY Custom
+======================
+
+Modules to display multiple elements in the site.
+
+diy_sitemap
+=====================
+module to display the site map (print all super categories and its children recursively)

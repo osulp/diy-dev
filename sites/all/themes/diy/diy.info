@@ -6,12 +6,19 @@ core = 7.x
 engine = phptemplate
 
 ; doug_fir styles
-stylesheets[all][] = bootstrap/css/bootstrap.css
+;stylesheets[all][] = bootstrap/css/bootstrap.css
+stylesheets[all][] = bootstrap/css/bootstrap_2_3_2.css
+
+;stylesheets[all][] = bootstrap/css/responsive.css
+
+
 stylesheets[all][] = css/main.css
+;stylesheets[all][] = css/main-responsive.css
 
 ; diy styles
 stylesheets[all][] = css/diy.css
 stylesheets[all][] = css/library.css
+stylesheets[all][] = css/resp.css
 stylesheets[all][] = css/megamenu.css
 stylesheets[all][] = css/citation.css
 

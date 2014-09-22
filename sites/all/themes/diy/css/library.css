@@ -450,6 +450,7 @@ float: none;
 #block-block-5 fieldset, #block-block-5 .form-item {
 	padding: 0;
 	margin:0;
+  float: left;
 }
 
 #block-block-5 label input, #block-block-5 .form-item input  {
@@ -2294,4 +2295,17 @@ h2.title.block-title {
 
 div#block-system-user-menu a:hover {
 	background: transparent;
+}
+/*
+#content-group.content-group.region.nested  {
+  width: 77.33% !important;
+}
+#sidebar-second.region.region-sidebar-second.sidebar-second.nested.grid12-2 .sidebar {
+  width: 22.67% !important;
+}
+*/
+@media (max-width: 768px) {
+  .preface-top-wrapper {
+    display: none;
+  }
 }
