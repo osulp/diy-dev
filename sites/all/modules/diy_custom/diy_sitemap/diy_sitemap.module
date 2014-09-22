@@ -230,14 +230,14 @@ function diy_sitemap_node_insert($node) {
   //$parent_categories = array();
 
   //if ($node->type === "diy_guide" || $node->type === "guide_categories")
-  _diy_sitemap_set_multiple_alias($node,"insert");
+  //_diy_sitemap_set_multiple_alias($node,"insert");
 
 
-  dpm($node);
+  //dpm($node);
 }
 
 function diy_sitemap_node_update($node) {
-  _diy_sitemap_set_multiple_alias($node,"update");
+  //_diy_sitemap_set_multiple_alias($node,"update");
 
   //dpm($node);
 }
