@@ -14,6 +14,74 @@ function diy_sitemap_preprocess_page(&$variables) {
   //dpm($variables['breadcrumb']);
 }
 
+function diy_sitemap_menu_breadcrumb_alter(&$active_trail, $item) {
+  //dpm($active_trail);
+  //if (substr($item['href'], 0, 4) == 'user') {
+    // Add a trail item before the one linking to the user profile page.
+  //}
+}
+
+function diy_sitemap_lists_session($key, $value = NULL) {
+  static $storage;
+  if ($value) {
+    $storage[$key] = $value ;
+    $_SESSION['lists'][$key] = $value ;   // I use 'lists' in case some other module uses 'type' in $_SESSION
+  }
+  else if (empty($storage[$key]) && isset($_SESSION['lists'][$key])) {
+    $storage[$key] = $_SESSION['lists'][$key];
+  }
+  return $storage[$key];
+}
+
+function diy_sitemap_lists_set_session($key, $value = NULL) {
+  if ($value) {
+    $_SESSION['lists'][$key] = $value ;   // I use 'lists' in case some other module uses 'type' in $_SESSION
+  }
+}
+
+
+function diy_sitemap_lists_reset_session($key, $value = NULL) {
+    $_SESSION['lists'][$key] = $value;
+}
+
+function _get_crumbid_with_session_level($crumb, $level = 1) {
+  $crumbid = "";
+  foreach($crumb as $cr) {
+    if ($cr->level == $level) {
+      $crumbid = $cr->nid;
+    }
+  }
+  return $crumbid;
+}
+
+function _get_crumb_obj_with_session_level($crumb, $level = 1) {
+  global $base_url;
+  $crumb_obj = new stdClass();
+  $crumb_obj->nid = "";
+  $crumb_obj->title = "";
+  $crumb_obj->level = "";
+  $crumb_obj->alias = "";
+  foreach($crumb as $cr) {
+    if ($cr->level == $level) {
+      $crumb_obj->nid = $cr->nid;
+      $crumb_obj->title = $cr->title;
+      $crumb_obj->level = $cr->level;
+      $alias = drupal_get_path_alias('node/'.$cr->nid);
+      $crumb_obj->href = $base_url.'/'.$alias;
+    }
+  }
+  return $crumb_obj;
+}
+
+function diy_sitemap_lists_get_session($key) {
+  $value = NULL;
+  if (isset($_SESSION['lists'][$key])) {
+    $value = $_SESSION['lists'][$key];
+  }
+  return $value;
+
+}
+
 /**
  * Implements hook_node_view().
  */
@@ -28,7 +96,7 @@ function diy_sitemap_node_view($node, $build_mode) {
     $breadcrumbs = custom_breadcrumbs_load_breadcrumbs('custom_breadcrumbs', NULL, array('node_type' => $node->type), $languages);
 
     if (!empty($breadcrumbs)) {
-      //dpm($node);
+      //dpm($breadcrumbs);
       $selected_pid = "";
 
       $query_parameters = drupal_get_query_parameters();
@@ -70,6 +138,7 @@ function diy_sitemap_node_view($node, $build_mode) {
 
       $objs = array('node' => $node);
       if ($breadcrumb = custom_breadcrumbs_select_breadcrumb($breadcrumbs, $objs)) {
+        //dpm($breadcrumb);
         custom_breadcrumbs_set_breadcrumb($breadcrumb, $objs);
       }
     }
@@ -221,7 +290,7 @@ function diy_sitemap_custom_create_alias($module, $op, $source, $data, $type = N
   return $path;
 }
 
-
+/*
 function diy_sitemap_node_insert($node) {
   //dpm("node scheduled:");
   //path_set_alias("node/$node->nid", "node-$node->nid-$node->type");
@@ -241,8 +310,8 @@ function diy_sitemap_node_update($node) {
 
   //dpm($node);
 }
-
-function diy_sitemap_get_categories ($title_field, $title) {
+*/
+function diy_sitemap_get_categories ($title_field, $title, $is_top = false) {
   $link = "";
 
   //dpm($output);
@@ -269,7 +338,19 @@ function diy_sitemap_get_categories ($title_field, $title) {
     $alias = url('node/' . $nid, $options);
 
     $url = $alias;
-    $link = l(t($title), $url,array('external' => TRUE, 'attributes' => array('name' => 'guide'.$nid)));
+
+    if ($is_top) {
+      $link = l(t($title), $url,array('external' => TRUE,
+        'attributes' => array('name' => 'guide'.$nid),
+        'query' => array('topc' => $nid)
+      ));
+    } else {
+      $link = l(t($title), $url,array('external' => TRUE,
+        'attributes' => array('name' => 'guide'.$nid),
+        'query' => array('category' => $nid)
+      ));
+    }
+
   }
 
 

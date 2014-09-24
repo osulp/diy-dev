@@ -216,9 +216,9 @@ $databases = array (
       'default' =>
       array (
         'database' => 'diy_dev',
-        'username' => 'drupal',
-        'password' => 'dr@dm1n',
-        'host' => 'lib-mysql1.library.oregonstate.edu',
+        'username' => 'root',
+        'password' => 'test',
+        'host' => 'localhost',
         'port' => '',
         'driver' => 'mysql',
         'prefix' => '',

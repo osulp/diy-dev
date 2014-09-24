@@ -27,7 +27,7 @@
 $title = $row->{$field->field_alias};
 //dpm($output);
   if (function_exists('diy_sitemap_get_categories')) {
-       $output = diy_sitemap_get_categories($output,$title);
+       $output = diy_sitemap_get_categories($output,$title,true);
    }
 
 ?>
