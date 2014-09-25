@@ -2306,6 +2306,6 @@ div#block-system-user-menu a:hover {
 */
 @media (max-width: 768px) {
   .preface-top-wrapper {
-    display: none;
+    /*display: none;*/
   }
 }
