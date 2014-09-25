@@ -38,7 +38,7 @@
      ?>
 
 
-    <h1><a href='<?php print $base_path; ?>'><?php print $site_name; ?></a></h1>
+    <h1><a href='http://osulibrary.oregonstate.edu/<?php //print $base_path; ?>'><?php print $site_name; ?></a></h1>
 
     <div id="page-inner" class="page-inner">
       <?php print render($page['header_top']); ?>

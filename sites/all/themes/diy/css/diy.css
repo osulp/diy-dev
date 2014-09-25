@@ -20,7 +20,8 @@ div#main {
 }
 
 div#content-group {
-  background-color: #e2e5ea;
+  /*background-color: #e2e5ea;*/
+  background-image: url('../images/patterns/satinweave.png');
   height: 100%;
 }
 
@@ -56,6 +57,7 @@ body.node-type-diy-guide div#main-inner, body.node-type-guide-categories div#mai
 
 body.front div#main-inner {
   background-color: #e2e5ea;
+  background-image: url('../images/patterns/satinweave.png');
 }
 
 /* @end */
@@ -578,6 +580,10 @@ body.front .view-sidebar-node-title {
 
 body.front .view-sidebar-subtitle {
   padding-top:1.5em;
+}
+
+div#preface-top-wrapper {
+    margin-top: -1em;
 }
 
 @media (max-width: 979px) {

@@ -128,8 +128,8 @@ h2, h4 {
 }
 
 /* Social Links */
-	.social-media {position:relative; top:4px;}
-	.social-media a {background-image: url('/sites/all/themes/doug_fir_library/images/socialnetworks.png'); display: block; width: 16px; height: 16px; text-indent:-100px; overflow: hidden; margin: 2px 0; }
+	.social-media {position:relative; top:2em; margin-right: -2em;}
+	.social-media a {background-image: url('../../doug_fir_library/images/socialnetworks.png'); display: block; width: 16px; height: 16px; text-indent:-100px; overflow: hidden; margin: 2px 0; }
 	.social-media .fb {background-position: 0 32px;}
 	.social-media .twitter {background-position: 0 16px;}
 
@@ -1322,24 +1322,29 @@ ul.osulheader-menu, #block-menu-menu-osul-utility ul.menu {float: left; font-siz
 .osulheader-menu li, #block-menu-menu-osul-utility li {display: block; float: left; height: 21px; }
 #block-menu-menu-osul-utility li {padding: 1px 0 0 0; margin: 0;}
 #block-menu-menu-osul-utility li a {border-right: 1px solid #fff;}
-#osu-top-hat ul.menu li.first {background: url(/sites/all/themes/osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
+#osu-top-hat ul.menu li.first {background: url(../../osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
 padding: 3px 5px 3px 37px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px;}
 #osu-top-hat ul.menu li.first:hover { background-color: #555; }
 #osu-top-hat ul.menu li.first a:hover{background-color:transparent;}
 
-#osu-top-hat ul.menu li.last {background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;
-margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+#osu-top-hat ul.menu li.last {
+  /*background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;*/
+  margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+}
+
 #osu-top-hat ul.menu li.last:hover {background-color: #555;}
 #osu-top-hat ul.menu li.last a:hover{background-color:transparent;}
 
 @media (max-width: 979px) {
-	#osu-top-hat ul.menu li.first.leaf {background: url(/sites/all/themes/osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
+	#osu-top-hat ul.menu li.first.leaf {background: url(../../osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
 		padding: 3px 5px 3px 37px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px;}
 	#osu-top-hat ul.menu li.first:hover { background-color: #555; }
 	#osu-top-hat ul.menu li.first a:hover{background-color:transparent;}
 
-	#osu-top-hat ul.menu li.last.leaf {background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;
-		margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
+	#osu-top-hat ul.menu li.last.leaf {
+    /*background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;*/
+		margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
+  }
 	#osu-top-hat ul.menu li.last:hover {background-color: #555;}
 	#osu-top-hat ul.menu li.last a:hover{background-color:transparent;}
 
@@ -1431,7 +1436,7 @@ margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-bo
 #tweets ul li {list-style: none; margin: 0 0 1em; word-wrap:break-word;}
 
 /* right sidebar: social media icons */
-.social-links a {outline: 0; display: inline-block; height: 16px; width: 16px; margin: 0 4px; background: url(/sites/all/themes/osu_confident/images/archives_images/socialnetworks.png); text-indent: -99999px;}
+.social-links a {outline: 0; display: inline-block; height: 16px; width: 16px; margin: 0 4px; background: url(../../osu_confident/images/archives_images/socialnetworks.png); text-indent: -99999px;}
 .social-links a.fb {background-position: 0 32px;}
 .social-links a.twitter {background-position: 0 16px;}
 
