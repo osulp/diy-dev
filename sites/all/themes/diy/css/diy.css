@@ -93,7 +93,7 @@ body.front div#main-inner {
   line-height: 120%;
   border-bottom: 1px solid white;
   padding-bottom: 15px;
-  font-size: 150%;
+  font-size: 138%;
 }
 
 #block-views-related_diys-block div.gutter {
@@ -592,10 +592,10 @@ div#preface-top-wrapper {
     font-size: 250%;
   }
   body.node-type-diy-guide div#content-group.content-group.region.nested  {
-    width: 76.33% !important;
+    width: 59.33% !important;
   }
   body.node-type-diy-guide div#sidebar-second.region.region-sidebar-second.sidebar-second.nested {
-    width: 23.67%% !important;
+    width: 40.67% !important;
   }
 
   body.front .view-sidebar-node-title .page-title-front p{
@@ -641,10 +641,10 @@ div#preface-top-wrapper {
     font-size: 250%;
   }
   body.node-type-diy-guide div#content-group.content-group.region.nested  {
-    width: 81.33% !important;
+    width: 68.33% !important;
   }
   body.node-type-diy-guide div#sidebar-second.region.region-sidebar-second.sidebar-second.nested {
-    width: 18.67%% !important;
+    width: 30.67% !important;
   }
 
 }
@@ -655,11 +655,14 @@ div#preface-top-wrapper {
     line-height: 120%;
     font-size: 250%;
   }
+  #block-views-sidebar_node_title-block_2 h1 {
+    font-size: 185%;
+  }
   body.node-type-diy-guide div#content-group.content-group.region.nested  {
-    width: 83.33% !important;
+    width: 74.33% !important;
   }
   body.node-type-diy-guide div#sidebar-second.region.region-sidebar-second.sidebar-second.nested {
-    width: 16.67%% !important;
+    width: 25.67% !important;
   }
 
 
