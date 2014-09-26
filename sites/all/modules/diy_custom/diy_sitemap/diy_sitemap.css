@@ -135,7 +135,7 @@ font-size: 81.25%;
 
 @media (min-width: 980px) and (max-width: 1199px) {
   #block-views-diy_guide_list-block div.views-field-field-list-title a {
-    margin-left: 1em !important;
+    margin-left: 0.7em !important;
   }
 
   div#block-views-front_page_categories-block div.views-field-field-list-title a {
