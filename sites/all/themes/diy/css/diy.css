@@ -586,6 +586,10 @@ div#preface-top-wrapper {
     margin-top: -1em;
 }
 
+body.page-gsearch div#content-group {
+  background: none;
+}
+
 @media (max-width: 979px) {
   #block-views-sidebar_node_title-block_1 h1 {
     line-height: 120%;
