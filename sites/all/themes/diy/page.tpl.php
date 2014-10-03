@@ -103,14 +103,25 @@
                         </div><!-- /content-region -->
 
                       </div><!-- /content-group-inner -->
+                      <div class="license">
+                        OSU's Library DIY is adapted from the Library DIY project created by Meredith Farkas, Amy Hofer, Lisa Molinelli and Kimberly Willson-St. Clair at Portland State University Library.
+                        Many thanks to them for making the <a href="https://github.com/pdxlibrary/Library-DIY">source code</a> available. </ br>
+
+                        <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons Attribution - Sharealike license</a>
+                      </div>
                     </div><!-- /content-group -->
                     <?php print render($page['sidebar_second']); ?>
+
                   </div><!-- /main-content-inner -->
                 </div><!-- /main-content -->
 
                 <?php print render($page['postscript_top']); ?>
+
               </div><!-- /main-group-inner -->
             </div><!-- /main-group -->
+
+
+
           </div><!-- /main-inner -->
           <!-- CUSTOM FOOTER GOES HERE -->
         </div><!-- /main -->
