@@ -590,6 +590,17 @@ body.page-gsearch div#content-group {
   background: none;
 }
 
+
+.license {
+  font-size: 12px;
+  padding: 1em;
+  display: none;
+}
+
+body.front .license {
+  display: block !important;
+}
+
 @media (max-width: 979px) {
   #block-views-sidebar_node_title-block_1 h1 {
     line-height: 120%;
