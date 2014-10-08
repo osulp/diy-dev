@@ -597,6 +597,16 @@ body.page-gsearch div#content-group {
   display: none;
 }
 
+.license .license_img {
+  float: left;
+  padding-right: 1em;
+  padding-top: 0.3em;
+}
+
+.license .license_credits {
+  float: right;
+}
+
 body.front .license {
   display: block !important;
 }
