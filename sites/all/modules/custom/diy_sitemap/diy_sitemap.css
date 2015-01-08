@@ -21,7 +21,11 @@ div#block-views-front_page_categories-block div.views-field-field-list-title a {
 
 div#block-megamenu-menu-menu-osul {
   top: -3px;
+  margin-bottom: -2px;
+  float: none;
 }
+
+
 
 div#block-quicktabs-osu_library_search .content{
   margin: 0px;
@@ -29,6 +33,8 @@ div#block-quicktabs-osu_library_search .content{
 }
 div#block-quicktabs-osu_library_search {
   font-weight: normal;
+  margin-right: 0px;
+  float: none;
 }
 
 form#osul-search-library-form input.form-submit,
@@ -38,6 +44,10 @@ form#osul-search-reserves-form input.form-submit {
 
 .quicktabs_main.quicktabs-style-osulp {
   margin: -4px 0 0 0 !important;
+}
+
+.license {
+  float: right;
 }
 
 @media (max-width: 767px) {
@@ -110,41 +120,44 @@ form#osul-search-reserves-form input.form-submit {
     width: 113% !important;
   }
 
-body.front div#main-group-inner,
-body.node-type-guide-categories div#main-group-inner{
-  width: 112.5% !important;
-}
-div#main-content-inner {
-  width: 100%;
-}
-
-.font-size-13 {
-font-size: 81.25%;
-}
-
-/*
-  #sidebar-first.region.region-sidebar-first.sidebar-first.nested.sidebar {
-    width: 26%;
-    background-color: #00759A !important;
+  body.front div#main-group-inner,
+  body.node-type-guide-categories div#main-group-inner{
+    width: 112.5% !important;
+  }
+  div#main-content-inner {
+    width: 100%;
   }
 
-  body.node-type-guide-categories div#main-inner {
-    background-color: #e2e5ea !important;
-  }
-  */
-
-/*
-  #main-wrapper.main-wrapper.full-width {
-    width: 98.4%;
-  }
-  #block-views-diy_guide_list-block div.views-field-field-list-title a {
-    margin-left: 1em !important;
+  .font-size-13 {
+  font-size: 81.25%;
   }
 
-  div#block-views-front_page_categories-block div.views-field-field-list-title a {
-    margin-left: 1em !important;
+  /*
+    #sidebar-first.region.region-sidebar-first.sidebar-first.nested.sidebar {
+      width: 26%;
+      background-color: #00759A !important;
+    }
+
+    body.node-type-guide-categories div#main-inner {
+      background-color: #e2e5ea !important;
+    }
+    */
+
+  /*
+    #main-wrapper.main-wrapper.full-width {
+      width: 98.4%;
+    }
+    #block-views-diy_guide_list-block div.views-field-field-list-title a {
+      margin-left: 1em !important;
+    }
+
+    div#block-views-front_page_categories-block div.views-field-field-list-title a {
+      margin-left: 1em !important;
+    }
+    */
+  div#block-megamenu-menu-menu-osul {
+    margin-top: 3em;
   }
-  */
 }
 
 @media (min-width: 980px) {
@@ -162,6 +175,18 @@ font-size: 81.25%;
   div#block-views-front_page_categories-block div.views-field-field-list-title a {
     margin-left: 1em !important;
   }
+
+  div#block-quicktabs-osu_library_search {
+    margin-left: 1.5em;
+  }
+  div#block-megamenu-menu-menu-osul {
+    margin-left: -1em;
+  }
+  .megamenu-skin-osul h2 a {
+      padding: 10px 47px 10px 30px;
+  }
+
+
 
 }
 
