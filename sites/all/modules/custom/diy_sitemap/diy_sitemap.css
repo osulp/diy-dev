@@ -19,6 +19,27 @@ div#block-views-front_page_categories-block div.views-field-field-list-title a {
   font-size: 110% !important;
 }
 
+div#block-megamenu-menu-menu-osul {
+  top: -3px;
+}
+
+div#block-quicktabs-osu_library_search .content{
+  margin: 0px;
+
+}
+div#block-quicktabs-osu_library_search {
+  font-weight: normal;
+}
+
+form#osul-search-library-form input.form-submit,
+form#osul-search-reserves-form input.form-submit {
+  background: #C34500 !important;
+}
+
+.quicktabs_main.quicktabs-style-osulp {
+  margin: -4px 0 0 0 !important;
+}
+
 @media (max-width: 767px) {
 
 }
