@@ -11,6 +11,7 @@
  *
  * @see template_preprocess_google_appliance_block_form()
  */
+//dsm($variables);
 ?>
 <div class="container-inline">
   <?php if (empty($variables['form']['#block']->subject)) : ?>
