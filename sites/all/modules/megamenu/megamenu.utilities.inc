@@ -9,9 +9,8 @@
 /**
  * function menu_list()
  *
- * Helper function lists menu machine names except 'navigation'.
- * @todo I think this will have to be changed to some stored value, but maybe
- *   not? could still be 1 function?
+ * helper function lists menu machine names except 'navigation'
+ * I think this will have to be changed to some stored value, but maybe not? could still be 1 function?
  */
 function _megamenu_menulist() {
   $menu_list = menu_get_menus();
@@ -24,7 +23,7 @@ function _megamenu_enabled_menus() {
   /*
   $menus = array();
   $result = db_query("SELECT menu_name FROM {megamenu} WHERE enabled = 1");
-
+  
   while ($menu = db_fetch_object($result)) {
     $menus[] = $menu->menu_name;
   }
@@ -57,17 +56,17 @@ function _megamenu_enabled_menus() {
 function _megamenu_get_menu_tree($menuname) {
   $menutree = menu_tree_all_data($menuname);
   $menutree_page = menu_tree_page_data($menuname); // Contains active trail
-  foreach ($menutree as $tier_1_key => $tier_1_item) {
+  foreach($menutree as $tier_1_key => $tier_1_item) {
     if ($menutree[$tier_1_key]['link']['in_active_trail']) {
       $menutree[$tier_1_key]['link']['in_active_trail'] = TRUE;
     }
-
+    
     if ($tier_1_item['link']['hidden'] == 1 || empty($tier_1_item['link']['link_title'])) {
       unset($menutree[$tier_1_key]);
     }
     else {
       if ($tier_1_item['below']) {
-        foreach ($tier_1_item['below'] as $tier_2_key => $tier_2_item) {
+        foreach($tier_1_item['below'] as $tier_2_key => $tier_2_item) {
           if ($menutree[$tier_1_key]['below'][$tier_2_key]['link']['in_active_trail']) {
             $menutree[$tier_1_key]['below'][$tier_2_key]['link']['in_active_trail'] = TRUE;
           }
@@ -76,15 +75,15 @@ function _megamenu_get_menu_tree($menuname) {
           }
           else {
             if ($tier_2_item['below']) {
-              foreach ($tier_2_item['below'] as $tier_3_key => $tier_3_item) {
+              foreach($tier_2_item['below'] as $tier_3_key => $tier_3_item) {
                 if ($menutree[$tier_1_key]['below'][$tier_2_key]['below'][$tier_3_key]['link']['in_active_trail']) {
                   $menutree[$tier_1_key]['below'][$tier_2_key]['below'][$tier_3_key]['link']['in_active_trail'] = TRUE;
                 }
-
+								
                 if ($tier_3_item['link']['hidden'] == 1 || empty($tier_3_item['link']['link_title'])) {
                   unset($menutree[$tier_1_key]['below'][$tier_2_key]['below'][$tier_3_key]);
                 }
-                elseif ($tier_3_item['below']) {
+                else if ($tier_3_item['below']) {
                   unset($menutree[$tier_1_key]['below'][$tier_2_key]['below'][$tier_3_key]['below']);
                 }
               } // end level 3 loop
@@ -100,7 +99,7 @@ function _megamenu_get_menu_tree($menuname) {
 /**
  * Determine if a particular mega menu item is active.
  *
- * @todo make it better
+ * TODO: make it better
  *
  * @param <string> $branch (of mega menu)
  */
@@ -124,19 +123,17 @@ function _megamenu_active_classes($branch) {
 /**
  * Remove the list wrapping div - we don't need it
  *
- * @todo Use regex replace instead?
- *
  * @param <strong> $list_markup
  */
 function _megamenu_strip_list_wrapper($output = null) {
 
-  // Remove opening wrapper div class.
-  $output = str_replace('<div class="item-list">', '', $output);
-
-  // Remove wrapper end div closer.
-  $output = substr($output, 0, strlen($output) - strlen('</div>'));
-
-  return $output;
+	// Remove opening wrapper div class.
+	$output = str_replace('<div class="item-list">', '', $output);
+	
+	// Remove wrapper end div closer.
+	$output = substr($output, 0, strlen($output) - strlen('</div>'));
+	
+	return $output;
 }
 
 /**
@@ -151,7 +148,6 @@ function _megamenu_strip_list_wrapper($output = null) {
  *    An item's numerical position within a sequence.
  * @param $leafcount
  *    The total count of items
- *
  * @return
  *    zebra (event/odd), halves (half1/half2), and order (first/last). clases are
  *    returned as a space delimited list.
@@ -191,10 +187,10 @@ function _megamenu_get_slot_orientation_by_name($menu_name) {
   return $result;
 }
 
-/*function _megamenu_get_slot_attributes_by_name($menu_name) {
+function _megamenu_get_slot_attributes_by_name($menu_name) {
   // TODO: Query db
   return '';
-}*/
+}
 
 /**
  * Verify Menu Entry
@@ -207,18 +203,18 @@ function _megamenu_verify_menu_entry($menu_name) {
 
   if (!$result) {
     db_insert('megamenu')
-      ->fields(array(
-        'menu_name' => $menu_name,
-        'enabled' => 0,
-      ))
-      ->execute();
+    ->fields(array(
+      'menu_name' => $menu_name,
+      'enabled' => 0,
+    ))
+    ->execute();
   }
 }
 
 /**
  * Determine if a particular mega menu is using a default supplied skin.
  *
- * @todo Rewrite this function! This is just a quick and dirty solution.
+ * @TODO: Rewrite this function! This is just a quick and dirty solution.
  *
  * @param <string> $menu_name
  */
@@ -237,7 +233,7 @@ function _megamenu_is_skin_default($menu_name) {
  */
 function _megamenu_get_translated_menu_title($current_menu, $mlid) {
   $item = menu_link_load($mlid);
-
+  
   if (module_exists('i18n_menu')) {
     $item['title'] = _i18n_menu_link_title($item);
   }

@@ -21,18 +21,17 @@ function megamenu_page_build(&$page) {
   $path = drupal_get_path('module', 'megamenu');
 
   // Add JavaScript.
-  drupal_add_js(array('megamenu' => array(
-    'timeout' => variable_get('megamenu_menu_timeout', 500),
-    'sizewait' => variable_get('megamenu_menu_sizewait', 500),
-    'hoverwait' => variable_get('megamenu_menu_hoverwait', 500),
-  )), 'setting');
-  drupal_add_js($path . '/megamenu.js');
+  $timeout = variable_get('megamenu_menu_timeout', 500);
+  $sizewait = variable_get('megamenu_menu_sizewait', 500);
+  $hoverwait = variable_get('megamenu_menu_hoverwait', 500);
+  drupal_add_js(array('megamenu' => array('timeout' => $timeout, 'sizewait' => $sizewait, 'hoverwait' => $hoverwait)), 'setting');
+  drupal_add_js($path .'/megamenu.js');
 
   // Add main CSS functionality.
-  drupal_add_css($path . '/megamenu.css');
+  drupal_add_css($path .'/megamenu.css');
 
-  // Load default skins.
-  // @todo Don't load if custom skin (but not custom CSS)...
+  // load default skins
+  // todo don't load if custom skin (but not custom CSS)...
   drupal_add_css($path . '/megamenu-skins.css');
 
   //I THINK YOU SHOULD CONSIDER MOVING THIS
@@ -43,6 +42,11 @@ function megamenu_page_build(&$page) {
     drupal_add_css($customcsspath);
   }
   */
+
+  // What is this for???
+  if (module_exists('i18n')) {
+    module_load_include('module', 'i18n', 'i18n_menu/i18n_menu');
+  }
 }
 
 /**
@@ -105,26 +109,21 @@ function megamenu_preprocess_megamenu_admin(&$variables) {
   }
 }
 
-/**
- * Implements hook_block_info().
- */
 function megamenu_block_info() {
   $blocks = array();
   $menus = _megamenu_enabled_menus();
   foreach ($menus as $menu_name) {
-    $menu_details = menu_load($menu_name);
+    $menudetails = menu_load($menu_name);
     $blocks[$menu_name] = array(
-      'info' => t('Megamenu - @title', array('@title' => $menu_details['title'])),
-      'cache' => DRUPAL_CACHE_PER_PAGE,
+      'info' => t('Megamenu - @title', array('@title' => $menudetails['title'])),
+      // Why not per page???
+      'cache' => DRUPAL_NO_CACHE,
     );
   }
   return $blocks;
 }
 
-/**
- * Implements hook_block_view().
- */
-function megamenu_block_view($delta = '') {
+function megamenu_block_view($delta = 0) {
   $menus = _megamenu_enabled_menus();
   if ($menus) {
     $key = array_search($delta, $menus);
@@ -142,6 +141,13 @@ function megamenu_block_view($delta = '') {
 
     return $block;
   }
+}
+
+/**
+ * Implements hook_help()
+ */
+function megamenu_help($path, $arg) {
+
 }
 
 /**
@@ -171,7 +177,7 @@ function megamenu_block_view($delta = '') {
  */
 function megamenu_theme_menu_tree($menu_name) {
   $menutree = _megamenu_get_menu_tree($menu_name);
-
+  
   if (function_exists('i18n_menu_localize_tree')) {
     $menutree = i18n_menu_localize_tree($menutree);
   }
@@ -182,24 +188,24 @@ function megamenu_theme_menu_tree($menu_name) {
   print_r($test);exit();
   */
   $skin = _megamenu_get_skin_by_name($menu_name);
-  //$menu_orientation = _megamenu_get_menu_orientation_by_name($menu_name);
+  $menu_orientation = _megamenu_get_menu_orientation_by_name($menu_name);
 
-  // @todo Currently, these attributes are set menu wide. Eventually these might should be set per menu level?
-  /* @todo temp value, should be attached to branch level in admin interface */
+  // @TODO: Currently, these attributes are set menu wide. Eventually these might should be set per menu level?
+  /* TODO: temp value, should be attached to branch level in admin interface */
   $slot_orientation = _megamenu_get_slot_orientation_by_name($menu_name);
-  /* @todo temp value, should be attached to twig level in admin interface. */
-  $slot_attributes = ''; //_megamenu_get_slot_attributes_by_name($menu_name);
+  /* TODO: temp value, should be attached to twig level in admin interface. */
+  $slot_attributes = _megamenu_get_slot_attributes_by_name($menu_name);
   $t1_position = 0;
   $branch_count = count($menutree);
   $branch_items = array();
-
+  
   foreach ($menutree as $branch) {
     $leaf_items_list = '';
     $twig_items_list = '';
     if ($branch['below']){
       $t2_position = 0;
       $twig_count = count($branch['below']);
-
+      
       foreach ($branch['below'] as $twig) {
         $leaf_items_list = '';
         if ($twig['below']) {
@@ -209,11 +215,11 @@ function megamenu_theme_menu_tree($menu_name) {
             // are we active / active-trail ?
             $active = _megamenu_active_classes($leaf);
             // $leaf_link_options['attributes'] = array('class'=>$active);
-
+          	
             $t3_count_attributes = _megamenu_count_attributes($t3_position, $leaf_count);
             $t3_position++;
-
-            $leaf_items[] = array(
+          	
+          	$leaf_items[] = array(
               'data'=>l($leaf['link']['link_title'], $leaf['link']['href'], $leaf['link']['options']),
               'id' => 'megamenu-mlid-'.$leaf['link']['mlid'],
               'class' => array(
@@ -222,12 +228,12 @@ function megamenu_theme_menu_tree($menu_name) {
                 $active,
               ),
             );
-
+          	
           } // END leaf iteration
-
+          
           // Build leaf list
           $leaf_list_options = array(
-            'class'=> array(
+          	'class'=> array(
               'megamenu-items',
               $slot_attributes,
             ),
@@ -235,7 +241,7 @@ function megamenu_theme_menu_tree($menu_name) {
           $leaf_items_list = theme('item_list', array('items' => $leaf_items, 'attributes' => $leaf_list_options));
           $leaf_items_list = _megamenu_strip_list_wrapper($leaf_items_list);
           unset($leaf_items);
-
+          
         } // END leaf detection
 
         $t2_count_attributes = _megamenu_count_attributes($t2_position, $twig_count);
@@ -246,21 +252,21 @@ function megamenu_theme_menu_tree($menu_name) {
         //$link_options['attributes'] = array('class'=>$active);
         // This twig's <li> content
         $twig_data = '<h3 class="megamenu-slot-title">';
-        $twig_data .= l(_megamenu_get_translated_menu_title($menu_name, $twig['link']['mlid']), $twig['link']['href'], $twig['link']['options']);
+        $twig_data .= l(_megamenu_get_translated_menu_title($menu_name,$twig['link']['mlid']), $twig['link']['href'], $twig['link']['options']);
         $twig_data .= '</h3>';
         $twig_data .= $leaf_items_list;
 
-        $twig_items[]  = array(
+        $twig_items[]	= array(
           'data' => $twig_data,
           'id' => 'megamenu-mlid-' . $twig['link']['mlid'],
           'class' => array('megamenu-slot','megamenu-slot-' . $t2_count_attributes, $active),
         );
-        unset($leaf_items_list);
+		unset($leaf_items_list);
       } // END twig iteration
 
       // Build twig list
       $twig_list_options = array(
-        'class' => array(
+      	'class' => array(
           'megamenu-bin',
           'megamenu-slots-' . $slot_orientation,
         ),
@@ -268,20 +274,20 @@ function megamenu_theme_menu_tree($menu_name) {
       $twig_items_list = theme('item_list', array('items' => $twig_items, 'attributes' => $twig_list_options));
       $twig_items_list = _megamenu_strip_list_wrapper($twig_items_list);
       unset($twig_items);
-
+      
     }  // END twig detection
+	
 
-
-  // setup active link classes
-  $active = _megamenu_active_classes($branch);
-
-  // Link options
-  $branch_link_options['attributes'] = array('class' => $active);
-
-    // setup $t1_count_attributes (classes)
-    $t1_count_attributes = _megamenu_count_attributes($t1_position, $branch_count);
+	// setup active link classes
+  	$active = _megamenu_active_classes($branch);
+  	
+  	// Link options
+	$branch_link_options['attributes'] = array('class' => $active);
+		
+  	// setup $t1_count_attributes (classes)
+  	$t1_count_attributes = _megamenu_count_attributes($t1_position, $branch_count);
     $t1_position++;
-
+    
     $branch_items[] = array(
       'data' => '<h2 class="megamenu-parent-title">'.
         l(_megamenu_get_translated_menu_title($menu_name,$branch['link']['mlid']), $branch['link']['href'], $branch['link']['options']) .
@@ -292,20 +298,20 @@ function megamenu_theme_menu_tree($menu_name) {
     unset($twig_items_list);
 
   } // END branch iteration
-
+  
   // Build branch list
   $branch_list_options = array(
-    'id' => 'megamenu-' . $menu_name,
-    'class' => array(
+  	'id' => 'megamenu-' . $menu_name,
+  	'class' => array(
       'megamenu-menu',
       $slot_orientation,
       'megamenu-skin-' . $skin,
     ),
   );
-
+  
   $output = theme('item_list', array('items' => $branch_items, 'attributes' => $branch_list_options));
   $output = _megamenu_strip_list_wrapper($output);
   unset($branch_items);
-
+  
   return $output;
 }

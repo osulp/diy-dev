@@ -3,27 +3,33 @@ CONTENTS OF THIS FILE
 
 Description
 -----------
-This module allows users to export all system specific blocks ( system specific
-blocks are those blocks which are created using Drupal interface add block
-functionality.) and then import it into another Drupal installation, or on the
-same site.
+This module allows users to export all system specific blocks (are those blocks
+which are created using Drupal interface add block functionality) and then
+import it into another Drupal installation, or on the same site.
+
+No additional configuration is required to export/Import block(s). Also this
+module does not create any table in the database. Therefore it will not effect
+the application performance.
 
 Export
 ------
-The blocks export interface allows the user to select a single or multiple
-blocks to export.
+The export interface allows the user to export a single or multiple blocks with 
+the following.
 
-User have choice to export each block with the Basic information
-or Full Information
+Export system specific block information.
+Export the pages, content types, roles, users visibility settings.
+Export CSS class(es) if corresponding module is installed.
 
 Import
 ------
-The blocks import page accepts the custom array structure an an input which are
-exported by using export.
-feature of this module.
+Import all system specific block information.
+Import all block roles.
+Import all block content types.
+Import CSS class(es) if corresponding module is installed.
 
-Before start of importing process administrator have a choice to override
-existing block(s).
+New Feature
+-----------
+Now it also support to export/import the theme region(s).
 
 Installation
 ------------

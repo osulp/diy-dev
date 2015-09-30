@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Form constructor for megamenu configuration.
- *
- * @see megamenu_admin_form_submit()
- * @ingroup forms
+ * Implements hook_form().
  */
 function megamenu_admin_form($form, &$form_state = NULL) {
   $form = array();
@@ -55,37 +52,12 @@ function megamenu_admin_form($form, &$form_state = NULL) {
     '#description' => t('Menu hover wait, default is 400.'),
   );
   $form['#theme'] = 'megamenu_admin';
+  $form['#validate'][] = 'megamenu_admin_form_validate';
   $form['#submit'][] = 'megamenu_admin_form_submit';
 
   return $form;
 }
 
-/**
- * Submit the main admin form.
- */
-function megamenu_admin_form_submit($form, &$form_state) {
-  drupal_set_message(t('Configuration Saved'));
-  variable_set('megamenu_menu_timeout', $form_state['values']['timeout']);
-  variable_set('megamenu_menu_sizewait', $form_state['values']['sizewait']);
-  variable_set('megamenu_menu_hoverwait', $form_state['values']['hoverwait']);
-
-  foreach (_megamenu_menulist() as $menu_name) {
-    db_update('megamenu')
-      ->fields(array(
-        'enabled' => $form_state['values'][$menu_name],
-      ))
-      ->condition('menu_name', $menu_name)
-      ->execute();
-  }
-}
-
-/**
- * Form constructor for single megamenu configuration.
- *
- * @see megamenu_settings_form_validate()
- * @see megamenu_settings_form_submit()
- * @ingroup forms
- */
 function megamenu_settings_form($form, &$form_state, $menu_name = '') {
   drupal_set_title(t('Megamenu settings for: @menu-name', array('@menu-name' => $menu_name)));
 
@@ -119,7 +91,7 @@ function megamenu_settings_form($form, &$form_state, $menu_name = '') {
     '#description' => t('Select a skin for this menu'),
   );
 
-  // @todo Create a function to return a list of default skins.
+  // @TODO: Create a function to return a list of default skins.
   $form['style']['skin_options'] = array(
     '#title' => t('Skin Type'),
     '#type' => 'radios',
@@ -135,8 +107,8 @@ function megamenu_settings_form($form, &$form_state, $menu_name = '') {
     '#default_value' => _megamenu_is_skin_default($menu_name) ? _megamenu_get_skin_by_name($menu_name) : 'minimal',
     '#description' => t('Select one of the supplied skins to use'),
   );
-  // @todo Make this path a variable somehow so it can be called more easily.
-  // @todo Make the "file exists/does not" text stand out.
+  // @TODO: make this path a variable somehow so it can be called more easily.
+  // @TODO: make the "file exists/does not" text stand out.
   /*
   $form['style']['custom_css'] = array(
     '#type' => 'item',
@@ -165,13 +137,46 @@ function megamenu_settings_form($form, &$form_state, $menu_name = '') {
   return $form;
 }
 
+/**
+ * Validate the main admin form.
+ */
+function megamenu_admin_form_validate($form, &$form_state) {
+  //drupal_set_message(t('Validated'));
+
+  // @TODO: Is there anything to validate on this form?
+  
+}
+
+/**
+ * Submit the main admin form.
+ */
+function megamenu_admin_form_submit($form, &$form_state) {
+  drupal_set_message(t('Configuration Saved'));
+  variable_set('megamenu_menu_timeout', $form_state['values']['timeout']);
+  variable_set('megamenu_menu_sizewait', $form_state['values']['sizewait']);
+  variable_set('megamenu_menu_hoverwait', $form_state['values']['hoverwait']);
+
+  foreach (_megamenu_menulist() as $menu_name) {
+    db_update('megamenu')
+      ->fields(array(
+        'enabled' => $form_state['values'][$menu_name],
+      ))
+      ->condition('menu_name', $menu_name)
+      ->execute();
+  }
+}
+
+/**
+ * Validate the settings form.
+ */
 function megamenu_settings_form_validate($form, &$form_state) {
+  // $settings = $form_state['values']['settings']; WTF IS THIS?
   // Need to validate the advanced value. Must be number and can't be a negative value.
   if ($form_state['values']['skin_options'] == 'custom_skin') {
     if ($form_state['values']['custom_skin'] == '') {
       form_set_error('custom_skin', t('If you want to use a custom skin, you must specify its name'));
     }
-    elseif (!check_plain($form_state['values']['custom_skin'])) {
+    else if (!check_plain($form_state['values']['custom_skin'])) {
       form_set_error('custom_skin', t('Value must be plain text'));
     }
     else {
@@ -184,9 +189,12 @@ function megamenu_settings_form_validate($form, &$form_state) {
   }
 
   $form_state['megamenu']['skin'] = $skin;
-
+  
 }
 
+/**
+ * Submit the settings form.
+ */
 function megamenu_settings_form_submit($form, &$form_state) {
   $menu_name = $form_state['values']['menu_name'];
   $skin = $form_state['megamenu']['skin'];
