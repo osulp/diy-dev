@@ -6,9 +6,10 @@ dependencies[] = block
 core = 7.x
 configure = admin/config/user-interface/megamenu
 
-; Information added by Drupal.org packaging script on 2015-05-14
-version = "7.x-1.x-dev"
+
+; Information added by Drupal.org packaging script on 2015-06-26
+version = "7.x-1.0-alpha1"
 core = "7.x"
 project = "megamenu"
-datestamp = "1431630782"
+datestamp = "1435327381"
 

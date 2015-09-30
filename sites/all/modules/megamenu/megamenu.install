@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file
+ * @file 
  */
 
 /**
@@ -80,6 +80,6 @@ function megamenu_update_7000() {
   );
 
   $result = db_change_field('megamenu', 'enabled', 'enabled', $spec);
-
+  
   return $result;
 }

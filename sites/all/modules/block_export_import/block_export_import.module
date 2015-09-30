@@ -12,36 +12,13 @@
  * Implements hook_help().
  */
 function block_export_import_help($path, $arg) {
+  $help = '';
   switch ($path) {
-    case 'admin/help#block-export-import':
-      $output = '<h3>' . t('Installation') . '</h3>';
-      $output .= '<p>' . t('Quite simple, Download the module and put into your
-      your_drupal_site_path/sites/all/modules and install from your admin panel.') . '</p>';
-      $output .= '<h3>' . t('Configuration') . '</h3>';
-      $output .= '<p>' . t('After successful installation you able to export
-      your all system specific blocks from Admin >> Structure >>
-      Export Blocks') . '</p>';
-      $output .= '<h3>' . t('Export Blocks') . '</h3>';
-      $output .= '<p>' . t('Select the specific blocks to export with the
-      feature of Base Information or Full Information.') . '</p>';
-      $output .= '<p>' . t('Base Information: it will export only Block
-      description, Block body and  Text format.') . '</p>';
-      $output .= '<p>' . t('Full Information: it will export all information
-      which inclueds Base Information plus Block title,  Visibility settings
-      and css Classes.') . '</p>';
-      $output .= '<p>' . t('Now click on Export tab.') . '</p>';
-      $output .= '<p>' . t('Copy all the data form Export Block(s) Code
-      textarea.') . '</p>';
-      $output .= '<h3>' . t('Import Blocks') . '</h3>';
-      $output .= '<p>' . t('Access the link
-      admin/structure/export-import-block/import') . '</p>';
-      $output .= '<p>' . t('Paste your exported code in displayed
-      box.') . '</p>';
-      $output .= '<p>' . t('Click on Import Blocks.') . '</p>';
-      $output .= '<h3>' . t('Dependencies') . '</h3>';
-      $output .= '<p>' . t('1. Block') . '</p>';
-      return $output;
+    case 'admin/help#block_export_import':
+      $help = check_markup(file_get_contents(dirname(__FILE__) . "/README.txt"));
+      break;
   }
+  return $help;
 }
 
 /**
@@ -92,8 +69,9 @@ function block_export_import_menu() {
  * @return array
  *   An block table fields array.
  */
-function _block_export_import_get_block_schema_fields() { 
+function _block_export_import_get_block_schema_fields() {
   $block_schema = drupal_get_schema('block');
   $block_schema_fields = array_keys($block_schema['fields']);
   return $block_schema_fields;
 }
+
