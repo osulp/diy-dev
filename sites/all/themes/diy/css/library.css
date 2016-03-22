@@ -1322,29 +1322,20 @@ ul.osulheader-menu, #block-menu-menu-osul-utility ul.menu {float: left; font-siz
 .osulheader-menu li, #block-menu-menu-osul-utility li {display: block; float: left; height: 21px; }
 #block-menu-menu-osul-utility li {padding: 1px 0 0 0; margin: 0;}
 #block-menu-menu-osul-utility li a {border-right: 1px solid #fff;}
-#osu-top-hat ul.menu li.first {background: url(../../osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
-padding: 3px 5px 3px 37px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px;}
+#osu-top-hat ul.menu li.first { padding: 3px 5px 3px 5px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px; }
 #osu-top-hat ul.menu li.first:hover { background-color: #555; }
 #osu-top-hat ul.menu li.first a:hover{background-color:transparent;}
 
-#osu-top-hat ul.menu li.last {
-  /*background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;*/
-  margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
-}
-
+#osu-top-hat ul.menu li.last { background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent; margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
 #osu-top-hat ul.menu li.last:hover {background-color: #555;}
 #osu-top-hat ul.menu li.last a:hover{background-color:transparent;}
 
 @media (max-width: 979px) {
-	#osu-top-hat ul.menu li.first.leaf {background: url(../../osu_confident/images/osul_images/askus.png) 10% 50% no-repeat transparent;
-		padding: 3px 5px 3px 37px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px;}
+	#osu-top-hat ul.menu li.first.leaf { padding: 3px 5px 3px 37px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top:-3px; margin-left:20px;}
 	#osu-top-hat ul.menu li.first:hover { background-color: #555; }
 	#osu-top-hat ul.menu li.first a:hover{background-color:transparent;}
 
-	#osu-top-hat ul.menu li.last.leaf {
-    /*background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent;*/
-		margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;
-  }
+	#osu-top-hat ul.menu li.last.leaf { background: url(/sites/all/themes/osu_confident/images/osul_images/foundation.png) 10% 50% no-repeat transparent; margin-top: -3px; padding:3px 5px 3px 24px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; }
 	#osu-top-hat ul.menu li.last:hover {background-color: #555;}
 	#osu-top-hat ul.menu li.last a:hover{background-color:transparent;}
 
@@ -2313,4 +2304,42 @@ div#block-system-user-menu a:hover {
   .preface-top-wrapper {
     /*display: none;*/
   }
+}
+
+.osu-question-icon {
+	background: url(/sites/all/themes/doug_fir_library/images/question-w22.png) no-repeat transparent;
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	float: left;
+}
+
+#top-hat-chat {
+	font-size: 19px;
+	color: #ffffff;
+	float: right;
+	margin-right: 20px;
+	margin-top:6px;
+	width:200px;
+}
+
+#top-hat-chat a {
+	padding: 0 0 0 5px;
+	border-radius: 0;
+}
+
+.top-hat-chat-sm {
+	font-size: 13px;
+	font-weight:normal;
+	color: #CCC;
+}
+
+#top-hat-chat a:hover {
+	background: none;
+	text-decoration: underline;
+	text-align: right;
+}
+
+#top-hat-chat a:active, a:focus {
+	background: none;
 }
