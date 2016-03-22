@@ -214,6 +214,8 @@ function osu_top_hat_render() {
     $top_hat .= render(drupal_get_form('osu_search_top_hat_form'));
   }
 
+  $top_hat .= '<div id="top-hat-chat"><a href="/reference"><i class="osu-question-icon"></i>Ask a Librarian<br><span class="top-hat-chat-sm">Chat or text us, email, DIY + more</span></a></div>';
+
   // Close our divs
   $top_hat .= "</div></div>";
 
