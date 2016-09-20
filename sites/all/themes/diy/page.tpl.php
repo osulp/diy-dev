@@ -1,16 +1,3 @@
-<?php
-?>
-<!-- Top-Hat -->
-<div class = "osu-top-hat-render">
-<?php
-  if (function_exists('osu_top_hat_render')) {
-    print osu_top_hat_render();
-  }
-  $site_name = variable_get('site_name');
-  $base_path= variable_get('base_path');
-?>
-</div>
-
 <div id="mobile-icon-menu">
   <a href='#' id="toggle-mobile-menu" class="m-icon-link"><i class="icon-reorder"></i></a>
   <a href='<?php echo $base_path; ?>search/osul' id="mobile-search-link" class="m-icon-link"><i class="icon-search"></i></a>
@@ -135,21 +122,85 @@
   </div><!-- /page -->
   <!-- Page Footer -->
 
-  <div id='footer-osul'>
-    <div class='container'>
-      <div class='row'>
-
-        <div class="span0 social-media">
-          <a class="flickr" href="http://www.flickr.com/photos/osuvalleylibrary" title="Flickr">Flickr</a>
-          <a class="fb" href="http://www.facebook.com/pages/Corvallis-OR/The-Valley-Library/5913513878?ref=ts" title="Facebook">Facebook</a>
-          <a class="twitter" href="http://www.twitter.com/osuvalleylib" title="Twitter">Twitter</a>
+<!--  <div id='footer-osul'>-->
+<!--    <div class='container'>-->
+<!--      <div class='row'>-->
+<!---->
+<!--        <div class="span0 social-media">-->
+<!--          <a class="flickr" href="http://www.flickr.com/photos/osuvalleylibrary" title="Flickr">Flickr</a>-->
+<!--          <a class="fb" href="http://www.facebook.com/pages/Corvallis-OR/The-Valley-Library/5913513878?ref=ts" title="Facebook">Facebook</a>-->
+<!--          <a class="twitter" href="http://www.twitter.com/osuvalleylib" title="Twitter">Twitter</a>-->
+<!--        </div>-->
+<!---->
+<!--        <div class='span9'>-->
+<!--          --><?php //print render($page['footer']); ?>
+<!--        </div>-->
+<!---->
+<!---->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<div id='footer'>
+  <div class='container-fluid'>
+    <div class='row-fluid'>
+      <div class='span2 contact'>
+        <h2>Contact Info</h2>
+        <div class="specific-contact">
+          <p>121 The Valley Library<br />Corvallis OR 97331–4501</p><p>Phone: 541-737-3331</p><p><a href="http://answers.library.oregonstate.edu/ask">Contact Us</a></p><p><a href="/accessibility-services">Services for Persons with Disabilities</a></p>            </div>
+        <div class="general-contact">
+          <a href="http://oregonstate.edu/copyright">Copyright</a>
+          &copy;2016              Oregon State University<br />
+          <a href="http://oregonstate.edu/disclaimer">Disclaimer</a>
         </div>
-
-        <div class='span9'>
-          <?php print render($page['footer']); ?>
+        <div class="social-media"><a href="http://www.facebook.com/pages/Corvallis-OR/The-Valley-Library/5913513878?ref=ts" title="Go to our Facebook page"><i class="icon-facebook"></i> Facebook</a><a href="http://www.flickr.com/photos/osuvalleylibrary" title="Go to our Flickr page"><i class="icon-flickr"></i> Flickr</a><a href="http://www.twitter.com/osuvalleylib" title="Go to our Twitter page"><i class="icon-twitter"></i> Twitter</a></div>
+      </div>
+      <div class='span10'>
+        <div class="region region-footer">
+          <div id="block-block-381" class="block block-block footer-links">
+            <div class="content">
+              <div id="osul-footer-left">
+                <div class="content">
+                  <h2>In The Valley Library</h2>
+                  <ul class="menu">
+                    <li class="first leaf"><a href="//www.osupress.oregonstate.edu/">Oregon State University Press</a></li>
+                    <li class="leaf"><a href="//cdss.library.oregonstate.edu">Center for Digital Scholarship and Services</a></li>
+                    <li class="leaf"><a href="//scarc.library.oregonstate.edu">Special Collections and Archives Research Center</a></li>
+                    <li class="leaf"><span class="separator"><hr /></span></li>
+                    <li class="leaf"><a href="/clc">Collaborative Learning Center</a></li>
+                    <li class="leaf"><a href="//oregonstate.edu/is/mediaservices/sms/">Student Multimedia Services</a></li>
+                    <li class="leaf"><a href="/nwart">Northwest Art Exhibit</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div id="osul-footer-right">
+                <div class="content">
+                  <h2>Digital Projects</h2>
+                  <ul class="menu">
+                    <li class="first leaf"><a href="//oregonexplorer.info">Oregon Explorer</a></li>
+                    <li class="leaf"><a href="//oregondigital.org">Oregon Digital</a></li>
+                    <li class="leaf"><a href="//ir.library.oregonstate.edu">ScholarsArchive@OSU</a></li>
+                    <li class="leaf"><a href="//dpi.library.oregonstate.edu">Digital Publishing Initiatives</a></li>
+                  </ul>
+                </div>
+                <div class="content">
+                  <h2>Branches</h2>
+                  <ul class="menu">
+                    <li class="leaf"><a href="//guin.library.oregonstate.edu">Marilyn Potts Guin Library</a></li>
+                    <li class="last leaf"><a href="//blogs.oregonstate.edu/cascadeslibrary/">Cascades Campus Library</a></li>
+                  </ul>
+                </div>
+              </div>  </div>
+          </div>
+          <div id="block-block-378" class="block block-block footer-gift">
+            <div class="content">
+              <p><a class="gift-btn" href="https://adminlb.imodules.com/s/359/foundation/index.aspx?sid=359&amp;gid=34&amp;pgid=1982&amp;cid=3007" target="_blank"><em class="icon-gift"></em> Make a Gift</a></p>  </div>
+          </div>
+          <div id="block-block-384" class="block block-block">
+            <div class="content">
+              <p><img src="/sites/default/files/fdlp-emblem-color.png" alt="FDLP Emblem" width="45" height="40" />  <a href="http://guides.library.oregonstate.edu/subject-guide/286-Government-Information">Federal Depository Library Program</a></p>  </div>
+          </div>
         </div>
-
-
       </div>
     </div>
   </div>
+</div>

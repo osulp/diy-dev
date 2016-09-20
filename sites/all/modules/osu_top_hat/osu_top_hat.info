@@ -1,6 +1,0 @@
-name = OSU Top Hat
-description = Theme options for the OSU Top Hat
-package = OSU
-core = 7.x
-version = 7.x-1.0
-stylesheets[all][] = osu_top_hat.css
