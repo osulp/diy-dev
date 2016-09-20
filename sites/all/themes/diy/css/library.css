@@ -128,10 +128,10 @@ h2, h4 {
 }
 
 /* Social Links */
-	.social-media {position:relative; top:2em; margin-right: -2em;}
-	.social-media a {background-image: url('../../doug_fir_library/images/socialnetworks.png'); display: block; width: 16px; height: 16px; text-indent:-100px; overflow: hidden; margin: 2px 0; }
-	.social-media .fb {background-position: 0 32px;}
-	.social-media .twitter {background-position: 0 16px;}
+	/*.social-media {position:relative; top:2em; margin-right: -2em;}*/
+	/*.social-media a {background-image: url('../../doug_fir_library/images/socialnetworks.png'); display: block; width: 16px; height: 16px; text-indent:-100px; overflow: hidden; margin: 2px 0; }*/
+	/*.social-media .fb {background-position: 0 32px;}*/
+	/*.social-media .twitter {background-position: 0 16px;}*/
 
 /*** main menus ***/
 #block-megamenu-0, #block-megamenu-1, #block-megamenu-2 {border-top: 1px solid #e2e2e2;}
@@ -1427,9 +1427,9 @@ ul.osulheader-menu, #block-menu-menu-osul-utility ul.menu {float: left; font-siz
 #tweets ul li {list-style: none; margin: 0 0 1em; word-wrap:break-word;}
 
 /* right sidebar: social media icons */
-.social-links a {outline: 0; display: inline-block; height: 16px; width: 16px; margin: 0 4px; background: url(../../osu_confident/images/archives_images/socialnetworks.png); text-indent: -99999px;}
-.social-links a.fb {background-position: 0 32px;}
-.social-links a.twitter {background-position: 0 16px;}
+/*.social-links a {outline: 0; display: inline-block; height: 16px; width: 16px; margin: 0 4px; background: url(../../osu_confident/images/archives_images/socialnetworks.png); text-indent: -99999px;}*/
+/*.social-links a.fb {background-position: 0 32px;}*/
+/*.social-links a.twitter {background-position: 0 16px;}*/
 
 /* right sidebar: flickr photos */
 #flickr div {margin: 0 0 5px 5px;}
@@ -2258,14 +2258,14 @@ table.table_ask {
   display: block;
   padding-left: 3px;
 }
-#footer .social-media a {
-  display: block;
-}
-#footer .social-media img {
-  height: 17px;
-  width: 17px;
-  margin-right: 2px;
-}
+/*#footer .social-media a {*/
+  /*display: block;*/
+/*}*/
+/*#footer .social-media img {*/
+  /*height: 17px;*/
+  /*width: 17px;*/
+  /*margin-right: 2px;*/
+/*}*/
 
 /* User menu block style */
 
