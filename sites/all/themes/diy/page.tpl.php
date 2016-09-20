@@ -293,7 +293,7 @@
         <div class='span2 contact'>
           <h2>Contact Info</h2>
           <div class="specific-contact">
-            <p>121 The Valley Library<br />Corvallis OR 97331–4501</p><p>Phone: 541-737-3331</p><p><a href="http://answers.library.oregonstate.edu/ask">Contact Us</a></p><p><a href="/accessibility-services">Services for Persons with Disabilities</a></p>            </div>
+            <p>121 The Valley Library<br />Corvallis OR 97331–4501</p><p>Phone: 541-737-3331</p><p><a href="http://answers.library.oregonstate.edu/ask">Contact Us</a></p><p><a href="//osulibrary.oregonstate.edu/accessibility-services">Services for Persons with Disabilities</a></p>            </div>
           <div class="general-contact">
             <a href="http://oregonstate.edu/copyright">Copyright</a>
             &copy;2016              Oregon State University<br />
@@ -313,9 +313,9 @@
                       <li class="leaf"><a href="//cdss.library.oregonstate.edu">Center for Digital Scholarship and Services</a></li>
                       <li class="leaf"><a href="//scarc.library.oregonstate.edu">Special Collections and Archives Research Center</a></li>
                       <li class="leaf"><span class="separator"><hr /></span></li>
-                      <li class="leaf"><a href="/clc">Collaborative Learning Center</a></li>
+                      <li class="leaf"><a href="//osulibrary.oregonstate.edu/clc">Collaborative Learning Center</a></li>
                       <li class="leaf"><a href="//oregonstate.edu/is/mediaservices/sms/">Student Multimedia Services</a></li>
-                      <li class="leaf"><a href="/nwart">Northwest Art Exhibit</a></li>
+                      <li class="leaf"><a href="//osulibrary.oregonstate.edu/nwart">Northwest Art Exhibit</a></li>
                     </ul>
                   </div>
                 </div>
