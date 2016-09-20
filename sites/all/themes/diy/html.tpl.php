@@ -55,9 +55,27 @@
 <!--
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
 -->
+  <!-- CSS -->
+  <style type="text/css" media="all">
+    @import url("//osulibrary.oregonstate.edu/modules/system/system.theme.css");
+  </style>
+  <style type="text/css" media="all">
+    @import url("//osulibrary.oregonstate.edu/sites/all/modules/nice_menus/css/nice_menus.css");
+    @import url("//osulibrary.oregonstate.edu/sites/all/modules/nice_menus/css/nice_menus_default.css");
+    @import url("//osulibrary.oregonstate.edu/sites/all/themes/doug-fir-drupal-7/css/variants/pine/pine.css");
+  </style>
+  <style type="text/css" media="all">
+    @import url("//osulibrary.oregonstate.edu/sites/all/themes/doug-fir-drupal-7/css/less/main.css");
+    @import url("//osulibrary.oregonstate.edu/sites/all/themes/doug-fir-d7-library/css/doug_fir_d7_library.css");
+  </style>
+  <style type="text/css" media="all">
+    @import url("//osulibrary.oregonstate.edu/sites/all/themes/doug-fir-drupal-7/bootstrap/css/responsive.css");
+    @import url("//osulibrary.oregonstate.edu/sites/all/themes/doug-fir-drupal-7/css/less/main-responsive.css");
+  </style>
+  <link href='http://fonts.googleapis.com/css?family=Gudea:400,400italic,700' rel='stylesheet' type='text/css'>
+
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
   <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
@@ -75,7 +93,7 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
   </script>
-
+  <script src="https://use.fontawesome.com/79de80f99e.js"></script>
   <?php print $scripts; ?>
 </head>
 <body id="<?php print $body_id; ?>" class="<?php print $classes; ?>" <?php print $attributes;?>>
