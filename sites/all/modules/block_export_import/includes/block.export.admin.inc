@@ -23,25 +23,33 @@ function block_export_import_blocks_export_form($form, &$form_state) {
         $themes[$data->name] = $data->info['name'];
       }
     }
-
+    // get theme if filtered
+    $theme_name = isset($_SESSION['blcok_export_theme_filter']) ? $_SESSION['blcok_export_theme_filter'] : '';
+    // filter by theme element
     $form['theme_name'] = array(
       '#type' => 'select',
       '#title' => t('Available Themes'),
       '#options' => array('' => t('-- Select --')) + (array) $themes,
-      '#description' => t('Use only if you have the same region(s) where you are going to import.'),
-      '#ajax' => array(
-        // Here we set up our AJAX callback handler.
-        'callback' => '_block_export_import_theme_region_callback',
-        'wrapper' => 'block-export-import-theme-region-wrapper',
-        'method' => 'replace',
-        // Tell FormAPI about our progress bar.
-        'progress' => array(
-          'type' => 'throbber',
-          'message' => t('Please wait...'),
-        ),
-      ),
+      '#default_value' => $theme_name,
+      '#description' => t('Use only if you have the same region(s) where you are going to import.')
     );
-    $theme_name = isset($form_state['values']['theme_name']) ? $form_state['values']['theme_name'] : '';
+
+    // filter button
+    $form['filter_theme'] = array(
+      '#type' => 'submit',
+      '#value' => t('Filter'),
+      '#validate' => array('_block_export_import_filter_theme_validate'),
+      '#submit' => array('_block_export_import_filter_theme_submit'),
+    );
+
+    // reset button
+    if(!empty($theme_name)) {
+      $form['reset_theme'] = array(
+        '#type' => 'submit',
+        '#value' => t('Reset'),
+        '#submit' => array('_block_export_import_reset_theme_submit'),
+      );
+    }
 
     $header = array();
     $header['info'] = array('data' => t('Block Name'), 'field' => 'bc.info', 'sort' => 'ASC');
@@ -90,15 +98,6 @@ function block_export_import_blocks_export_form($form, &$form_state) {
         }
         $rows[$bid]['action'] = array('data' => $link);
       }
-
-      $form['custom_block'] = array(
-        '#type' => 'tableselect',
-        '#header' => $header,
-        '#options' => $rows,
-        '#prefix' => '<div id="block-export-import-theme-region-wrapper">',
-        '#suffix' => '</div>',
-        '#empty' => t('No system specific block exists.'),
-      );
     }
 
     $form['custom_block'] = array(
@@ -144,10 +143,35 @@ function block_export_import_blocks_export_form($form, &$form_state) {
 }
 
 /**
- * Callback to fetch the block theme name and region.
+ * Callback to theme filter validate.
  */
-function _block_export_import_theme_region_callback($form, &$form_state) {
-  return $form['custom_block'];
+function _block_export_import_filter_theme_validate($form, &$form_state) {
+  $theme = $form_state['values']['theme_name'];
+  if(empty($theme)) {
+    form_set_error('theme_name', t('Please select a theme to filter'));
+  }
+}
+
+/**
+ * Callback to filter by theme, to fetch the block theme name and region.
+ */
+function _block_export_import_filter_theme_submit($form, &$form_state) {
+  $theme = $form_state['values']['theme_name'];
+  if(!empty($theme)) {
+    $_SESSION['blcok_export_theme_filter'] = $theme;
+  }
+  else {
+    if(isset($_SESSION['blcok_export_theme_filter'])) {
+      unset($_SESSION['blcok_export_theme_filter']);
+    }
+  }
+}
+
+/**
+ * Callback to reset filter by theme.
+ */
+function _block_export_import_reset_theme_submit($form, &$form_state) {
+  unset($_SESSION['blcok_export_theme_filter']);
 }
 
 /**
