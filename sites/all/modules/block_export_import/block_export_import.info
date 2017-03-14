@@ -4,9 +4,9 @@ core = 7.x
 configure = admin/structure/export-import-block
 dependencies[] = block
 
-; Information added by Drupal.org packaging script on 2016-08-23
-version = "7.x-2.32"
+; Information added by Drupal.org packaging script on 2016-12-12
+version = "7.x-2.33"
 core = "7.x"
 project = "block_export_import"
-datestamp = "1471954394"
+datestamp = "1481540890"
 

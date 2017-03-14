@@ -611,6 +611,20 @@ body.front .license {
   display: block !important;
 }
 
+.pine #block-nice-menus-1 {
+  width: auto;
+}
+
+.pine #block-block-406 {
+  float: right;
+  width: auto;
+}
+
+.pine #block-block-406 a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
 @media (max-width: 979px) {
   #block-views-sidebar-node-title-block-1 h1 {
     line-height: 120%;
