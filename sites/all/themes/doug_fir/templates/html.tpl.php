@@ -49,6 +49,7 @@ $lang = $language->language;
 <!--[if gt IE 8]><!--><html class="<?php print $html_classes; ?>" lang="<?php echo $lang; ?>"><!--<![endif]-->
 
 <head profile="<?php print $grddl_profile; ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <?php print $head; ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
@@ -65,35 +66,34 @@ $lang = $language->language;
 
   <!-- CSS -->
   <?php print $styles; ?>
-  <link href='http://fonts.googleapis.com/css?family=Gudea:400,400italic,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Gudea:400,400italic,700' rel='stylesheet'>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
   <!-- These will insert some CSS to hide or show elements based on our theme settings -->
   <?php echo hide_book_nav(); ?>
   <?php echo hide_terms(); ?>
 
   <!-- Javascripts -->
 
-  <!-- Google Analytics script -->
+  <!-- Google Universal Analytics script -->
   <!-- Tracking code is returned in google_tracking_code() from template.php -->
-  <script type='text/javascript'>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', "<?php echo google_tracking_code() ?>"]);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script');
-      ga.type = 'text/javascript';
-      ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-    })();
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "<?php echo google_tracking_code() ?>", 'auto');  // Replace with your property ID.
+  ga('send', 'pageview');
+
   </script>
 
   <?php print $scripts; ?>
 
 </head>
 
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<body class="<?php print $classes; print get_variant_classes(); ?>" <?php print $attributes;?>>
   <div id="skip-link">
-    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    <a href="#content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
   </div>
 <!-- OSU Top Hat -->
   <?php print $page_top; ?>

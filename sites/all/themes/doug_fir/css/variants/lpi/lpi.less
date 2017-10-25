@@ -1,0 +1,289 @@
+/**** sitewide styles *****/
+
+.lpi {
+  
+  /* adds the wrapper background necessary to have background image */
+  #page-wrapper {
+    background-image: none;
+    background-color: #f4f2ec;
+    padding: 0 20px;
+  }
+
+  .breadcrumb {
+    font-size: 16px;
+  }
+
+  /* specific style for the book navigation when it is in the primary sidebar */
+  #block-book-navigation {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  /* lpi contact info in footer wider */
+  .specific-contact {
+    width: 360px;
+  }
+
+  /* centers highlights and text spacing */
+  #block-views-highlights-block  img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 0 0 10px 0;
+  }
+
+  /* hover, focus and active styles for sidebar menu */
+  #sidebar-first ul.menu li.active-trail > a.active:hover, 
+  #audience-menu ul.menu li.active-trail > a.active:hover, 
+  #sidebar-first ul.menu li.active-trail > a.active:active, 
+  #audience-menu ul.menu li.active-trail > a.active:active, 
+  #sidebar-first ul.menu li.active-trail > a.active:focus, 
+  #audience-menu ul.menu li.active-trail > a.active:focus, 
+  #sidebar-first ul.menu li li > a.active, 
+  #audience-menu ul.menu li li > a.active {
+    background: #c34500;
+    color: #fff;
+  }
+
+  /**** styles for LPI top lvl site *****/
+
+  /* background image for LPI site all pages except for specific groups with their own*/
+  body {
+    background-image: url('images/lpi-bg.jpg');
+    background-position: center 189px;
+    background-repeat: repeat-x;
+  }
+
+  /* adjusts title for front page "research" block */
+  #block-block-5 h2 {
+    background: #561f4b;
+  }
+
+  /* adjusts title for front page "outreach" block */
+  #block-block-6 h2 {
+    background: #561f4b;
+  }
+
+  /* adjusts title for front page "LPI Blog" block */
+  #block-live-feeds-3 h2{
+    background: #561f4b;
+  }
+
+  /* adjusts title for front page "in the news" block */
+  #block-block-25 h2 {
+    background: #561f4b;
+  }
+
+  /**** styles for HDI group *****/
+
+  /* background image for HDI */
+  body.health-and-disease-index {
+    background-image: url('images/hdi-debut_light.png');
+    background-repeat: repeat;
+  }
+
+  /* content background */
+  body.health-and-disease-index #page-wrapper {
+    background: #fff;
+  }
+
+  /* adjustst title for HDI block */
+  #block-block-23 h2 {
+    background: #c34500;
+  }
+
+  /* adjustst title for HDI block */
+  #block-block-24 h2 {
+    background: #c34500;
+  }
+
+
+  /**** styles for HYP group *****/
+
+  /* centers found giving widget */
+  #wosuf_23 {
+    margin: 0 auto!important;
+  }
+
+  /* background image for hyp */
+  body.healthy-youth-program {
+    background-image: url('images/hyp-bg.jpg');
+    background-position: left 249px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* sidebar menu styles to match rest of site */
+  #block-menu-menu-healthy-youth-program .menu {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  #block-menu-menu-healthy-youth-program ul.menu li, 
+  #audience-menu ul.menu li {
+    border-top: 1px solid #f2f5ed;
+  }
+
+  /* special class for headers within content. found in garden pages */
+  .headerstyle {
+    background: #c34500;
+    color: #fff;
+    border-radius: 3px 3px 0 0;
+    font-weight: normal !important;
+    padding: 0 25px 0 10px;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Gudea',Arial,Helvetica,Verdana,sans-serif;
+  }
+
+  /* increase font size for blocks on HYP front page */
+  #block-block-30 h2, 
+  #block-block-32 h2 {
+    font-size: 20px !important;
+  }
+
+  /* hides parent contact for hyp */
+  .healthy-youth-program .specific-contact {
+  display: none;
+  }
+
+
+  /* hide print friendly link on all hyp pages */
+  .book_printer {
+    display: none !important;
+  }
+
+  /* table styles on recipes page */
+  #node-651 th {
+    width:30%;
+  }
+
+
+  /**** styles for MIC group *****/
+
+  .micronutrient-information-center h2 {
+    color: #385e86;
+  }
+
+  .micronutrient-information-center h3 {
+    color: #385e86;
+  }
+
+  .micronutrient-information-center h4 {
+    color: #385e86;
+  }
+
+  /* mic background */
+  body.micronutrient-information-center, 
+  body.centro-de-información-de-micronutrientes {
+    background-image: url('images/mic-blue.jpg');
+    background-position: left 249px;
+    background-repeat: repeat-x;
+  }
+
+  /* sidebar menu styles */
+  body.micronutrient-information-center #block-book-navigation .menu, 
+  #block-menu-menu-mic-menu {
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  #block-book-navigation ul.menu li, 
+  #audience-menu ul.menu li, 
+  #block-menu-menu-mic-menu li {
+    border-top: 1px solid #f2f5ed!important;
+  }
+
+  /* MIC front page block titles */
+  #block-block-8 h2 {
+    background: #385e86;
+    color:#fff;
+  }
+
+  /* MIC front page block titles */
+  #block-block-9 h2 {
+    background: #385e86;
+    color:#fff;
+  }
+
+  /* decrease gap on MIC group image bottom */
+  body.micronutrient-information-center #block-views-group-information-block-2 {
+    margin-bottom: -30px;
+  }
+
+  /* style for mobile menu for MIC */
+  #block-nice-menus-2 ul {
+    border: none;
+    list-style: none;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  #block-nice-menus-2 li {
+    list-style-image: none;
+    border-top: 1px dotted #252525;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    float: left;
+    border: none;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    background: #fff;
+  }
+
+  #block-nice-menus-2 ul a {
+    color: #252525;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+  }
+
+  /* styles for collapsible content feature */
+  .expanding {
+    display: block;
+  }
+  .expanding + input {
+    display: none;
+  }
+  .expanding + input + * {
+    display: none;
+  }
+  .expanding + input:checked + * {
+    list-style-image: url("/sites/lpi.oregonstate.edu/files/bullett.png") !important;
+    display: block;
+  }
+  .secondlevellist {
+    list-style-image: url("/sites/lpi.oregonstate.edu/files/bullet2.png") !important;
+  }
+  .thirdlevellist {
+    list-style-image: url("/sites/lpi.oregonstate.edu/files/bullet3.png") !important;
+  }
+
+  caption.th {
+    caption-side: top;
+    font-weight: bold;
+    background: #F5F2ED !important;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom: 0px solid #E0E0E0 !important;
+    color: #385e86 !important;
+    font-size: 110% !important;
+    text-align: center;
+  }
+}
+
+@media (min-width:768px) {
+
+  .lpi #block-nice-menus-2 {
+    display: none;
+  }
+
+}

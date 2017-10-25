@@ -15,6 +15,7 @@
 .clearfix:after {
   display: table;
   content: "";
+  line-height: 0;
 }
 .clearfix:after {
   clear: both;
@@ -29,10 +30,9 @@
 .input-block-level {
   display: block;
   width: 100%;
-  min-height: 28px;
+  min-height: 32px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* though not specifically in a media query, this helps to make all images in
@@ -46,16 +46,41 @@ img {
     padding: 0;
   }
   #osu-top-hat .logo,
+  #osu-top-hat.new img,
   #main-menu {
     display: none;
   }
   #osu-top-hat .logo .menu,
+  #osu-top-hat.new img .menu,
   #main-menu .menu,
   #osu-top-hat .logo .nice-menu,
+  #osu-top-hat.new img .nice-menu,
   #main-menu .nice-menu {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+  }
+  .pine #osu-top-hat .logo,
+  .pine #osu-top-hat.new img {
+    display: block;
+    height: 60px;
+  }
+  .pine #mobile-menu {
+    top: 80px;
+  }
+  .pine #mobile-icon-menu {
+    top: 30px !important;
+  }
+  .pine #osu-top-hat.new {
+    background: #d73f09;
+    height: 80px;
+  }
+  .pine #osu-top-hat.new .mobile-header {
+    display: none;
+  }
+  iframe {
+    max-width: 100%;
+    height: auto;
   }
   #content {
     padding-right: 0;
@@ -68,45 +93,56 @@ img {
     z-index: 999;
     top: 40px;
   }
-  #osu-top-hat {
-    background-color: #bb4200;
-    background-image: -moz-linear-gradient(top, #c34500, #ae3d00);
-    background-image: -ms-linear-gradient(top, #c34500, #ae3d00);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c34500), to(#ae3d00));
-    background-image: -webkit-linear-gradient(top, #c34500, #ae3d00);
-    background-image: -o-linear-gradient(top, #c34500, #ae3d00);
-    background-image: linear-gradient(top, #c34500, #ae3d00);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c34500', endColorstr='#ae3d00', GradientType=0);
+  #osu-top-hat,
+  #osu-top-hat.new {
     height: auto;
     border-bottom: none;
     text-align: left;
   }
-  #osu-top-hat .container {
+  #osu-top-hat .container,
+  #osu-top-hat.new .container {
     padding: 10px 0 0 10px;
   }
-  #osu-top-hat a.tag {
+  #osu-top-hat a.tag,
+  #osu-top-hat.new a.tag {
     margin-left: 0;
     float: none;
   }
-  #osu-top-hat ul.menu {
+  #osu-top-hat ul.menu,
+  #osu-top-hat.new ul.menu {
     display: block;
     margin-top: 5px;
   }
-  #osu-top-hat ul.menu li {
+  #osu-top-hat ul.menu li,
+  #osu-top-hat.new ul.menu li {
     padding-bottom: .4em;
   }
-  #osu-top-hat ul.menu li.first {
+  #osu-top-hat ul.menu li.first,
+  #osu-top-hat.new ul.menu li.first {
     padding-left: 0;
   }
-  #osu-top-hat ul.menu li a {
+  #osu-top-hat ul.menu li a,
+  #osu-top-hat.new ul.menu li a {
     padding: 5px 1px;
   }
   #osu-top-hat ul.menu li:hover,
+  #osu-top-hat.new ul.menu li:hover,
   #osu-top-hat ul.menu li:active,
-  #osu-top-hat ul.menu li:focus {
+  #osu-top-hat.new ul.menu li:active,
+  #osu-top-hat ul.menu li:focus,
+  #osu-top-hat.new ul.menu li:focus {
     background-color: transparent;
     text-decoration: underline;
+  }
+  #osu-top-hat.new .mobile-header {
+    padding-left: 15px;
+    line-height: 40px;
+  }
+  #osu-top-hat.new .group-header {
+    padding-left: 15px !important;
+  }
+  #osu-top-hat.new h1 {
+    font-size: 20px;
   }
   /* Live feeds tweaks */
   .block-live-feeds h2,
@@ -121,8 +157,11 @@ img {
     font-weight: bold;
     font-size: 16px;
   }
+  .pine .live-feeds-block .rss-icon {
+    border: none;
+  }
   .classic #header {
-    height: 30px;
+    height: auto;
   }
   #header h1 {
     padding: 4px 8px 2px 10px;
@@ -147,7 +186,20 @@ img {
   .parent {
     padding-left: 10px;
   }
+  .pine .parent {
+    padding-left: 0;
+  }
   /* Feature Story Responsive Edits */
+  #features {
+    padding-top: 6px;
+    background-color: #fff;
+  }
+  #features + .row #content {
+    padding-top: 10px;
+  }
+  #features #block-views-feature-story-block .view-feature-story .views-field-field-caption {
+    padding-bottom: 0;
+  }
   #block-views-feature-story-block .view-feature-story .more-link {
     bottom: -15px;
     right: 4px;
@@ -169,6 +221,18 @@ img {
   .classic .content,
   .classic #block-system-main > .content {
     padding: .4em;
+  }
+  /* VSO Header */
+  #osu-top-hat p.vso-standard-header {
+    margin: 0;
+  }
+  #osu-top-hat p.vso-standard-header a {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .pine #footer,
+  .pine #osu-top-hat {
+    margin: 0 !important;
   }
 }
 @media (max-width: 540px) {
@@ -192,6 +256,9 @@ img {
   #osu-top-hat ul.menu li.leaf {
     padding: 0 .3em;
   }
+  #osu-top-hat.new {
+    margin-bottom: 14px;
+  }
   #header {
     margin-bottom: 10px;
   }
@@ -207,18 +274,29 @@ img {
   }
   #header h1 {
     padding-top: .1em;
-    padding-left: 135px;
+    /* padding-left: 135px; */
+  }
+  .pine h1,
+  .pine .group-header {
+    margin: 0 -20px;
+    width: auto;
+  }
+  .pine .group-header h1 {
+    margin: 0;
+  }
+  .pine #mobile-menu {
+    margin-left: -20px;
   }
 }
 @media (max-width: 767px) {
   #admin-menu,
-  #main-menu {
+  #main-menu,
+  #search-link {
     display: none;
   }
   html body.admin-menu {
     margin-top: 0 !important;
     /*remove top margin along with menu*/
-  
   }
   a.m-icon-link {
     padding: 11px 13px 9px;
@@ -233,12 +311,29 @@ img {
   #osu-top-hat {
     height: 40px;
   }
+  #osu-top-hat.new {
+    height: auto;
+    background: #c34500;
+  }
+  #osu-top-hat.new .group-header {
+    display: block;
+    padding-left: 0;
+    background: #fff;
+    margin-top: 0;
+    padding-top: 8px;
+  }
+  #osu-top-hat.new .group-header h1 {
+    line-height: 28px;
+  }
+  #osu-top-hat.new h1 {
+    display: block;
+    background: #fff;
+  }
   #osu-top-hat .search-terms,
   #osu-top-hat .search-terms:focus {
     width: 160px;
     -webkit-transition: none;
     -moz-transition: none;
-    -ms-transition: none;
     -o-transition: none;
     transition: none;
   }
@@ -257,6 +352,9 @@ img {
   #osu-top-hat form.search {
     display: none;
   }
+  p.vso-standard-header {
+    margin: 8px 0;
+  }
   #mobile-icon-menu {
     color: #fff;
     text-decoration: none;
@@ -270,9 +368,13 @@ img {
   #mobile-icon-menu .icon-search {
     font-size: 18px;
   }
+  .pine #mobile-icon-menu {
+    top: 35px;
+  }
   #mobile-menu {
     margin-left: 0;
     background: #373737;
+    width: 100vw;
   }
   #mobile-menu li {
     list-style: none !important;
@@ -289,8 +391,8 @@ img {
     line-height: 40px;
     padding-left: 10px;
   }
-  #mobile-menu ul li a + ul {
-    display: none;
+  #mobile-menu ul li a + ul a {
+    padding-left: 20px;
   }
   #mobile-menu ul li a.active {
     font-weight: bold;
@@ -298,19 +400,40 @@ img {
   #mobile-menu ul li a.active + ul {
     display: block;
   }
+  #mobile-menu #mobile-main-menu .menu .menu {
+    display: none;
+  }
+  #mobile-menu #mobile-main-menu.book-menu .menu .menu {
+    display: block;
+  }
+  #mobile-menu #mobile-main-menu.book-menu .menu .menu .menu {
+    display: none;
+  }
+  #mobile-menu #mobile-main-menu .menu .menu {
+    padding-left: 10px;
+  }
+  #mobile-menu #mobile-main-menu li.expanded a {
+    display: inline-block;
+    padding-right: 5px;
+  }
+  #mobile-menu #mobile-main-menu .icon-chevron-right,
+  #mobile-menu #mobile-main-menu .icon-chevron-down {
+    color: #fff;
+    font-size: 12px;
+    padding-left: 5px;
+  }
   #mobile-menu #mobile-main-menu > ul > li + li {
     border-top: 1px solid #474747;
   }
   #mobile-menu #mobile-main-menu .active + .menu {
     background-color: #303030;
     background-image: -moz-linear-gradient(top, #373737, #252525);
-    background-image: -ms-linear-gradient(top, #373737, #252525);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#373737), to(#252525));
     background-image: -webkit-linear-gradient(top, #373737, #252525);
     background-image: -o-linear-gradient(top, #373737, #252525);
-    background-image: linear-gradient(top, #373737, #252525);
+    background-image: linear-gradient(to bottom, #373737, #252525);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#373737', endColorstr='#252525', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff373737', endColorstr='#ff252525', GradientType=0);
   }
   #mobile-menu #mobile-audience-menu {
     background: #525252;
@@ -321,13 +444,12 @@ img {
   #mobile-menu #mobile-audience-menu .active + .menu {
     background-color: #474747;
     background-image: -moz-linear-gradient(top, #525252, #373737);
-    background-image: -ms-linear-gradient(top, #525252, #373737);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#525252), to(#373737));
     background-image: -webkit-linear-gradient(top, #525252, #373737);
     background-image: -o-linear-gradient(top, #525252, #373737);
-    background-image: linear-gradient(top, #525252, #373737);
+    background-image: linear-gradient(to bottom, #525252, #373737);
     background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#525252', endColorstr='#373737', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff525252', endColorstr='#ff373737', GradientType=0);
   }
   #mobile-menu #mobile-osu-top-hat {
     padding-top: 10px;
@@ -410,6 +532,14 @@ img {
   #main-column2 > div {
     margin: 0;
   }
+  .pine #footer {
+    color: #fff;
+  }
+  .pine #footer h2,
+  .pine #footer h3,
+  .pine #footer a {
+    color: #fff;
+  }
   #footer {
     background: #e5e2dd;
     color: #252525;
@@ -481,6 +611,13 @@ img {
     display: none !important;
   }
 }
+@media (max-width: 767px) {
+  .pine #footer,
+  .pine #osu-top-hat {
+    margin: 0 -20px;
+    width: auto;
+  }
+}
 @media (min-width: 768px) and (max-width: 979px) {
   #admin-menu-wrapper > .dropdown:last-child {
     display: none;
@@ -505,7 +642,6 @@ img {
     display: block;
     filter: none;
     /* removes filter from ie9 */
-  
   }
   ul.quicktabs-tabs.quicktabs-style-basic {
     height: auto;
@@ -520,7 +656,7 @@ img {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
   .view-feature-story.view-display-id-block .fs-row .views-field-field-caption {
-    min-height: 160px;
+    min-height: 40px;
     height: auto;
     -webkit-transition: none;
     -moz-transition: none;
@@ -529,6 +665,9 @@ img {
   .view-feature-story.view-display-id-block .fs-row .views-field-field-caption .fs-title {
     margin-right: 0;
   }
+  .view-feature-story.view-display-id-block .fs-row .views-field-field-caption .fs-caption {
+    display: none;
+  }
   .view-feature-story.view-display-id-block .fs-row:hover .views-field-field-caption {
     height: auto;
   }
@@ -536,10 +675,12 @@ img {
     position: static;
     padding-bottom: 25px;
     /* to make room for all stories link */
-  
   }
   .view-feature-story .side-controls {
     top: 20%;
+  }
+  .pine #content {
+    padding-right: 0;
   }
 }
 @media (min-width: 980px) {
@@ -547,10 +688,26 @@ img {
   #alt-tag {
     display: none;
   }
+  .pine #page-wrapper.container-fluid {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
 }
 @media (min-width: 1200px) {
   #osu-top-hat .wrapper4 {
     width: 1200px;
+  }
+  #features {
+    max-width: 1200px;
+  }
+  .pine #features {
+    max-width: 100%;
+  }
+  .pine #block-views-feature-story-block .view-feature-story .views-field-field-picture img {
+    width: 100%;
+  }
+  .pine #block-views-feature-story-block .content {
+    max-height: 100%;
   }
   #alt-menu,
   #alt-tag {

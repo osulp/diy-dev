@@ -1,0 +1,47 @@
+.cascades {
+  
+  #header {
+    color: transparent;
+    &> h1 {
+       display: none;
+     }
+     &> a + h1 {
+      display: block; 
+     }
+     &> a {
+      display: none; 
+     }
+     &> a + a {
+      display: inline; 
+      font-style: normal;
+      font-size: 30px;
+     }
+     &> a + a::after { 
+       content: " - ";
+     }
+     &> a + a + h1{
+       display: inline;
+     }
+  }
+
+  .parent + h1 {
+    padding-top: 10px;
+  }
+
+  #block-views-news-block-1 .field-content > a {
+   text-decoration: none;
+   font-weight: bold;
+  }
+
+  .book_printer {
+    display:none!important;
+  }
+  
+  #footer {
+    background: url('images/repeatable-treeline.png') repeat-x #373737;
+    color: #fff;
+    a, h2, h3 {
+      color: #fff;
+    }
+  }
+}

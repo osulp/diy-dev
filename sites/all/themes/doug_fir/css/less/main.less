@@ -12,10 +12,10 @@
 
 @font-face {
   font-family: 'EksjaExtremesRegular';
-  src: url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.eot);
-  src: local('☺'), url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff) format('woff'),
-  url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf) format('truetype'),
-  url(http://oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont) format('svg');
+  src: url(//oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.eot);
+  src: local('☺'), url(//oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.woff) format('woff'),
+  url(//oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.ttf) format('truetype'),
+  url(//oregonstate.edu/osuhomepage/css/fonts/Eksja/Eksja-regular-webfont.svg#webfont) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  background: url('../images/bg-pattern.jpg') repeat @sand;
+  background: url('../../images/bg-pattern.jpg') repeat @sand;
 } 
 
 #sidebar-first,
@@ -66,10 +66,9 @@ h1 a {
 /* This is from the parent item, that can be manually added to a theme */
 a.parent,
 .parent {
-  color: #555;
   text-decoration: none;
   font-style: italic;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 9px;
   display: inline-block;
 }
@@ -85,19 +84,6 @@ h2 {
 
 .front #page-title {
   display: none;
-}
-
-#sidebar-first h2,
-#sidebar-second h2 {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-}
-
-
-#sidebar-first .block h2,
-#sidebar-second .block h2 {
-  padding-left: 10px;
 }
 
 h1, h2, h1 a {
@@ -125,6 +111,27 @@ h5 {
   margin-bottom: .4em;
 }
 
+.block > h2 {
+    background: none repeat scroll 0 0 #373737;
+    border-radius: 3px 3px 0 0;
+    color: #ffffff;
+    font-family: 'Gudea',Arial,Helvetica,Verdana,sans-serif;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    line-height: 30px;
+    margin-bottom: 18px;
+    padding: 0 10px;
+}
+.block > h2 > a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.region-sidebar-first > div,
+.region-sidebar-second > div {
+    border-bottom: medium none !important;
+}
+
+
 a {
   text-decoration: underline;
 }
@@ -136,13 +143,20 @@ a:focus {
 }
 
 ul li {
-  list-style-image: url('../images/bullet.png');
+  list-style-image: url('../../images/bullet.png');
   line-height: 20px;
   margin-bottom: 6px;
 }
 
+/* List of exceptions to the li bullets */
+ul.horizontal-tabs-list li,
+ul.vertical-tabs-list li,
+ul.field-collection-view-links li {
+  list-style-image: none;
+}
+
 .ie8 img { /* ie8 was having problems scaling images, this resolves that */
-  width: auto; 
+  width: auto;
   height: auto;
 }
 
@@ -154,10 +168,6 @@ ul li {
 .navbar .nav > li > a:active,
 .navbar .nav > li > a:focus {
   background-color: #666;
-}
-
-#admin-menu {
-  font-size: 13px;
 }
 
 .navbar.menu {
@@ -240,7 +250,7 @@ div.content {
     color: #fff;
     font-size: 120%;
     margin-top: 0;
-    line-height: auto;
+    line-height: inherit;
   }
   a {
     color: #fff;
@@ -266,7 +276,7 @@ div.content {
 }
 
 blockquote {
-  background: url('../images/blockquote.png') center left no-repeat;
+  background: url('../../images/blockquote.png') center left no-repeat;
   font-size: 110%;
   padding-left: 4em;
   min-height: 60px;
@@ -279,7 +289,7 @@ blockquote {
 
 /* Admin / edit interface */
 ul.primary li a {
-  background: #f2f2f2;
+  background: #f5f2ed;
   &:hover, &:active, &:focus {
     color: #252525;
   }
@@ -288,7 +298,7 @@ ul.primary li a {
 a.contextual-links-trigger:hover,
 a.contextual-links-trigger:active,
 a.contextual-links-trigger:focus {
-  background-color: #f2f2f2;
+  background-color: #f5f2ed;
   border: 1px solid #ccc;
 }
 
@@ -318,7 +328,7 @@ ul.contextual-links li a:focus {
 }
 
 #sidebar-first .block-menu > .content {
-  margin-top: 0;  
+  margin-top: 0;
 }
 
 #sidebar-second .region-sidebar-second > div {
@@ -351,10 +361,6 @@ ul.contextual-links li a:focus {
   display: none;
 }
 
-#admin-menu {
-  font-size: 70%;
-}
-
 /* Search Page Styling */
 .page-search {
   #page-title {
@@ -366,6 +372,124 @@ ul.contextual-links li a:focus {
     }
     .form-item {
       margin-bottom: 0;
+    }
+  }
+}
+
+/* New top hat styling */
+#osu-top-hat.new {
+  background: @sand;
+  height: 87px;
+  border-bottom: none;
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  &.container {
+    max-width: 1167px;
+  }
+  a {
+    padding: 0;
+    border-radius: 0;
+  }
+  img {
+    vertical-align: top;
+  }
+  .group-header {
+    display: inline-block;
+    margin-top: 18px;
+    padding-left: 20px;
+    h1 {
+      display: block;
+      padding: 0;
+    }
+  }
+  .parent,
+  a.parent {
+    color: #c34500;
+    font-size: 15px;
+    font-style: normal;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding: 0;
+    &:active, &:focus, &:hover {
+      background: transparent;
+      text-decoration: underline;
+    }
+  }
+  h1 {
+    display: inline-block;
+    padding: 1.1em 1em 0 .5em;
+    a {
+      padding: 0;
+      color: #c34500;
+      border-radius:0;
+      &:active, &:focus, &:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+    }
+  }
+  #search-link {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    font-size: 24px;
+    color: @osu;
+    &:active, &:focus, &:hover {
+      background: @osu;
+      color: #fff;
+    }
+  }
+
+}
+
+/* Search overlay for new search within doug fir */
+#search-overlay {
+  display: none;
+  background: rgba(0,0,0,.86);
+  height: 90vh;
+  width: 100vw;
+  max-width: 100%; /* older browsers and linux seem to have an issue with 100 vw this fixes it */
+  position: absolute;
+  left: 0;
+  z-index: 999;
+  text-align: center;
+  #osu-search-top-hat-form {
+    text-align: center;
+    margin-top: 40px;
+    .form-item {
+      display: inline-block;
+    }
+    .search-terms {
+      height: 2em;
+      width: 10em;
+      font-size: 1.6em;
+      line-height: 1.6em;
+      padding-left: .7em;
+      border-radius: 0;
+    }
+    input.form-submit {
+      background: @osu url('../../images/search.png') no-repeat 50% 50%;
+      border-radius: 0;
+      box-shadow: 0;
+      margin: 0 0 0 -3px;
+      font-size: 2em;
+      width: 1.6em;
+      top: 2px;
+      position: relative;
+      font-family: FontAwesome, Gudea, sans-serif;
+      padding: 11px;
+      border: none;
+    }
+  }
+  .exit-search {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    &:hover, &:active, &:focus {
+      background: #fff;
+      color: #000;
     }
   }
 }
@@ -408,10 +532,30 @@ ul.contextual-links li a:focus {
 }
 /* end lightbox */
 
+/* Icon tweaks */
+a .icon-rss {
+  display: inline-block;
+}
+
+/* Hide urls on printed pages */
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
+
+/* Small tweaks to Media Module classes */
+.media.media-element-container {
+  margin-top: 0; // overwrites bootstrap 2 class that was being added to embed media
+}
+
 @import "components/quick-tabs.less";
 @import "components/forms.less";
 @import "components/tables.less";
 @import "components/horizontal-menus.less";
 @import "components/vertical-menus.less";
+@import "components/accordion.less";
 @import "components/footer-menus.less";
 @import "components/helpers.less";
+@import "components/widgets.less";
+@import "components/progress-bars.less";

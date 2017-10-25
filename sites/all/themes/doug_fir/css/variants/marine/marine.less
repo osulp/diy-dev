@@ -6,260 +6,424 @@
  * Modified:
  *
 */
+/* theme option */
+@import "../../../bootstrap/less/variables.less";
+@import "../../../bootstrap/less/mixins.less";
 
-html.marine {
+/* @main: #4d6c88;  main blue color */
+@secondary: #61798f; /* secondary blue color */
+@main: #385e86; /* darkest blue rss feeds and others */
+@dark: #385e86;
+@light: #e8ef82;
+
+.marine {
   background-color: #9AA6B2;
-}
-
-/* Marine backgrounds */
-body.marine {
-  background-color: #101f2a;
-  background-image:url(../images/marine_bg_1.png);
-  background-repeat: repeat-x;
-}
-
-body.seascape {
-  background-image:url(../images/marine_bg_1.png);
-  background-repeat: repeat-x;
-}
-
-body.icons {
-  background-image:url(../images/marine_bg_2.png);
-  background-repeat: repeat;
-}
-
-body.waves {
-  background-image:url(../images/marine_bg_3.png);
-  background-repeat: repeat;
-}
 
 
-.marine #header h1 a{
-  color: #fff;
-}
+  /* Marine backgrounds */
+  body {
+    background: url("images/marine_bg.png") no-repeat fixed center center #294869;
+    background-size: 100%;
+    &.seascape {
+      background-image:url(images/marine_bg_1.png);
+      background-repeat: repeat-x;
+      background-size: auto;
+    }
+    &.icons {
+      background-image:url(images/marine_bg_2.png);
+      background-repeat: repeat;
+      background-size: auto;
+    }
+    &.waves {
+      background-image:url(images/marine_bg_3.png);
+      background-repeat: repeat;
+      background-size: auto;
+    }
+    &.space {
+      background-image:url(images/space_bg.jpg);
+      background-repeat: repeat-x;
+      background-size: auto;
+      background-position: left top;
+      background-attachment: fixed;
+    }
+  }
 
-.marine #main h3 {
-  color: #61798f;
-}
+  a,
+  h2,
+  h4 {
+    color: @main;
+  }
 
-/* Block titles are white on a blue tab */
-.marine h3.title,
-.marine #main h2.title,
-.marine #main h3.title {
-  display: inline-block;
-  color: #fff;
-  background-color: #4d6c88;
-  padding: .2em 1em 0 1em;
-  margin-left: 0;
-  margin-top: .5em;
-  margin-bottom: 0;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-}
+  #page-wrapper {
+    background: rgba(255,255,255,.9);
+    padding: 0 20px;
+  }
+  
+  /* Feed Icons (border radius in particular) */
+  .live-feeds-block .rss-icon,
+  .feed-icon {
+      border-radius: 0;
+      color: #fff;
+      background-color: #c34500;
+  }
+  
+  #content {
+    padding: 10px;
+  }
+  
+  #header h1 a{
+    color: @main;
+  }
 
-/* Other h2 titles are white */
-.marine h2.title {
-  color: #fff;
-  background-color: transparent;
-}
+  #main h3 {
+    color: @secondary;
+  }
 
-.marine .node-type-publications h2.title {
-  background: transparent !important;
-}
+  /* Other h2 titles are white */
+  h2.title {
+    color: @main;
+    background-color: transparent;
+  }
 
-.marine #block-announcement-summary h3.title a {
-  color: #fff;
-  background-color: #4d6c88;
-}
+  .node-type-publications h2.title {
+    background: transparent !important;
+  }
 
-/* Other titles and links are blue on white */
-.marine #sidebar-left a,
-.marine #sidebar-right a,
-.marine #content-area a,
-.marine .news-body a,
-.marine .field-content a,
-.marine .view-footer a,
-.marine h1#site-name a,
-.marine #main h3 a,
-.marine #calendar-cws span.day,
-.marine #calendar-cws a,
-.marine #announcement_summary_block a,
-.marine .view-feature-story.view-display-id-block_1 .views-field-title a,
-.marine #main .news-story h3.title,
-.marine a.block-config,
-.marine #site-map a,
-.marine a.block-edit-menu,
-.marine #post-content a {
-  color: #61798f;
-  background-color: #fff;
-}
+  #block-announcement-summary h3.title a {
+    color: #fff;
+    background-color: @main;
+  }
+  
+  #main-column1 .content {
+    padding-left: 15px;
+  }
+  
+  #main-menu .menu, 
+  #main-menu .nice-menu {
+    background: @dark;
+  }
+  
+  #main-menu {
+    .nice-menu a,
+    .nice-menu a:visited {
+      color: #fff;
+    }
+    .nice-menu > li.menuparent:hover > a, 
+    .nice-menu > li.menuparent > a:hover, 
+    .nice-menu > li.menuparent > a:active, 
+    .nice-menu > li.menuparent > a:focus,
+    .nice-menu > li.over > a,
+    .nice-menu > li > a:hover,
+    .nice-menu > li > a:active,
+    .nice-menu > li > a:focus,
+    .menu li a:hover,
+    .menu li a:active,
+    .menu li a:focus {
+      color: @main !important;
+      background-color: #fff !important;
+    }
+    
+    .nice-menu {
+      > li > ul { /* Level 2 */
+        margin-top: 15px;
+        background-color: @main;
+        border: none;
+        border-top: none;
+        .box-shadow(0 2px 3px rgba(0,0,0,.1));
+        > li > a {
+          &:hover, &:active, &:focus {
+            color: @main !important;
+            background-color: #fff !important;
+          }
+        }
+      }
+      li.menuparent:hover a {
+        color: #fff !important;
+        background-color: @main !important;
+        &:hover, &:active, &:focus {
+          color: @main !important;
+          background-color: #fff !important;
+        }
+      }
+      li {
+        li.menuparent > a {
+          &:hover, &:active, &:focus {
+            color: @main !important;
+            background-color: #fff !important;
+          }
+        }
+        li {
+          a {
+            .border-radius(0);
+            &:hover, &:active, &:focus {
+              background-color: @main;
+            }
+          }
+          &.over a {
+            background-color: @main !important;
+            color: #fff !important;
+          }
+        }
+      }
+      /* Level 3 */
+      ul ul,
+      li li.over li a {
+        color: #fff !important;
+        background-color: @main !important;
+      }
 
-.marine #content .view h2.title {
-  color: #61798f;
-  background-color: #fff;
-  padding-left: .2em;
-}
+      li li.over li a:hover,
+      li li.over li a:active,
+      li li.over li a:focus,
+      li li li.over a {
+        color: @main !important;
+        background-color: #fff !important;
+      }
+
+      /* Level 4 */
+      ul ul ul,
+      li li li.over li a {
+        color: #fff !important;
+        background-color: @main !important;
+      }
+
+      li li li.over li a:hover,
+      li li li.over li a:active,
+      li li li.over li a:focus,
+      li li li li.over a {
+        color: @main !important;
+        background-color: #fff !important;
+      }
+    } /* end nice menu */
+    
+  }
+  
+  /* Nice menu on the right hand column */
+  
+  ul.nice-menu-left {
+    width: 100%;
+    border: none;
+    > li {
+      width: 100%;
+    }
+    li {
+      border-width: 0;
+      border-color: #fff;
+      list-style-image: none;
+      background-color: @main;
+      a {
+        color: #fff;
+        text-decoration: none;
+        &:hover, &:active, &:focus {
+          background-color: #fff;
+          color: @main;
+        }
+      }
+      ul {
+        left: -14em;
+      }
+      &+ li {
+        border-top: 1px solid #fff;
+      }
+    }
+    li.menuparent {
+      list-style-image: none;
+      background-image: none;
+      > a {
+        &:before {
+          content: " < ";
+          color: #fff;
+        }
+      }
+      &:hover a {
+        color: #fff;
+        background-color: @main;
+      }
+    }
+  }
+
+  .live-feeds-block .calendar-item .date.calendar .month {
+    background: @main;
+  }
 
 
-
-/* Increase the spacing between content areas and the next titles below */
-.marine #content-area,
-.marine #hp-news,
-.marine #hp-events {
-  margin-bottom: 1em;
-}
+  /* Increase the spacing between content areas and the next titles below */
+  #content-area,
+  #hp-news,
+  #hp-events {
+    margin-bottom: 1em;
+  }
 
 
 /* Hovers are white on blue */
-.marine a:hover,
-.marine #content-area a:hover,
-.marine #site-name a:hover,
-.marine .news-body a:hover,
-.marine .field-content a:hover,
-.marine .view-footer a:hover,
-.marine h1#site-name a:hover,
-.marine #main h3 a:hover,
-.marine h3.title a:hover,
-.marine #calendar-cws a:hover,
-.marine #announcement_summary_block a:hover,
-.marine .view-feature-story.view-display-id-block_1 .views-field-title a:hover,
-.marine .view-feature-story.view-display-id-block_1 .more-link a:hover,
-.marine #sidebar-left ul.menu a:hover,
-.marine #sidebar-right ul.menu a:hover {
-  color: #fff !important;
-  background-color: #4d6c88 !important;
-}
+  a:hover,
+  #content-area a:hover,
+  #site-name a:hover,
+  .news-body a:hover,
+  .field-content a:hover,
+  .view-footer a:hover,
+  h1#site-name a:hover,
+  #main h3 a:hover,
+  h3.title a:hover,
+  #calendar-cws a:hover,
+  #announcement_summary_block a:hover,
+  .view-feature-story.view-display-id-block_1 .views-field-title a:hover,
+  .view-feature-story.view-display-id-block_1 .more-link a:hover,
+  #sidebar-left ul.menu a:hover,
+  #sidebar-right ul.menu a:hover,
+  .ui-accordion a:hover,
+  .ui-accordion a:active,
+  .ui-accordion a:focus {
+    color: #fff !important;
+    background-color: @main !important;
+  }
 
-/* Active links are blue on white */
-.marine a:active,
-.marine #site-name a:active,
-.marine #sidebar-left ul.menu a:active,
-.marine #sidebar-right ul.menu a:active,
-.marine #sidebar-left ul.menu a.active,
-.marine #sidebar-right ul.menu a.active {
-  color: #4d6c88;
-}
+  .views-field-field-image-highlight a {
+    &:hover, &:active, &:focus {
+      background-color: transparent !important;  
+    }
+  }
+  
+  /* Active links are blue on white */
+  a:active,
+  #site-name a:active,
+  #sidebar-left ul.menu a:active,
+  #sidebar-right ul.menu a:active,
+  #sidebar-left ul.menu a.active,
+  #sidebar-right ul.menu a.active,
+  #sidebar-first .content > ul.menu > li > a.active, 
+  #audience-menu .content > ul.menu > li > a.active {
+    color: @main;
+  }
 
-/* Active hover gets white background */
-.marine #sidebar-left ul.menu li.active-trail a:hover,
-.marine #sidebar-right ul.menu li.active-trail a:hover {
-  color: #fff;
-}
-
-
-/* List chevron bullets are blue */
-.marine #sidebar-left ul.menu ul a:before,
-.marine #sidebar-right ul.menu ul a:before {
-	color: #4d6c88;
-	content: "\00BB \0020";
-}
-
-/* The primary links in the header get blue bottom borders */
-.marine #header ul li a:hover {
-  color: #fff;
-  background-color: #4d6c88;
-	border-bottom: 3px solid #4d6c88;
-}
-
-.marine #header ul > li a.active {
-	border-bottom: 3px solid #4d6c88;
-}
-
-/* Breadcrub links are white */
-.marine .breadcrumb a {
-  color: #fff;
-  background-color: #4d6c88;
-  padding: .1em .2em;
-}
+  /* Active hover gets white background */
+  #sidebar-left ul.menu li.active-trail a:hover,
+  #sidebar-right ul.menu li.active-trail a:hover {
+    color: #fff;
+  }
 
 
-/* Footer */
-.marine #ft {
-  background-image: url(images/marine-footer-slice.jpg);
-  background-repeat: repeat-x;
-  color: #000;
-}
+  /* List chevron bullets are blue */
+  #sidebar-left ul.menu ul a:before,
+  #sidebar-right ul.menu ul a:before {
+	  color: @main;
+	  content: "\00BB \0020";
+  }
 
-.marine #ft a,
-.marine #ft h3 {
-  color: #000;
-  background: transparent;
-}
+  /* The primary links in the header get blue bottom borders */
+  #header ul li a:hover {
+    color: #fff;
+    background-color: @main;
+	  border-bottom: 3px solid @main;
+  }
 
-.marine #ft a {
-  color: #000;
-  text-decoration: underline;
-}
+  #header ul > li a.active {
+	  border-bottom: 3px solid @main;
+  }
 
-.marine #ft h3.title,
-.marine #hp-news .news-story  h3.title{
-  padding: 0;
-}
+  /* Breadcrub links are white */
+  .breadcrumb a {
+    padding: .1em .2em;
+  }
 
-.marine #ft h3 a:hover,
-.marine #ft a:hover {
-	text-decoration: none;
-	background-color: #fff !important;
-  color: #000 !important;
-}
 
-.marine #ft .content {
-  background-color: transparent;
-}
+  /* Footer */
+  #footer {
+    border-width: 1px;
+  }
 
-.marine #ft div.block.with-block-editing div.edit a:hover {
-  color: #4d6c88;
-  background-color: #fff;
-}
+  #hp-news .news-story  h3.title{
+    padding: 0;
+  }
 
-.marine #sidebar-left h3.title a {
-  color: #fff;
-  background-color: #4d6c88;
-}
+  #sidebar-left h3.title a {
+    color: #fff;
+    background-color: @main;
+  }
 
-.marine #sidebar-left h3.title a:hover  {
-  color: #fff;
-  background-color: #4d6c88;
-  text-decoration: underline
-}
+  #sidebar-left h3.title a:hover  {
+    color: #fff;
+    background-color: @main;
+    text-decoration: underline
+  }
 
-/* Feature Story dots */
+  /* Feature Story dots */
+  .view-feature-story .controls li a:hover,
+  .view-feature-story .controls li.active a {
+    background-color: @main;
+  }
 
-.marine .view-feature-story .controls li a:hover,
-.marine .view-feature-story .controls li.active a {
-  background-color: #4d6c88;
-}
+  /* Fix for active hover */
+  ul.nice-menu a.active:hover {
+    color: @main !important;
+    background-color: #fff !important;
+  }
 
-/* Fix for active hover */
-.marine ul.nice-menu a.active:hover {
-  color: #4d6c88 !important;
-  background-color: #eee !important;
-}
+  /* Fix for exposed filter block */
+  div.views-exposed-form input.form-text {
+    max-width: 200px;
+  }
 
-/* Fix for exposed filter block */
-.marine div.views-exposed-form input.form-text {
-  max-width: 200px;
-}
+  /* Fix for events date */
+  #calendar-cws span.month {
+    color: #949494;
+  }
 
-/* Fix for events date */
+  #content-inner {
+    background-color: transparent;
+  }
 
-.marine #calendar-cws span.month {
-  color: #949494;
-}
+  /* Fix for feeds_display */
+  #feeds-display h3.title {
+    background-color: #fff;
+    display: inline;
+    padding: 0;
+  }
 
-.marine #content-inner {
-  background-color: transparent;
-}
-
-/* Fix for feeds_display */
-.marine #feeds-display h3.title {
-  background-color: #fff;
-  display: inline;
-  padding: 0;
-}
-
-.marine #feeds-display p.title a,
-.marine #feeds-display .calendar-item span.month,
-.marine #feeds-display a{
-    color: #61798f;
+  #feeds-display p.title a,
+  #feeds-display .calendar-item span.month,
+  #feeds-display a{
+    color: @secondary;
+  }
+  
+  /* Feature story */
+  #block-views-feature-story-block .view-feature-story .views-field-field-caption {
+    .fs-title a, 
+    .fs-title {
+      color: @main;
+    }
+  }
+  
+  /* Video Carousel */
+  .jcarousel-skin-osu-video .views-field-colorbox a:hover,
+  .jcarousel-skin-osu-video .views-field-lightbox a:hover {
+    background: transparent !important;
+  }
+  
+  /* Pagination (feature stories for example) */
+  .pager li > a, 
+  .pager li > span {
+    color: @main;
+  }
+  
+  /* News and Events and others */
+  #block-views-news-block h2,
+  .block > h2,
+  .block-announcement h2 {
+    color: #fff;
+    background: @main;
+    .border-radius(0);
+  }
+  
+  .live-feeds-block { 
+    .calendar-item {
+      padding: 0 10px 10px;
+      .date.calendar .day-year {
+        background-color: #fff;
+      }
+    }
+    .rss-icon {
+      .border-radius(0);
+    }
+  }
 }

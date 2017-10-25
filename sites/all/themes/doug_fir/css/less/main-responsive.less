@@ -11,12 +11,11 @@
 @import "../../bootstrap/less/variables.less";
 @import "../../bootstrap/less/mixins.less";
 
-
 /* though not specifically in a media query, this helps to make all images in
 the page scale while keeping the same ratio. This could used to be in bootstrap
 but was removed in version 2.0.4 */
 img {
-  height: auto; 
+  height: auto;
 }
 
 @media (max-width: 480px) {
@@ -25,7 +24,8 @@ img {
     padding: 0;
   }
   
-  #osu-top-hat .logo,  
+  #osu-top-hat .logo,
+  #osu-top-hat.new img,
   #main-menu {
     display: none;
     .menu,
@@ -33,7 +33,33 @@ img {
       .border-radius(0);
     }
   }
-  
+  .pine {
+    #osu-top-hat .logo,
+    #osu-top-hat.new img {
+      display: block;
+      height: 60px;
+    }
+    #mobile-menu {
+      top: 80px;
+    }
+    #mobile-icon-menu {
+      top: 30px !important;
+    }
+  }
+
+  .pine #osu-top-hat.new {
+    background: #d73f09;
+    height: 80px;
+    .mobile-header {
+      display: none;
+    }
+  }
+
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
   #content {
     padding-right: 0;
   }
@@ -48,8 +74,8 @@ img {
     top: 40px;  
   }
   
-  #osu-top-hat {
-    #gradient .vertical(#c34500, #AE3D00);
+  #osu-top-hat,
+  #osu-top-hat.new {
     height: auto;
     border-bottom: none;
     text-align: left;
@@ -80,6 +106,19 @@ img {
       }
     }
   }
+
+  #osu-top-hat.new {
+    .mobile-header {
+      padding-left: 15px;
+      line-height: 40px;
+    }
+    .group-header {
+      padding-left: 15px !important;
+    }
+    h1 {
+      font-size: 20px;
+    }
+  }
   
   /* Live feeds tweaks */
   
@@ -96,9 +135,13 @@ img {
     font-weight: bold;
     font-size: 16px;
   }
+
+  .pine .live-feeds-block .rss-icon {
+    border: none;
+  }
   
   .classic #header {
-    height: 30px;
+    height: auto;
   }
   
   #header h1 {
@@ -129,8 +172,24 @@ img {
   .parent {
     padding-left: 10px;
   }
+  .pine .parent {
+    padding-left: 0;
+  }
   
   /* Feature Story Responsive Edits */
+  #features {
+    padding-top: 6px;
+    background-color: #fff;
+  }
+  
+  #features + .row #content {
+    padding-top: 10px;
+  }
+
+  #features #block-views-feature-story-block .view-feature-story .views-field-field-caption {
+    padding-bottom: 0;
+  }
+
   #block-views-feature-story-block .view-feature-story .more-link {
     bottom: -15px;
     right: 4px;
@@ -152,6 +211,22 @@ img {
   .classic .content,
   .classic #block-system-main > .content {
     padding: .4em;
+  }
+  
+  /* VSO Header */
+  #osu-top-hat p.vso-standard-header {
+    a {
+      font-size: 16px;
+      text-transform:uppercase;
+    }
+    margin: 0;
+  }
+
+  .pine {
+    #footer,
+    #osu-top-hat {
+      margin: 0 !important;
+    }
   }
   
 }
@@ -183,6 +258,9 @@ img {
         padding: 0 .3em;
       }
     }
+    &.new {
+      margin-bottom: 14px;
+    }
   }
   
   #header {
@@ -203,13 +281,28 @@ img {
   
   #header h1 {
     padding-top: .1em;
-    padding-left: 135px;
+    /* padding-left: 135px; */
+  }
+
+  .pine h1,
+  .pine .group-header {
+    margin: 0 -20px;
+    width: auto;
+  }
+
+  .pine .group-header h1 {
+    margin: 0;
+  }
+
+  .pine #mobile-menu {
+    margin-left: -20px;
   }
 }
 
 @media (max-width: 767px) {
   #admin-menu,
-  #main-menu {
+  #main-menu,
+  #search-link {
     display: none;
   }
 
@@ -228,6 +321,24 @@ img {
   
   #osu-top-hat {
     height: 40px;
+    &.new {
+      height: auto;
+      background: #c34500;
+      .group-header {
+        display: block;
+        padding-left: 0;
+        background: #fff;
+        margin-top: 0;
+        padding-top: 8px;
+        h1 {
+          line-height: 28px;
+        }
+      }
+      h1 {
+        display: block;
+        background: #fff;
+      }
+    }
     .search-terms,
     .search-terms:focus {
       width: 160px;
@@ -250,6 +361,11 @@ img {
     }
   }
   
+  p.vso-standard-header {
+     margin: 8px 0;
+   }
+  
+  
   #mobile-icon-menu {
     color: #fff;
     text-decoration: none;
@@ -262,6 +378,9 @@ img {
     .icon-search {
       font-size: 18px;
     }
+  }
+  .pine #mobile-icon-menu {
+    top: 35px;
   }
   
   @import "components/mobile-menus.less";
@@ -325,7 +444,13 @@ img {
   #main-column2 > div {
     margin: 0;
   }
-  
+
+  .pine #footer {
+    color: #fff;
+    h2, h3, a {
+      color: #fff;
+    }
+  }
   #footer {
     background: #e5e2dd;
     color: #252525;
@@ -378,7 +503,7 @@ img {
       }
     }
   }
-  
+
   /* CLASSIC variant only edits */
   .classic #main-menu .nice-menu > li.menuparent:hover > a, 
   .classic #main-menu .nice-menu > li.menuparent > a:hover, 
@@ -410,6 +535,16 @@ img {
     display: none !important; // hides mobile menu for when display is too wide
   }
   
+}
+
+@media (max-width: 767px) {
+  .pine {
+    #footer,
+    #osu-top-hat {
+      margin: 0 -20px;
+      width: auto;
+    }
+  }
 }
 
 
@@ -463,13 +598,16 @@ img {
   }
   
   .view-feature-story.view-display-id-block .fs-row .views-field-field-caption {
-    min-height: 160px;
+    min-height: 40px;
     height: auto;
     -webkit-transition: none;
     -moz-transition: none;
     transition: none;
     .fs-title {
       margin-right: 0;
+    }
+    .fs-caption {
+      display: none;
     }
   }
 
@@ -485,6 +623,11 @@ img {
   .view-feature-story .side-controls {
     top: 20%;
   }
+
+  // removes a weird padding issue for paragraphs items inside content
+  .pine #content {
+    padding-right: 0;
+  }
 }
 
 
@@ -495,6 +638,11 @@ img {
     display: none;
   }
 
+  .pine #page-wrapper.container-fluid {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+
 }
 
 
@@ -502,6 +650,22 @@ img {
   
   #osu-top-hat .wrapper4 {
     width: 1200px;
+  }
+
+  #features {
+    max-width: 1200px;
+  }
+
+  .pine #features {
+    max-width: 100%;
+  }
+
+  .pine #block-views-feature-story-block .view-feature-story .views-field-field-picture img {
+    width: 100%;
+  }
+
+  .pine #block-views-feature-story-block .content {
+    max-height: 100%;
   }
   
   #alt-menu,

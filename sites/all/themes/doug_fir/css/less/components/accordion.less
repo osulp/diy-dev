@@ -1,0 +1,24 @@
+/* Accordion styling */
+.ui-accordion {
+  .ui-accordion-header {
+    border-color: #eee;
+    background-image: none;
+    &.ui-state-default {
+      background: #f2f2f2;
+      &:hover, &:active, &:focus {
+        background: #c34500;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+  .ui-widget-content {
+    border-color: #eee;
+    a {
+      &:active, &:focus, &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

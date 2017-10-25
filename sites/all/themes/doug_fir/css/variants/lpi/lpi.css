@@ -1,0 +1,269 @@
+/**** sitewide styles *****/
+.lpi {
+  /* adds the wrapper background necessary to have background image */
+
+  /* specific style for the book navigation when it is in the primary sidebar */
+
+  /* lpi contact info in footer wider */
+
+  /* centers highlights and text spacing */
+
+  /* hover, focus and active styles for sidebar menu */
+
+  /**** styles for LPI top lvl site *****/
+
+  /* background image for LPI site all pages except for specific groups with their own*/
+
+  /* adjusts title for front page "research" block */
+
+  /* adjusts title for front page "outreach" block */
+
+  /* adjusts title for front page "LPI Blog" block */
+
+  /* adjusts title for front page "in the news" block */
+
+  /**** styles for HDI group *****/
+
+  /* background image for HDI */
+
+  /* content background */
+
+  /* adjustst title for HDI block */
+
+  /**** styles for HYP group *****/
+
+  /* centers found giving widget */
+
+  /* background image for hyp */
+
+  /* sidebar menu styles to match rest of site */
+
+  /* special class for headers within content. found in garden pages */
+
+  /* increase font size for blocks on HYP front page */
+
+  /* hides parent contact for hyp */
+
+  /* hide print friendly link on all hyp pages */
+
+  /* table styles on recipes page */
+
+  /**** styles for MIC group *****/
+
+  /* mic background */
+
+  /* sidebar menu styles */
+
+  /* MIC front page block titles */
+
+  /* decrease gap on MIC group image bottom */
+
+  /* style for mobile menu for MIC */
+
+  /* styles for collapsible content feature */
+
+}
+.lpi #page-wrapper {
+  background-image: none;
+  background-color: #f4f2ec;
+  padding: 0 20px;
+}
+.lpi .breadcrumb {
+  font-size: 16px;
+}
+.lpi #block-book-navigation {
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.lpi .specific-contact {
+  width: 360px;
+}
+.lpi #block-views-highlights-block img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 0 0 10px 0;
+}
+.lpi #sidebar-first ul.menu li.active-trail > a.active:hover,
+.lpi #audience-menu ul.menu li.active-trail > a.active:hover,
+.lpi #sidebar-first ul.menu li.active-trail > a.active:active,
+.lpi #audience-menu ul.menu li.active-trail > a.active:active,
+.lpi #sidebar-first ul.menu li.active-trail > a.active:focus,
+.lpi #audience-menu ul.menu li.active-trail > a.active:focus,
+.lpi #sidebar-first ul.menu li li > a.active,
+.lpi #audience-menu ul.menu li li > a.active {
+  background: #c34500;
+  color: #fff;
+}
+.lpi body {
+  background-image: url('images/lpi-bg.jpg');
+  background-position: center 189px;
+  background-repeat: repeat-x;
+}
+.lpi #block-block-5 h2 {
+  background: #561f4b;
+}
+.lpi #block-block-6 h2 {
+  background: #561f4b;
+}
+.lpi #block-live-feeds-3 h2 {
+  background: #561f4b;
+}
+.lpi #block-block-25 h2 {
+  background: #561f4b;
+}
+.lpi body.health-and-disease-index {
+  background-image: url('images/hdi-debut_light.png');
+  background-repeat: repeat;
+}
+.lpi body.health-and-disease-index #page-wrapper {
+  background: #fff;
+}
+.lpi #block-block-23 h2 {
+  background: #c34500;
+}
+.lpi #block-block-24 h2 {
+  background: #c34500;
+}
+.lpi #wosuf_23 {
+  margin: 0 auto!important;
+}
+.lpi body.healthy-youth-program {
+  background-image: url('images/hyp-bg.jpg');
+  background-position: left 249px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lpi #block-menu-menu-healthy-youth-program .menu {
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.lpi #block-menu-menu-healthy-youth-program ul.menu li,
+.lpi #audience-menu ul.menu li {
+  border-top: 1px solid #f2f5ed;
+}
+.lpi .headerstyle {
+  background: #c34500;
+  color: #fff;
+  border-radius: 3px 3px 0 0;
+  font-weight: normal !important;
+  padding: 0 25px 0 10px;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: 'Gudea', Arial, Helvetica, Verdana, sans-serif;
+}
+.lpi #block-block-30 h2,
+.lpi #block-block-32 h2 {
+  font-size: 20px !important;
+}
+.lpi .healthy-youth-program .specific-contact {
+  display: none;
+}
+.lpi .book_printer {
+  display: none !important;
+}
+.lpi #node-651 th {
+  width: 30%;
+}
+.lpi .micronutrient-information-center h2 {
+  color: #385e86;
+}
+.lpi .micronutrient-information-center h3 {
+  color: #385e86;
+}
+.lpi .micronutrient-information-center h4 {
+  color: #385e86;
+}
+.lpi body.micronutrient-information-center,
+.lpi body.centro-de-información-de-micronutrientes {
+  background-image: url('images/mic-blue.jpg');
+  background-position: left 249px;
+  background-repeat: repeat-x;
+}
+.lpi body.micronutrient-information-center #block-book-navigation .menu,
+.lpi #block-menu-menu-mic-menu {
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.lpi #block-book-navigation ul.menu li,
+.lpi #audience-menu ul.menu li,
+.lpi #block-menu-menu-mic-menu li {
+  border-top: 1px solid #f2f5ed!important;
+}
+.lpi #block-block-8 h2 {
+  background: #385e86;
+  color: #fff;
+}
+.lpi #block-block-9 h2 {
+  background: #385e86;
+  color: #fff;
+}
+.lpi body.micronutrient-information-center #block-views-group-information-block-2 {
+  margin-bottom: -30px;
+}
+.lpi #block-nice-menus-2 ul {
+  border: none;
+  list-style: none;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.lpi #block-nice-menus-2 li {
+  list-style-image: none;
+  border-top: 1px dotted #252525;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  float: left;
+  border: none;
+  list-style: none;
+  text-align: left;
+  width: 100%;
+  background: #fff;
+}
+.lpi #block-nice-menus-2 ul a {
+  color: #252525;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+}
+.lpi .expanding {
+  display: block;
+}
+.lpi .expanding + input {
+  display: none;
+}
+.lpi .expanding + input + * {
+  display: none;
+}
+.lpi .expanding + input:checked + * {
+  list-style-image: url("/sites/lpi.oregonstate.edu/files/bullett.png") !important;
+  display: block;
+}
+.lpi .secondlevellist {
+  list-style-image: url("/sites/lpi.oregonstate.edu/files/bullet2.png") !important;
+}
+.lpi .thirdlevellist {
+  list-style-image: url("/sites/lpi.oregonstate.edu/files/bullet3.png") !important;
+}
+.lpi caption.th {
+  caption-side: top;
+  font-weight: bold;
+  background: #F5F2ED !important;
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 0px solid #E0E0E0 !important;
+  color: #385e86 !important;
+  font-size: 110% !important;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .lpi #block-nice-menus-2 {
+    display: none;
+  }
+}
