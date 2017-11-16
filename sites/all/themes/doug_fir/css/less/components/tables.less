@@ -2,6 +2,7 @@ table {
   width: 99%;
   margin-bottom: 1.5em;
   overflow-x: scroll;
+  border: none;
 }
 
 table.small {
@@ -44,8 +45,25 @@ tr,
   border-bottom-width: 1px;
 }
 
+tr:nth-child(2n),
+tr.even {
+  background-color: #fff;  
+}
+
+tr.odd,
 tr:nth-child(2n+1) {
-  background-color: #f2f2f2;
+  background-color: #f5f2ed;
+}
+
+#sidebar-first {
+  tr.odd, 
+  tr:nth-child(2n+1) {
+    background-color: transparent;
+  }
+}
+
+tr:last-child {
+  border-bottom: none;
 }
 
 td, 
@@ -59,8 +77,29 @@ th {
   border-top-width: 1px;
 }
 
-th + th,
-td + td {
-  border-left-width: 1px;
+th,
+td {
+  border-right-width: 1px;
 }
 
+td:last-child,
+th:last-child {
+  border-right-width: 0;
+}
+
+
+/* Table class with no borders or anything */
+table.plain {
+  tr:nth-child(2n),
+  tr:nth-child(2n+1),
+  caption,
+  td,
+  tbody {
+    background-color: transparent;
+    border-width: 0 !important;
+  }
+}
+
+table.border {
+  border: 1px solid #e0e0e0;
+} 

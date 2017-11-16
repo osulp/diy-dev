@@ -7,6 +7,7 @@
 .clearfix:after {
   display: table;
   content: "";
+  line-height: 0;
 }
 .clearfix:after {
   clear: both;
@@ -21,13 +22,14 @@
 .input-block-level {
   display: block;
   width: 100%;
-  min-height: 28px;
+  min-height: 32px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
 .honors {
+  /* Feed icons */
+
   /* Main menu */
 
   /* Vertical Navigation tweaks */
@@ -40,15 +42,31 @@
 
 }
 .honors #sidebar-first .block,
+.honors #sidebar-second .block,
 .honors .block-live-feeds {
   background-color: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+.honors #sidebar-first .block h2,
+.honors #sidebar-second .block h2,
+.honors .block-live-feeds h2 {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  /* no RSS header rounded corners */
+
 }
 .honors h3 {
   color: #c34500;
 }
 .honors h4 {
   color: #252525;
+}
+.honors .rss-icon,
+.honors .feed-icon {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 .honors #main-menu .nice-menu ul li + li {
   border-top: 1px dotted #999;
@@ -76,11 +94,11 @@
 .honors #sidebar-first ul.menu li a.active {
   color: #561f4b;
 }
-.honors .block-live-feeds > div {
-  padding: 5px 12px;
+.honors #sidebar-second .region-sidebar-second > div {
+  padding-top: 0;
 }
-.honors .block-live-feeds h2 {
-  color: #fff;
+.honors .block > div {
+  padding: 5px 12px;
 }
 .honors .not-front #features {
   margin-bottom: 15px;

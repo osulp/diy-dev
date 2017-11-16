@@ -1,14 +1,17 @@
 name =  Doug Fir
-description = OSU Theme based on Twitter Bootstrap
+description = Doug Fir is a modern Drupal 7 theme. Built from the start with a responsive layout, it works well in phones, tablets, as well as laptops and desktops.  It can be used by any OSU department, institute, program or academic unit. It includes space for rotating feature stories, rotating highlights, video carousel and space for formatted calendar and news feeds.
 package = OSU
-version = 7.x-1.1.1
+version = 7.x-3.7
 core = 7.x
 
 stylesheets[all][] = bootstrap/css/bootstrap.css
-stylesheets[all][] = css/main.css
+stylesheets[all][] = css/less/main.css
 
-scripts[] = js/timers.js
+
+scripts[] = js/jquery.mobile.custom.min.js
+scripts[] = js/bootstrap.min.js
 scripts[] = js/menus.js
+; scripts[] = js/variants.js  // this file is loaded through theme-settings.php
 
 ; Default regions
 regions[page_top]           = Page Top
@@ -25,7 +28,7 @@ regions[pre_content]        = Pre content
 regions[content]            = Content
 regions[post_content]       = Post content
 regions[sidebar_first]      = Primary Sidebar
-regions[sidebar_second]     = Secondary Sidebar;
+regions[sidebar_second]     = Secondary Sidebar
 regions[pre_footer]         = Full width above the footer
 regions[footer]             = Footer
 regions[highlighted]        = Highlighted
@@ -46,12 +49,15 @@ features[] = secondary_menu
 ; Theme variants
 default_variant     = 'doug_fir'
 variants[doug_fir]  = 'Doug Fir'
+variants[pine]      = 'Pine'
 variants[classic]   = 'OSU Standard'
-; variants[marine]    = 'Marine Sciences'
-variants[science]   = 'College of Science'
-variants[honors]   = 'Honors College'
+variants[marine]    = 'Marine'
+variants[science]   = 'Science'
+variants[pharmacy]  = 'Orange'
+variants[agsci]     = 'Agriculture'
+
 
 settings[responsive] = 1
 settings[hide_breadcrumbs] = 0
 settings[hide_book_nav] = 0
-settings[hide_terms = 0
+settings[hide_terms] = 0

@@ -1,0 +1,42 @@
+.cascades #header {
+  color: transparent;
+}
+.cascades #header > h1 {
+  display: none;
+}
+.cascades #header > a + h1 {
+  display: block;
+}
+.cascades #header > a {
+  display: none;
+}
+.cascades #header > a + a {
+  display: inline;
+  font-style: normal;
+  font-size: 30px;
+}
+.cascades #header > a + a::after {
+  content: " - ";
+}
+.cascades #header > a + a + h1 {
+  display: inline;
+}
+.cascades .parent + h1 {
+  padding-top: 10px;
+}
+.cascades #block-views-news-block-1 .field-content > a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.cascades .book_printer {
+  display: none!important;
+}
+.cascades #footer {
+  background: url('images/repeatable-treeline.png') repeat-x #373737;
+  color: #fff;
+}
+.cascades #footer a,
+.cascades #footer h2,
+.cascades #footer h3 {
+  color: #fff;
+}

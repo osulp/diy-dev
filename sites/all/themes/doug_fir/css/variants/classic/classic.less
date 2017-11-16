@@ -25,8 +25,8 @@
   }
 
   .content {
-    padding: 1em .5em;
-    margin-bottom: 25px;
+    padding: 1em .5em 0;
+    margin-bottom: 10px;
   }
 
   .content > .node > .content {
@@ -178,7 +178,6 @@
   }
 
   #sidebar-first {
-    
     h2 {
       background: #f2f2f2;
       #gradient .vertical(#fff, #ededed);
@@ -186,6 +185,9 @@
       margin-left: -7px;
       padding-left: 14px;
       position: relative;
+      a { 
+        color: #373737; 
+      }
       &:before {
         width: 7px;
         height: 7px;
@@ -235,6 +237,15 @@
   
   /* end menus */
 
+  /* Middle sidebar adjustments */
+  .two-sidebars #page-wrapper > .row > .span9 {
+    background: #fff;
+    .box-shadow(0 2px 3px rgba(0, 0, 0, 0.08));
+    #content {
+      .box-shadow(none); /* removes box shadow of first sidebar */
+    }
+  }
+  /* end middle sidebar */
 
   /* Footer */
   #footer {
@@ -252,30 +263,29 @@
     margin-bottom: -7px; /* edit options touch the content below */
   }
 
-
+  .block-announcement h2 a,
+  .block-announcement h2 {
+    color: #373737;
+  }
   /* Live feeds *****************************************************************/
   .block-live-feeds {
-    
-    h2 {
-      font-family: @sansFontFamily;
+    div + a {
+      margin-left: 20px;
+    }
+    > .content {
+      margin-bottom: 0;
+    }
+  }
+  
+  .block > h2 {
       color: #373737;
       border-radius: 0;
       border-bottom: 1px solid #d2d2d2;
-      line-height: 36px;
-      padding-left: 20px;
       background: rgb(236,235,234); /* Old browsers */
       #gradient .vertical(#ecebea, #f2f2f2);
     }
     
-    > .content {
-      margin-bottom: 0;
-    }
-
-    div + a {
-      margin-left: 20px;
-    }
     
-  } /* close .block-live-feeds */
 
   .row .block-live-feeds .live-feeds-block {
     .calendar-item,
@@ -292,6 +302,12 @@
   #main-column1 > div,
   #main-column2 > div {
     margin: 0;
+  }
+  
+  /* Feed Icons (border radius in particular) */
+  .live-feeds-block .rss-icon,
+  .feed-icon {
+      border-radius: 0;
   }
 
   /* Calendar */

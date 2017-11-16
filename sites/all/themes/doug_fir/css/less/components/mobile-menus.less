@@ -1,8 +1,8 @@
 // Responsive menus that collapse to the top
 #mobile-menu {
-  
   margin-left: 0;
   background: #373737;
+  width: 100vw;
   li {
     list-style: none !important;
     margin: 0;
@@ -17,8 +17,8 @@
         display: block;
         line-height: 40px;
         padding-left: 10px;
-        &+ ul {
-          display: none; // hide second level items
+        &+ ul a {
+          padding-left: 20px; // add padding to second level item
         }
         &.active {
           font-weight: bold;
@@ -31,6 +31,28 @@
   }
   
   #mobile-main-menu {
+    .menu .menu {
+      display: none;
+    }
+    &.book-menu .menu .menu {
+      display: block;
+      .menu {
+        display: none;
+      }
+    }
+    .menu .menu {
+      padding-left: 10px;
+    }
+    li.expanded a {
+      display: inline-block;
+      padding-right: 5px;
+    }
+    .icon-chevron-right,
+    .icon-chevron-down {
+      color: #fff;
+      font-size: 12px;
+      padding-left: 5px;
+    }
     & > ul > li + li {
         border-top: 1px solid #474747;
     }

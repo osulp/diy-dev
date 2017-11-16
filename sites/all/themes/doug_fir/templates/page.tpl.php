@@ -98,56 +98,60 @@
  */
 ?>
 
-<!-- Top-Hat -->
+<!-- OSU Top-Hat -->
 <?php
-  if (function_exists('osu_top_hat_render')) {
+  // Calls the Function that grabs appropriate header and title regardless of group or not
+  if (!isset($node)) { $node = NULL; }
+  $doug_fir_headers = doug_fir_header_set_up($front_page, $node, $site_name, $title);
+
+  // Sets the value of the page title
+  $title = $doug_fir_headers->title;
+
+  $container = doug_fir_full_screen();
+
+  $logo_path = $front_page . path_to_theme();
+
+  if (doug_fir_top_hat()) {
     print osu_top_hat_render();
-  }
+  } else { // Render the new tophat
 ?>
+<div id="osu-top-hat" class="new <?php echo $container ?>">
+  <?php echo get_logo($logo_path); ?>
+  <span class="mobile-header"><a href="//www.oregonstate.edu">OREGON STATE UNIVERSITY</a></span>
+  <a href='<?php echo $base_path; ?>search/osu' id="search-link" class="m-icon-link">
+      <i class="icon-search"></i><span class="sr-only">Open search box</span>
+  </a>
+</div>
+  <?php echo $doug_fir_headers->header; ?>
+<?php } // end rendering new tophat ?>
 <div id="mobile-icon-menu">
-  <a href='#' id="toggle-mobile-menu" class="m-icon-link"><i class="icon-reorder"></i></a>
-  <a href='<?php echo $base_path; ?>search/osu' id="mobile-search-link" class="m-icon-link"><i class="icon-search"></i></a>
+  <a href='#' id="toggle-mobile-menu" class="m-icon-link">
+      <i class="icon-reorder"></i><span class="sr-only">Toggle menu</span>
+  </a>
+  <a href='<?php echo $base_path; ?>search/osu' id="mobile-search-link" class="m-icon-link">
+      <i class="icon-search"></i><span class="sr-only">Go to search page</span>
+  </a>
 </div>
 
-<div id='page-wrapper' class='container'>
-
-  <!-- Site Name -->
-  <div id='header' class='row-fluid'>
-    <?php
-      $parent = parent_site_name();
-      if (!empty($parent)){ ?>
-        <a class="parent" href='http://<?php print $parent['url']; ?>'><?php print $parent['name']; ?></a>
-    <?php } ?>
-      <h1><a href='<?php print $front_page; ?>'><?php print $site_name; ?></a></h1>
+<div id='page-wrapper' class='<?php echo $container ?>'>
+  <div id="search-overlay">
+    <?php print doug_fir_search_overlay(); ?>
+    <button class="exit-search">Exit Search</button>
   </div>
-  <?php 
-      $audience_menu = menu_tree_all_data('audience-menu', '', 2);
-      $main_menu = menu_tree_all_data('main-menu', '', 2);
-      $tophat_menu = menu_tree_all_data('osu-top-hat', '', 1);
-      if ( !empty($audience_menu) || !empty($main_menu) || !empty($tophat_menu) ) {
-        echo '<ul id="mobile-menu">';
-          if (!empty($main_menu) ) {
-            echo '<li id="mobile-main-menu">';
-              print render(menu_tree_output($main_menu));
-            echo '</li>';
-          }
-          if (!empty($audience_menu) ) {
-            echo '<li id="mobile-audience-menu">';
-              print render(menu_tree_output($audience_menu));
-            echo '</li>';
-          }
-          if (!empty($tophat_menu) ) {
-            echo '<li id="mobile-osu-top-hat">';
-              print render(menu_tree_output($tophat_menu));
-            echo '</li>';
-          }
-         echo '</ul>'; 
-        }
+<!-- Site Name, parent unit, and group name -->
+  <?php if (doug_fir_top_hat()) { ?>
+  <div id='header' class='row-fluid'>
+    <?php echo $doug_fir_headers->header; ?>
+  </div>
+  <?php } ?>
+<!-- Get all of the menus that could be included in the mobile menu -->
+  <?php
+      print doug_fir_mobile_menu();
    ?>
    <!-- Main menu navbar -->
    <?php if ($page['nav']): ?>
-      <div id='main-menu'>
-          <?php print render($page['nav']); ?>
+      <div id='main-menu' role="navigation">
+        <?php print render($page['nav']); ?>
       </div> <!-- /#main-menu -->
     <?php endif; ?>
 
@@ -159,14 +163,14 @@
 
       if ($breadcrumb && ! theme_get_setting('hide_breadcrumbs') ) {
         print $breadcrumb;
-        }
+      }
       ?>
     </div> <!-- messages -->
 
 
     <!-- Full width top region -->
     <?php if ($page['full_top']): ?>
-      <div class='row'>
+      <div class='row-fluid'>
         <div id='full-top' class='span12'>
           <?php print render($page['full_top']); ?>
         </div>
@@ -174,7 +178,7 @@
     <?php endif; ?>
 
     <?php
-       // We split the page into columns so we want to do some calulations
+       // We split the page into columns so we want to do some calculations
        // We start with 12 columns
        // If there is a right sidebar (sidebar_first) we subtract 3
       $main_cols = 12;
@@ -184,8 +188,8 @@
     ?>
 
     <!-- Now divide into main column and right sidebar -->
-    <div class='row'>
-      <div class='span<?php print $main_cols; ?>' >
+    <div class='row-fluid'>
+      <div id="main-column" class='span<?php print $main_cols; ?>' >
 
         <!-- Features -->
         <?php if ($page['features']): ?>
@@ -197,13 +201,14 @@
         <?php
           // Main column may be further divided if there is a middle sidebar
           // Subtract 3 more columns for middle sidebar (sidebar_second)
+        $inner_cols = 12;
           if ($page['sidebar_second']) {
-            $main_cols -= 3;
+            $inner_cols -= 3;
           }
         ?>
-        <div class='row'>
+        <div class='row-fluid'>
         <!-- Main content and middle sidebar -->
-          <div class='span<?php print $main_cols; ?>'>
+          <div class='span<?php print $inner_cols; ?>'>
 
             <!-- Pre-content -->
             <?php if ($page['pre_content']): ?>
@@ -215,9 +220,9 @@
             <!-- Main Content -->
             <?php if ($page['content']): ?>
               <?php print render($title_prefix); ?>
-              <?php if ( ($title) && !($is_front) ) { ?>
+              <?php if ( (($title) && !($is_front)) || $node->type == 'feature_page' ) { ?>
                 <h2 class="title" id="page-title">
-                  <?php print $title; ?>
+                  <?php print decode_entities($title); ?>
                 </h2>
               <?php } ?>
 
@@ -230,8 +235,7 @@
                 </div>
               <?php endif; ?>
 
-              <div id='content' >
-                <a name="main-content"></a>
+              <div id='content' role="main">
                 <?php print render($page['content']); ?>
               </div> <!-- /content -->
             <?php endif; ?>
@@ -317,7 +321,7 @@
 
     <!-- Full width above footer -->
     <?php if ($page['pre_footer']): ?>
-      <div class='row'>
+      <div class='row-fluid'>
         <div id='pre-footer' class='span12'>
           <?php print render($page['pre_footer']); ?>
         </div>
@@ -329,18 +333,18 @@
   <!-- Page Footer -->
 
     <div id='footer'>
-      <div class='container'>
-        <div class='row'>
+      <div class='<?php echo $container ?>'>
+        <div class='row-fluid'>
           <div class='span2 contact'>
-            <h3>Contact Info</h3>
+            <h2>Contact Info</h2>
             <div class="specific-contact">
               <?php echo $footer_message; ?>
             </div>
             <div class="general-contact">
-              <a href="http://oregonstate.edu/copyright">Copyright</a>
+              <a href="//oregonstate.edu/copyright">Copyright</a>
               &copy;<?php echo date("Y"); ?>
               Oregon State University<br />
-              <a href="http://oregonstate.edu/disclaimer">Disclaimer</a>
+              <a href="//oregonstate.edu/disclaimer">Disclaimer</a>
             </div>
              <div class="social-media"><?php print doug_fir_social_media(); ?></div>
           </div>

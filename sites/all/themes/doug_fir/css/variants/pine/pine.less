@@ -1,0 +1,863 @@
+/* theme option */
+@import "../../../bootstrap/less/variables.less";
+@import "../../../bootstrap/less/mixins.less";
+
+
+@osu-new: #dc4405;
+@accessible-orange: #d73f09;
+@link: #006A8E;
+@sand: #e0e0e0;
+@electric-beav: #ffaa4d;
+@pine-stand: #4a773c;
+@reindeer-moss: #c4d6a4;
+@hop-bine: #aa9d2e;
+@till: #b7a99a;
+@high-tide: #00859b;
+@seafoam: #b8dde1;
+@rogue-wave: #0d5257;
+@coastline: #a7aca2;
+@luminance: #ffb500;
+@candela: #fdd26e;
+@solar-flare: #d3832b;
+@high-desert: #7a6855;
+@stratosphere: #006a8e;
+@moondust: #c6dae7;
+@star-canvas: #003b5c;
+@crater: #8e9089;
+@lava: #af292e;
+@vulcan: #e69198;
+@basalt: #5e131a;
+@ash: #e6e6e6;
+
+@divider : 1px solid #e0e0e0;
+@dark: rgba(0,0,0,.85);
+
+@open : 'Open sans', sans-serif;
+@stratum : 'Stratum2Web', sans-serif;
+@rufina : 'Rufina-Italic', serif;
+
+@font-face {
+  font-family: 'Stratum2Web';
+  src:  url('fonts/Stratum2WebBold.woff2') format('woff2'),
+  url('fonts/Stratum2WebBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rufina-Italic';
+  src:  url('fonts/rufina-italic.woff2') format('woff2'),
+  url('fonts/rufina-italic.woff') format('woff');
+}
+
+
+.pine {
+  font-size: 18px;
+  background-color: transparent;
+  height: 100%;
+  body {
+    font-family: @open;
+    background-image: none;
+    background-color: #fff;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  a {
+    color: @link;
+  }
+
+  h1 {
+    font-family: @open;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    color: #fff;
+    background-color: #000;
+    margin: 0;
+    padding: 10px 20px;
+    width: 100%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    a {
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+  }
+
+  h2,
+  #page-title {
+    font-family: @stratum;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: @osu-new
+  }
+
+  h3,
+  #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title a,
+  #block-views-feature-story-block .view-feature-story .views-field-field-caption .fs-title {
+    font-family: @stratum;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: @osu-new;
+    a {
+      color: @osu-new;
+    }
+  }
+
+  h4 {
+    font-family: @open;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    a {
+      color: #000;
+    }
+  }
+
+  h5, h6 {
+    font-family: @open;
+    font-size: 1.1rem;
+    color: @osu-new;
+    border-bottom: none;
+    a {
+      color: @osu-new;
+      text-decoration: underline;
+      &:active, &:focus, &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  h6 {
+    color: #000;
+    a {
+      color: #000;
+    }
+  }
+
+  ul li,
+  ol li {
+    line-height: 1.4rem;
+  }
+
+  #page-wrapper {
+    flex: 1 0 auto;
+  }
+
+  #footer {
+    background: url(images/repeatable-treeline.png) #373737 repeat-x left bottom;
+    border-color: @osu-new;
+    min-height: 270px;
+  }
+
+  table {
+    caption {
+      background: #000;
+      color: #fff;
+      font-weight: normal;
+    }
+    tr.odd,
+    tr:nth-child(2n+1) {
+      background-color: #f0f0f0;
+    }
+    border: @divider;
+    th {
+      border: none;
+      border-top: @divider;
+      line-height: 2em;
+      background-color: #444;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    tbody {
+      background: transparent;
+      tr + tr {
+        border-top: @divider;
+      }
+    }
+    th a,
+    caption a {
+      color: #fff;
+      text-decoration: underline;
+      &:active, &:focus, &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  #osu-top-hat + .group-header {
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    a {
+      color: #fff;
+      margin: 0;
+      font-size: 1rem;
+      &.parent {
+        font-size: 1rem;
+        font-style: normal;
+        font-family: 'Open sans', sans-serif;
+        line-height: 16px;
+        padding-right: 2px;
+        &:active, &:focus, &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    h1 {
+      display: inline;
+      padding: 0;
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .block > h2 {
+    background-color: transparent;
+    border-radius: 0;
+    color: @osu-new;
+    font-family: 'Open sans', sans-serif;
+    font-size: 19px !important;
+    font-weight: bold !important;
+    line-height: 1.3rem;
+    margin-bottom: 18px;
+    padding: 0 10px 0 2px;
+    border-bottom: 1px solid #e0e0e0;
+    text-transform: uppercase;
+    & > a {
+      color: @osu-new;
+      text-decoration: none;
+    }
+  }
+  .block.block-live-feeds > h2 {
+    padding-right: 25px;
+  }
+
+  blockquote {
+    background: none;
+    font-family: @rufina;
+    padding: 1em 4em;
+    color: #666;
+    line-height: 1.6;
+    margin-left: 0;
+    margin-bottom: 0;
+    p {
+      font-style: normal;
+
+    }
+
+  }
+  .paragraphs-items .orange-bg-left .span6:first-child .field-item,
+  .paragraphs-items .orange-bg-right .span6 + .span6 .field-item,
+  .paragraphs-items .black-bg-left .span6:first-child .field-item,
+  .paragraphs-items .black-bg-right .span6 + .span6 .field-item {
+    blockquote {
+      color: #fff;
+      padding: 1em 2.5em;
+    }
+  }
+  div.horizontal-tabs {
+    border: none;
+    margin-top: 10px;
+    ul.horizontal-tabs-list {
+      border: none;
+      border-bottom: @divider;
+      li {
+        border: none;
+        padding: 0;
+        position: relative;
+        bottom: -1px;
+        a {
+          background: #f3f2ed;
+          &:hover strong, &:active strong, &:focus strong {
+            color: #000;
+          }
+        }
+        &.selected {
+
+          a {
+            border: @divider;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+
+          }
+        }
+      }
+      strong {
+        font-weight: normal;
+      }
+    }
+  }
+
+  /* HORIZONTAL MAIN MENU  ****************************************************/
+  #main-menu {
+    .content {
+      margin: 10px 0;
+    }
+
+    // set negative margin so letters start aligned with page content
+    .nice-menu > li.first,
+    .menu li.first {
+      margin-left: -16px;
+    }
+
+    .nice-menu {
+      margin: 0;
+      background: transparent;
+      li {
+        ul {
+          margin: -9px 0 0;
+          padding: 10px 0;
+        }
+        li {
+          margin-right: 0;
+        }
+        a {
+          border-radius: 0;
+          background: transparent;
+        }
+      }
+      & > li {
+        & > ul {
+          margin-top: 11px;
+          margin-left: 2px;
+          padding: 10px 0;
+        }
+        & > a {
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+        a {
+          color: #fff;
+          &:hover, &:active, &:focus {
+            background: @dark;
+            color: #fff;
+          }
+        }
+      }
+      & > li.menuparent > a {
+        background-image: none;
+        padding-right: 16px; /* no arrows on first level */
+        &:hover, &:active, &:focus {
+          background: @dark;
+          color: #fff;
+        }
+      }
+      & > li & > a {
+        &:hover, &:active, &:focus {
+          background: #666;
+          color: #fff;
+        }
+      }
+      & > li.menuparent:hover > a,
+      & > li.over > a {
+        background: @dark;
+        color: #fff;
+      }
+
+      /* All parent level 2 and up get this arrow style */
+
+      li li.menuparent > a,
+      li li.menuparent > a:hover,
+      li li.menuparent > a:active,
+      li li.menuparent > a:focus {
+        background: url("../../../images/h-menu-arrow-right-hover.png") 97% center no-repeat transparent;
+      }
+
+      li li a {
+        padding-left: 15px;
+      }
+
+      /* Level 2 */
+
+      li li li.over li a,
+      li.over li a,
+      li li.over li a {
+        background-color: transparent;
+      }
+      ul {
+        background-color: @dark;
+      }
+
+      li.over li a:hover,
+      li.over li a:active,
+      li.over li a:focus,
+      li li.over > a {
+        background-color: #666;
+      }
+
+      /* Level 3 */
+      ul ul {
+        background-color: @dark;
+      }
+
+      li li.over li a:hover,
+      li li.over li a:active,
+      li li.over li a:focus,
+      li li li.over > a {
+        background-color: #666;
+      }
+
+      /* Level 4 */
+      ul ul ul {
+        background-color: @dark;
+      }
+
+      li li li.over li a:hover,
+      li li li.over li a:active,
+      li li li.over li a:focus,
+      li li li li.over > a {
+        background-color: #666;
+      }
+    }
+
+    .menu,
+    .nice-menu {
+      background-color: transparent;
+    }
+    .menu li,
+    .nice-menu > li {
+      margin-top: 6px;
+    }
+    .menu li a,
+    .nice-menu > li > a {
+      color: #252525;
+      border: none;
+      line-height: 16px;
+      margin: 0 2px;
+    }
+  }
+
+  // Hiides mobile tophat (no longer in Pine)
+  #mobile-menu {
+    #mobile-osu-top-hat {
+      display: none;
+    }
+    font-size: 16px;
+  }
+
+  /* AUDIENCE MENU *********************************************/
+  #sidebar-first ul.menu li,
+  #audience-menu ul.menu li {
+    border-top: none;
+  }
+
+  #sidebar-first ul.menu li.active-trail ul,
+  #audience-menu ul.menu li.active-trail ul {
+    background: @sand;
+  }
+
+
+  #sidebar-first ul.menu li a,
+  #audience-menu ul.menu li a {
+    border-bottom: @divider;
+  }
+
+  #sidebar-first .content > ul.menu > li.last > a,
+  #audience-menu .content > ul.menu > li.last > a {
+    border-bottom: 0;
+  }
+
+  #sidebar-first ul.menu li li.first a,
+  #audience-menu ul.menu li li.first a {
+    padding-top: 8px;
+  }
+
+  a:active,
+  #sidebar-left ul.menu a:active,
+  #sidebar-right ul.menu a:active,
+  #sidebar-left ul.menu a.active,
+  #sidebar-right ul.menu a.active,
+  #sidebar-first .content > ul.menu > li > a.active,
+  #audience-menu .content > ul.menu > li > a.active,
+  #sidebar-first .content > ul.menu > li > a.active:hover,
+  #audience-menu .content > ul.menu > li > a.active:hover,
+  #sidebar-first .content > ul.menu > li > a.active:active,
+  #audience-menu .content > ul.menu > li > a.active:active,
+  #sidebar-first .content > ul.menu > li > a.active:focus,
+  #audience-menu .content > ul.menu > li > a.active:focus,
+  #sidebar-first ul.menu li.active-trail > a.active,
+  #audience-menu ul.menu li.active-trail > a.active,
+  #sidebar-first ul.menu li.active-trail > a.active:hover,
+  #audience-menu ul.menu li.active-trail > a.active:hover,
+  #sidebar-first ul.menu li.active-trail > a.active:active,
+  #audience-menu ul.menu li.active-trail > a.active:active,
+  #sidebar-first ul.menu li.active-trail > a.active:focus,
+  #audience-menu ul.menu li.active-trail > a.active:focus,
+  #sidebar-first ul.menu li li > a.active,
+  #audience-menu ul.menu li li > a.active {
+    color: #fff;
+    background: #000;
+  }
+
+  #sidebar-first ul.menu li a:hover,
+  #audience-menu ul.menu li a:hover,
+  #sidebar-first ul.menu li a:active,
+  #audience-menu ul.menu li a:active,
+  #sidebar-first ul.menu li a:focus,
+  #audience-menu ul.menu li a:focus {
+    color: #000;
+    background: @sand;
+    text-decoration: underline;
+  }
+
+  /* Active hover gets white background */
+  #sidebar-left ul.menu li.active-trail a:hover,
+  #sidebar-right ul.menu li.active-trail a:hover {
+    color: @osu-new;
+    background: #fff;
+  }
+  #sidebar-first ul.menu li li a,
+  #audience-menu ul.menu li li a {
+    padding-left: 18px;
+  }
+
+  #sidebar-first ul.menu li li li a,
+  #audience-menu ul.menu li li li a {
+    padding-left: 30px;
+  }
+
+  #sidebar-first ul.menu li li li li a,
+  #audience-menu ul.menu li li li li a {
+    padding-left: 38px;
+  }
+
+  /* List chevron bullets are blue */
+  #sidebar-first ul.menu li li a::before,
+  #audience-menu ul.menu li li a::before {
+    color: inherit;
+    //content: "hi";
+    content: "\f105";
+    font-family: FontAwesome, Arial;
+    padding-right: 5px;
+  }
+
+  #osu-top-hat #osu-search-top-hat-form {
+    margin-right: 20px;
+    margin-top: 2em;
+  }
+
+  /*** New top hat ***/
+  #osu-top-hat.new {
+    background: @osu-new;
+    height: 100px;
+    img {
+      height: 80px;
+      margin: 10px;
+    }
+    #search-link {
+      text-decoration: none;
+      top: 35px;
+      &:active, &:focus, &:hover {
+        background: none;
+      }
+    }
+    a {
+      &:active, &:focus, &:hover {
+        background: none;
+      }
+    }
+    .icon-search {
+      color: #fff;
+      &:hover, &:active, &:focus {
+        color: #000;
+      }
+    }
+  }
+
+  /********************** MODULE OVERRIDES *******************/
+  // LIVE FEEDS
+  .live-feeds-block .rss-icon {
+    background: transparent;
+    .icon-rss {
+      color: @osu-new;
+    }
+  }
+
+  .live-feeds-block .news-item {
+    line-height: 16px;
+  }
+  .live-feeds-block .news-item .date {
+     font-size: 16px;
+    font-style: normal;
+  }
+  .live-feeds-block .news-item h3.title a,
+  .live-feeds-block .calendar-item .title a {
+    font-family: @open;
+    font-size: 16px;
+    color: #000;
+    text-decoration: underline;
+    line-height: 18px;
+    &:active, &:focus, &:hover {
+      text-decoration: none;
+    }
+    strong {
+      font-weight: normal;
+    }
+  }
+  .live-feeds-block .news-item .news-body {
+    font-size: 14px;
+  }
+
+  .live-feeds-block .calendar-item {
+    .date.calendar {
+      .day {
+        font-size: 1.7em;
+        padding-top: 8px;
+        padding-bottom: 6px;
+      }
+      .month {
+        font-size: 19px;
+        font-weight: bold;
+        line-height: 26px;
+        background-color: @osu-new
+      }
+      .year {
+        font-size: 1em;
+      }
+    }
+  }
+
+  // Views Things
+  .view.view-feature-story.view-id-feature_story.view-display-id-page .fs-title a {
+    text-decoration: underline;
+    color: @osu-new;
+    &:active, &:focus, &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a.carousel-control {
+    color: #fff;
+  }
+
+  // Navgrid
+  .view-navigation-grid-display .views-field-field-rollover-text .field-content a strong {
+    color: #fff;
+  }
+  .view-navigation-grid-display .views-field-field-rollover-text .field-content a {
+    font-size: 13px;
+  }
+  .view-navigation-grid-display .views-field-field-rollover-text .field-content {
+    border-color: @osu-new;
+  }
+  .view-navigation-grid-display .views-field-field-nav-image img {
+    box-shadow: none;
+  }
+
+  //Multimenus
+  #multimenus-menu li:hover, #multimenus-menu li.active {
+    background-color: @osu-new;
+  }
+
+
+  //OSU THEME
+  #block-views-featured-sites-block .jcarousel-container-horizontal {
+    border-top: 1px solid @sand;
+  }
+
+  // Admin Toolbar
+  #toolbar li.label {
+    background-color: #202020;
+  }
+
+  /**** Alerts ***/
+  .alert {
+    text-shadow: none;
+    border: none;
+    border-color: transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #000;
+    background-color: @candela;
+  }
+  .alert-error {
+    background-color: @vulcan;
+  }
+  .alert-info {
+    background-color: @moondust;
+  }
+  .alert-success {
+    background-color: @reindeer-moss;
+  }
+  /**** Buttons / Button links ***/
+  .btn {
+    font-size: 18px;
+    line-height: 24px;
+    background-image: none;
+    background-color: @ash;
+    filter: none;
+    border-radius: 0;
+    color: #000;
+    border: 1px solid #fff;
+    padding: .5em .8em;
+    text-decoration: none;
+    box-shadow: none;
+    text-shadow: none;
+    &:hover, &:active, &:focus {
+      background-color: @ash;
+      text-decoration: underline;
+    }
+  }
+  .btn-mini {
+    font-size: 13.5px;
+  }
+  .btn-small {
+    font-size: 15.6px;
+  }
+  .btn-large {
+    font-size: 22px;
+  }
+  .btn.btn-primary,
+  .paragraphs-items .orange-bg-left .span6:first-child .field-item a.btn.btn-primary,
+  .paragraphs-items .orange-bg-right .span6 + .span6 .field-item a.btn.btn-primary,
+  input.form-submit {
+    background-color: @accessible-orange;
+    color: #fff;
+    &:hover, &:active, &:focus {
+      background-color: @accessible-orange;
+      color: #fff;
+    }
+  }
+  .btn.btn-secondary {
+    background-color: #000;
+    color: #fff;
+    &:hover, &:active, &:focus {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .btn.btn-danger {
+    background-color: @lava;
+    color: #fff;
+    &:hover, &:active, &:focus {
+      background-color: @lava;
+      color: #fff;
+    }
+  }
+  .btn.btn-warning {
+    background-color: @luminance;
+    color: #000;
+    &:hover, &:active, &:focus {
+      background-color: @luminance;
+      color: #000;
+    }
+  }
+  .btn.btn-info {
+    background-color: @star-canvas;
+    color: #fff;
+    &:hover, &:active, &:focus {
+      background-color: @star-canvas;
+      color: #fff;
+    }
+  }
+  .btn.btn-success {
+    background-color: @pine-stand;
+    color: #fff;
+    &:hover, &:active, &:focus {
+      background-color: @pine-stand;
+      color: #fff;
+    }
+  }
+  .btn.btn-link {
+    background-color: transparent;
+    color: @link;
+    cursor: pointer;
+    &:hover, &:active, &:focus {
+      background-color: transparent;
+      color: #252525;
+    }
+  }
+  /**** Badges & Labels ***/
+  .badge,
+  .label {
+    text-shadow: none;
+    background-color: @ash;
+    color: #000;
+  }
+  .badge {
+    &.badge-success {
+      background-color: @pine-stand;
+      color: #fff;
+    }
+    &.badge-info {
+      background-color: @rogue-wave;
+      color: #fff;
+    }
+    &.badge-warning {
+      background-color: @luminance;
+    }
+    &.badge-important {
+      background-color: @lava;
+      color: #fff;
+    }
+    &.badge-inverse {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  .label {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    &.label-success {
+      background-color: @pine-stand;
+      color: #fff;
+    }
+    &.label-info {
+      background-color: @rogue-wave;
+      color: #fff;
+    }
+    &.label-warning {
+      background-color: @luminance;
+    }
+    &.label-important {
+      background-color: @lava;
+      color: #fff;
+    }
+    &.label-inverse {
+      background-color: #000;
+      color: #fff;
+    }
+  }
+  /**** Thumbnails ***/
+  .thumbnail {
+    padding: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0;
+    .caption {
+      padding: 9px 15px;
+    }
+  }
+  a.thumbnail {
+    &:hover, &:active, &:focus {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-color: @osu-new;
+    }
+  }
+  /**** Wells ***/
+  .well {
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.12);
+  }
+  .well-large {
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.12);
+  }
+  .well-small {
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.12);
+  }
+} // END Pine

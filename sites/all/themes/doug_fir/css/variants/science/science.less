@@ -8,7 +8,8 @@
 @dark-orange:   #a13800;
 
 .science {
-  
+  background-color: #c7c7c7; //matches footer gradient
+
   body {
     background-image: none;
     background-color: #fff;
@@ -38,14 +39,19 @@
     .nice-menu {
       margin: 0;
       background: @sand;
-      &> li a {
-        color: #000;
-        &:hover, &:active, &:focus {
+      &> li {
+        &> a {
+          font-size: 16px;
+        }
+        a {
           color: #000;
+          &:hover, &:active, &:focus {
+            background: @sand;
+            color: @dark-orange;
+          }
         }
       }
       &> li.menuparent > a {
-        font-size: 16px;
         background-image: none;
         padding-right: 16px; /* no arrows on first level */
         &:hover, &:active, &:focus {
@@ -230,18 +236,21 @@
  
  /* NEWS AND EVENTS ****************************************************/
  
-  .block-live-feeds h2 {
+  .block > h2 {
     filter: none; /* removes IE gradients from doug fir */
     background: none;
     border-top: 3px solid #c34500;
     border-bottom: 1px dotted #ccc;
     color: #252525;
     .border-radius(0);
+    a {
+      color: #252525;
+    }
   }
  
  /* FOOTER * ****************************************************/
   &.ie #footer {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a19e9a', endColorstr='#c7c7c7', GradientType=0);
+    background: #c7c7c7;
   } 
   #footer {
     #gradient .vertical(#a19e9a, #c7c7c7);
